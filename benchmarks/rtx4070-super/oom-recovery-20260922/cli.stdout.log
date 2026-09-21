@@ -1,0 +1,7 @@
+kv-allocation-recovery-r1-a0: starting llama_cpp, context=524288, GPU layers=99
+kv-allocation-recovery-r1-a0: OOM
+kv-allocation-recovery-r1-a0: cleanup confirmed; trying next explicit OOM fallback
+kv-allocation-recovery-r1-a1: starting llama_cpp, context=2048, GPU layers=99
+kv-allocation-recovery-r1-a1: SUCCESS
+Results: D:\PrismBench-Repro-20260922\outputs\oom-recovery\benchmark\results.json
+Report: D:\PrismBench-Repro-20260922\outputs\oom-recovery\benchmark\report.md

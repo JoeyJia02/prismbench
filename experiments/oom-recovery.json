@@ -1,0 +1,30 @@
+{
+  "backend": "llama_cpp",
+  "server": "../runtimes/upstream/llama-server.exe",
+  "model": "../models/Qwen3-8B-Q4_K_M.gguf",
+  "model_id": "Qwen/Qwen3-8B",
+  "quantization": "Q4_K_M",
+  "expected_model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "repetitions": 1,
+  "seed": 42,
+  "gpu_index": 0,
+  "quality": false,
+  "load_timeout_seconds": 30,
+  "request_timeout_seconds": 15,
+  "sample_interval_seconds": 0.5,
+  "notes": "Opt-in CUDA allocation rejection under an external 8 GiB Windows Job commit cap; not a physical VRAM capacity or usable-context measurement.",
+  "cases": [{
+    "name": "kv-allocation-recovery",
+    "context_size": 524288,
+    "prompt_tokens": 128,
+    "output_tokens": 16,
+    "gpu_layers": 99,
+    "threads": 6,
+    "batch_size": 128,
+    "ubatch_size": 64,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "on",
+    "fallbacks": [{"context_size": 2048}]
+  }]
+}

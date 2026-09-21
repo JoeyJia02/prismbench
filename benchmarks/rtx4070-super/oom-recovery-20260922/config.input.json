@@ -1,0 +1,36 @@
+{
+  "seed": 42,
+  "load_timeout_seconds": 30,
+  "sample_interval_seconds": 0.5,
+  "gpu_index": 0,
+  "quantization": "Q4_K_M",
+  "quality": false,
+  "model": "models/Qwen3-8B-Q4_K_M.gguf",
+  "notes": "Opt-in real CUDA allocation-rejection experiment under external 8 GiB host Job commit ceiling; not a maximum usable context or sustained VRAM exhaustion measurement. Uncontrolled desktop; unchanged installed alpha CLI.",
+  "expected_model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "model_id": "Qwen/Qwen3-8B",
+  "request_timeout_seconds": 15,
+  "server": "runtimes/upstream/llama-server.exe",
+  "repetitions": 1,
+  "cases": [
+    {
+      "cache_type_k": "f16",
+      "threads": 6,
+      "fallbacks": [
+        {
+          "context_size": 2048
+        }
+      ],
+      "prompt_tokens": 128,
+      "cache_type_v": "f16",
+      "ubatch_size": 64,
+      "name": "kv-allocation-recovery",
+      "context_size": 524288,
+      "gpu_layers": 99,
+      "output_tokens": 16,
+      "batch_size": 128,
+      "flash_attention": "on"
+    }
+  ],
+  "backend": "llama_cpp"
+}

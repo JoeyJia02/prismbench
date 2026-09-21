@@ -1,0 +1,5 @@
+{
+  "tool": "curl without authentication",
+  "exit_code": 0,
+  "url": "https://github.com/JoeyJia02/prismbench/releases/download/v0.1.0a1/prismbench-0.1.0a1-py3-none-any.whl"
+}

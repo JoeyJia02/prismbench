@@ -1,0 +1,28 @@
+{
+  "classification": "same-machine fresh-directory and fresh-venv reproduction, not independent hardware or clean OS",
+  "release": "v0.1.0a1",
+  "release_commit": "3c20f6506c99f131ecf0b34d53e79173ea244eeb",
+  "wheel_sha256": "7488f2378bc6dabbf045dd6c5d2e775dd5f5be1b17d69f3c25234178e51b44d9",
+  "anonymous_public_wheel_download_verified": true,
+  "model_source": "copied local cached file, verified pinned SHA256",
+  "runtime_source": "fresh extraction of two checksum-verified cached ZIPs",
+  "import_identity": {
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\PrismBench-Repro-20260922\\.venv\\Scripts\\python.exe",
+    "prismbench_file": "D:\\PrismBench-Repro-20260922\\.venv\\Lib\\site-packages\\prismbench\\__init__.py"
+  },
+  "pip_check": "passed",
+  "synthetic_demo_and_report": "passed",
+  "same_model_executable_33_dlls_14_sources_as_reference": true,
+  "real_attempts": 3,
+  "successes": 3,
+  "context": 2048,
+  "prompt_tokens": 1792,
+  "output_tokens": 128,
+  "mean_ttft_s": 0.43365283334666554,
+  "mean_generation_tokens_per_second": 77.67349282778142,
+  "max_sampled_device_vram_mib": 6268.0,
+  "all_cleanup_confirmed": true,
+  "raw_ttft_and_peak_reconstructed": true,
+  "report_export_links_verified": true
+}

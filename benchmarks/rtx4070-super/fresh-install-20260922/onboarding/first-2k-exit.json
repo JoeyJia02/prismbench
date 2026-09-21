@@ -1,0 +1,5 @@
+{
+  "config": "quickstart.local.json",
+  "command": "prismbench run quickstart.local.json --output outputs/first-2k",
+  "exit_code": 0
+}

@@ -1,0 +1,7 @@
+attrs==26.1.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+prismbench @ file:///D:/PrismBench-Repro-20260922/downloads/prismbench-0.1.0a1-py3-none-any.whl#sha256=7488f2378bc6dabbf045dd6c5d2e775dd5f5be1b17d69f3c25234178e51b44d9
+psutil==7.2.2
+referencing==0.37.0
+rpds-py==2026.6.3

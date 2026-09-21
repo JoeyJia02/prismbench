@@ -1,0 +1,58 @@
+{
+  "attempt_id": "kv-allocation-recovery-r1-a0",
+  "case_name": "kv-allocation-recovery",
+  "repetition": 1,
+  "attempt_index": 0,
+  "parent_attempt_id": null,
+  "status": "OOM",
+  "error": "Server exited during load (1); inspect server logs",
+  "synthetic": false,
+  "requested": {
+    "name": "kv-allocation-recovery",
+    "context_size": 524288,
+    "prompt_tokens": 128,
+    "output_tokens": 16,
+    "gpu_layers": 99,
+    "threads": 6,
+    "batch_size": 128,
+    "ubatch_size": 64,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "on",
+    "fallbacks": []
+  },
+  "runtime": {
+    "cleanup": {
+      "success": true,
+      "remaining_pids": [],
+      "exit_code": 1,
+      "errors": []
+    }
+  },
+  "metrics": {
+    "load_time_s": null,
+    "ttft_s": null,
+    "total_latency_s": null,
+    "prompt_tokens_per_second": null,
+    "generation_tokens_per_second": null,
+    "prompt_tokens": null,
+    "generated_tokens": null,
+    "cache_tokens": null,
+    "baseline_vram_mib": 1303.0,
+    "loaded_idle_vram_mib": null,
+    "peak_vram_mib": 5920.0,
+    "peak_process_rss_mib": 4443.7109375,
+    "peak_system_ram_used_mib": 17298.59375,
+    "telemetry_samples": 10,
+    "sample_interval_seconds": 0.5,
+    "gpu_process_vram_mib": null,
+    "peak_scope": "sampled whole device across load, warmup, measurement and quality",
+    "after_cleanup_vram_mib": 1303.0
+  },
+  "quality": null,
+  "cleanup_confirmed": true,
+  "evidence_dir": "attempts/kv-allocation-recovery-r1-a0",
+  "warnings": [
+    "Preload GPU utilization exceeds 5%; background load may affect results."
+  ]
+}
