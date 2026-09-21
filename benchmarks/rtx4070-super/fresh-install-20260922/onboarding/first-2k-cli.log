@@ -1,0 +1,8 @@
+ctx2k-r1-a0: starting llama_cpp, context=2048, GPU layers=99
+ctx2k-r1-a0: SUCCESS
+ctx2k-r2-a0: starting llama_cpp, context=2048, GPU layers=99
+ctx2k-r2-a0: SUCCESS
+ctx2k-r3-a0: starting llama_cpp, context=2048, GPU layers=99
+ctx2k-r3-a0: SUCCESS
+Results: D:\PrismBench-Repro-20260922\outputs\first-2k\results.json
+Report: D:\PrismBench-Repro-20260922\outputs\first-2k\report.md

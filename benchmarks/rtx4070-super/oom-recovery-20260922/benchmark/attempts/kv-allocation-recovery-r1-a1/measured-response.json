@@ -1,0 +1,18 @@
+{
+  "ttft_s": 0.0562045999977272,
+  "total_latency_s": 0.24063089999253862,
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 128,
+    "prompt_ms": 41.936,
+    "prompt_per_token_ms": 0.327625,
+    "prompt_per_second": 3052.2701259061428,
+    "predicted_n": 16,
+    "predicted_ms": 184.379,
+    "predicted_per_token_ms": 12.291933333333333,
+    "predicted_per_second": 81.35416723162616
+  },
+  "content": " every independent result.\nRecord 6: the blue box holds 9 samples.",
+  "truncated": false,
+  "ttft_definition": "first_nonempty_generated_text_chunk"
+}

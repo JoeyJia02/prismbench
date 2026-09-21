@@ -1,0 +1,9 @@
+demo-r1-a0: starting synthetic, context=2048, GPU layers=99
+demo-r1-a0: SUCCESS
+oom-demo-r1-a0: starting synthetic, context=2048, GPU layers=99
+oom-demo-r1-a0: OOM
+oom-demo-r1-a0: cleanup confirmed; trying next explicit OOM fallback
+oom-demo-r1-a1: starting synthetic, context=2048, GPU layers=16
+oom-demo-r1-a1: SUCCESS
+Results: D:\PrismBench-Repro-20260922\outputs\demo\results.json
+Report: D:\PrismBench-Repro-20260922\outputs\demo\report.md

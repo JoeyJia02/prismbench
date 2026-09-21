@@ -1,0 +1,1282 @@
+{
+  "protocol": {
+    "version": 1,
+    "baseline_samples": 5,
+    "sample_interval_s": 1,
+    "watchdog_interval_s": 0.1,
+    "minimum_start_available_ram_bytes": 12884901888,
+    "minimum_run_available_ram_bytes": 8589934592,
+    "job_commit_limit_bytes": 8589934592,
+    "maximum_tree_rss_bytes": 8589934592,
+    "outer_wall_limit_s": 120,
+    "post_chain_samples": 15,
+    "settle_last_samples": 3,
+    "settle_tolerance_mib": 256
+  },
+  "harness_sha256": "4ff903467ba219331d0a8615632cc3fe989c009e075825b671c0e2c24c002411",
+  "source_sha256": {
+    "__init__.py": "ea45c03accb4903efa01040017cf6379e2ca48f7f1502629df6d99ae65e1b83a",
+    "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "backends/__init__.py": "317c9e77aecca6cb786cd263dce0e6a7e1ff70388837145cd93ccda32dda3e6a",
+    "backends/base.py": "4124d45f774ba8f5210a6ee64ea5731e34fbd782b48f70d18771deab43b1f1a1",
+    "backends/llama_cpp.py": "6bd6163362c6428fad1fc59b0b7eedb9280dd7e1faba5ea996bd925fcd0c51ce",
+    "backends/process.py": "5cb12b987956305d01bf2e99916ed5fef1fa06f7e6483ab0c3e5fcdb16df09d4",
+    "backends/synthetic.py": "bc05a666200d92d2bfef981b3a4fdfec6369901ccd379b1aeee43c44104cb780",
+    "cli.py": "8e2141e4f0f26e3872486e507b9f209901fe74dd70256b944baac4f8774b260e",
+    "config.py": "b14539cd8ed9c3aa8a2b1302ea8dadfe7ed00b80aa9abed436c8804392a874ee",
+    "hardware.py": "c02e9e80bb4f1332b2a9ecf26250a18297ff3750a4e7d1e7b153716880ffbfb1",
+    "io.py": "bed3a0cf1e020c1af054401a8d414fe4dcfc5b96abb6189dba8d69e1d964851c",
+    "quality.py": "c52d793cce49ca85dc90cf42d6bb938c1b29f5c60735e2b949171ed71b8e8a64",
+    "report.py": "1b47a15f56f5e9df17ae2b033909adaa0c55a47b243ffcccf2abb7911e466637",
+    "runner.py": "e3a0092e6938ade9b591fdbece1448979ec1272662372cb84a7cb44678ba1169"
+  },
+  "python": "D:\\PrismBench-Repro-20260922\\.venv\\Scripts\\python.exe",
+  "package_path": "D:\\PrismBench-Repro-20260922\\.venv\\Lib\\site-packages\\prismbench",
+  "tool_version": "0.1.0a1",
+  "baseline": [
+    {
+      "phase": "baseline",
+      "monotonic_s": 133770.9013658,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 18.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12813.19140625,
+      "system_ram_available_mib": 19589.3515625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "baseline",
+      "monotonic_s": 133771.9021999,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12820.92578125,
+      "system_ram_available_mib": 19581.6171875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "baseline",
+      "monotonic_s": 133772.9025469,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 18.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12815.046875,
+      "system_ram_available_mib": 19587.49609375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "baseline",
+      "monotonic_s": 133773.9031882,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12813.6953125,
+      "system_ram_available_mib": 19588.84765625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "baseline",
+      "monotonic_s": 133774.9035306,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 18.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12818.0078125,
+      "system_ram_available_mib": 19584.53515625,
+      "process_tree_rss_mib": null
+    }
+  ],
+  "samples": [
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133776.004721,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 18.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12855.48046875,
+      "system_ram_available_mib": 19547.0625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133777.0070381,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12862.83203125,
+      "system_ram_available_mib": 19539.7109375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133778.0145121,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12866.6875,
+      "system_ram_available_mib": 19535.85546875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133779.0260211,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 18.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12866.12109375,
+      "system_ram_available_mib": 19536.421875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133780.031164,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 18.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12899.9453125,
+      "system_ram_available_mib": 19502.59765625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133781.040949,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1464.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 38.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 13180.796875,
+      "system_ram_available_mib": 19221.74609375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133782.0458277,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 5920.0,
+      "gpu_utilization_percent": 55.0,
+      "gpu_temperature_c": 39.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 14845.87890625,
+      "system_ram_available_mib": 17556.6640625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133783.0496173,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1464.0,
+      "gpu_utilization_percent": 17.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 15725.3984375,
+      "system_ram_available_mib": 16677.14453125,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133784.0564475,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 4.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12865.65234375,
+      "system_ram_available_mib": 19536.890625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133785.0598846,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 7.0,
+      "gpu_temperature_c": 39.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12866.984375,
+      "system_ram_available_mib": 19535.55859375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133786.0599975,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1464.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 39.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 13166.35546875,
+      "system_ram_available_mib": 19236.1875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133787.0666454,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 5920.0,
+      "gpu_utilization_percent": 16.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 14903.25,
+      "system_ram_available_mib": 17499.29296875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133788.073545,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 6242.0,
+      "gpu_utilization_percent": 17.0,
+      "gpu_temperature_c": 42.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 17740.265625,
+      "system_ram_available_mib": 14662.27734375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "cli_chain",
+      "monotonic_s": 133789.083646,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 4.0,
+      "gpu_temperature_c": 43.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12827.33203125,
+      "system_ram_available_mib": 19575.2109375,
+      "process_tree_rss_mib": null
+    }
+  ],
+  "guards": [
+    {
+      "monotonic_s": 133775.9963704,
+      "available_ram_bytes": 20525461504,
+      "owned_tree_rss_bytes": 7880704
+    },
+    {
+      "monotonic_s": 133776.1050913,
+      "available_ram_bytes": 20497928192,
+      "owned_tree_rss_bytes": 35954688
+    },
+    {
+      "monotonic_s": 133776.2100921,
+      "available_ram_bytes": 20491747328,
+      "owned_tree_rss_bytes": 47292416
+    },
+    {
+      "monotonic_s": 133776.3146962,
+      "available_ram_bytes": 20461408256,
+      "owned_tree_rss_bytes": 47734784
+    },
+    {
+      "monotonic_s": 133776.4246126,
+      "available_ram_bytes": 20476092416,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133776.530047,
+      "available_ram_bytes": 20471476224,
+      "owned_tree_rss_bytes": 63668224
+    },
+    {
+      "monotonic_s": 133776.6350172,
+      "available_ram_bytes": 20476981248,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133776.7403523,
+      "available_ram_bytes": 20478509056,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133776.8456786,
+      "available_ram_bytes": 20478185472,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133776.9506816,
+      "available_ram_bytes": 20470190080,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133777.0556844,
+      "available_ram_bytes": 20453859328,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133777.1616869,
+      "available_ram_bytes": 20478410752,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133777.2666796,
+      "available_ram_bytes": 20472709120,
+      "owned_tree_rss_bytes": 59310080
+    },
+    {
+      "monotonic_s": 133777.3718389,
+      "available_ram_bytes": 20477083648,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133777.4780926,
+      "available_ram_bytes": 20477915136,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133777.5836586,
+      "available_ram_bytes": 20470587392,
+      "owned_tree_rss_bytes": 58343424
+    },
+    {
+      "monotonic_s": 133777.6891856,
+      "available_ram_bytes": 20478136320,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133777.7942244,
+      "available_ram_bytes": 20470730752,
+      "owned_tree_rss_bytes": 64524288
+    },
+    {
+      "monotonic_s": 133777.9005861,
+      "available_ram_bytes": 20478308352,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.0064865,
+      "available_ram_bytes": 20478132224,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.1112856,
+      "available_ram_bytes": 20467146752,
+      "owned_tree_rss_bytes": 64524288
+    },
+    {
+      "monotonic_s": 133778.2167647,
+      "available_ram_bytes": 20474818560,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.3218427,
+      "available_ram_bytes": 20474732544,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.4271804,
+      "available_ram_bytes": 20468768768,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.5311869,
+      "available_ram_bytes": 20476792832,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.63661,
+      "available_ram_bytes": 20476792832,
+      "owned_tree_rss_bytes": 64524288
+    },
+    {
+      "monotonic_s": 133778.7418066,
+      "available_ram_bytes": 20476854272,
+      "owned_tree_rss_bytes": 64524288
+    },
+    {
+      "monotonic_s": 133778.8468077,
+      "available_ram_bytes": 20476866560,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133778.9519792,
+      "available_ram_bytes": 20469653504,
+      "owned_tree_rss_bytes": 56778752
+    },
+    {
+      "monotonic_s": 133779.0569955,
+      "available_ram_bytes": 20449189888,
+      "owned_tree_rss_bytes": 64524288
+    },
+    {
+      "monotonic_s": 133779.1629905,
+      "available_ram_bytes": 20474036224,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133779.2685053,
+      "available_ram_bytes": 20468400128,
+      "owned_tree_rss_bytes": 64524288
+    },
+    {
+      "monotonic_s": 133779.3730818,
+      "available_ram_bytes": 20474470400,
+      "owned_tree_rss_bytes": 56131584
+    },
+    {
+      "monotonic_s": 133779.4785948,
+      "available_ram_bytes": 20473716736,
+      "owned_tree_rss_bytes": 56156160
+    },
+    {
+      "monotonic_s": 133779.5836369,
+      "available_ram_bytes": 20472664064,
+      "owned_tree_rss_bytes": 64548864
+    },
+    {
+      "monotonic_s": 133779.6889161,
+      "available_ram_bytes": 20472078336,
+      "owned_tree_rss_bytes": 56668160
+    },
+    {
+      "monotonic_s": 133779.7939947,
+      "available_ram_bytes": 20471537664,
+      "owned_tree_rss_bytes": 56156160
+    },
+    {
+      "monotonic_s": 133779.8989898,
+      "available_ram_bytes": 20464001024,
+      "owned_tree_rss_bytes": 56156160
+    },
+    {
+      "monotonic_s": 133780.0040551,
+      "available_ram_bytes": 20464001024,
+      "owned_tree_rss_bytes": 56156160
+    },
+    {
+      "monotonic_s": 133780.1098533,
+      "available_ram_bytes": 20448088064,
+      "owned_tree_rss_bytes": 64548864
+    },
+    {
+      "monotonic_s": 133780.2150947,
+      "available_ram_bytes": 20459139072,
+      "owned_tree_rss_bytes": 52191232
+    },
+    {
+      "monotonic_s": 133780.3201821,
+      "available_ram_bytes": 20424540160,
+      "owned_tree_rss_bytes": 134840320
+    },
+    {
+      "monotonic_s": 133780.4252663,
+      "available_ram_bytes": 20478939136,
+      "owned_tree_rss_bytes": 54841344
+    },
+    {
+      "monotonic_s": 133780.5309374,
+      "available_ram_bytes": 20289179648,
+      "owned_tree_rss_bytes": 248668160
+    },
+    {
+      "monotonic_s": 133780.6370667,
+      "available_ram_bytes": 20480004096,
+      "owned_tree_rss_bytes": 54874112
+    },
+    {
+      "monotonic_s": 133780.7415005,
+      "available_ram_bytes": 20317011968,
+      "owned_tree_rss_bytes": 213999616
+    },
+    {
+      "monotonic_s": 133780.8472191,
+      "available_ram_bytes": 20481978368,
+      "owned_tree_rss_bytes": 55083008
+    },
+    {
+      "monotonic_s": 133780.9517256,
+      "available_ram_bytes": 20307324928,
+      "owned_tree_rss_bytes": 228720640
+    },
+    {
+      "monotonic_s": 133781.0569304,
+      "available_ram_bytes": 20174880768,
+      "owned_tree_rss_bytes": 355389440
+    },
+    {
+      "monotonic_s": 133781.1664077,
+      "available_ram_bytes": 20126855168,
+      "owned_tree_rss_bytes": 396283904
+    },
+    {
+      "monotonic_s": 133781.2723635,
+      "available_ram_bytes": 20117315584,
+      "owned_tree_rss_bytes": 410685440
+    },
+    {
+      "monotonic_s": 133781.3778953,
+      "available_ram_bytes": 20114780160,
+      "owned_tree_rss_bytes": 410750976
+    },
+    {
+      "monotonic_s": 133781.4823769,
+      "available_ram_bytes": 20099670016,
+      "owned_tree_rss_bytes": 411111424
+    },
+    {
+      "monotonic_s": 133781.5866699,
+      "available_ram_bytes": 20100644864,
+      "owned_tree_rss_bytes": 411566080
+    },
+    {
+      "monotonic_s": 133781.6915894,
+      "available_ram_bytes": 19873218560,
+      "owned_tree_rss_bytes": 648372224
+    },
+    {
+      "monotonic_s": 133781.7966607,
+      "available_ram_bytes": 19483828224,
+      "owned_tree_rss_bytes": 1057697792
+    },
+    {
+      "monotonic_s": 133781.9064004,
+      "available_ram_bytes": 19096662016,
+      "owned_tree_rss_bytes": 1424097280
+    },
+    {
+      "monotonic_s": 133782.0119358,
+      "available_ram_bytes": 18716643328,
+      "owned_tree_rss_bytes": 1806704640
+    },
+    {
+      "monotonic_s": 133782.1177876,
+      "available_ram_bytes": 18349539328,
+      "owned_tree_rss_bytes": 2168352768
+    },
+    {
+      "monotonic_s": 133782.2231254,
+      "available_ram_bytes": 17981743104,
+      "owned_tree_rss_bytes": 2539499520
+    },
+    {
+      "monotonic_s": 133782.3286852,
+      "available_ram_bytes": 17600671744,
+      "owned_tree_rss_bytes": 2941329408
+    },
+    {
+      "monotonic_s": 133782.4347801,
+      "available_ram_bytes": 17253748736,
+      "owned_tree_rss_bytes": 3271995392
+    },
+    {
+      "monotonic_s": 133782.5403486,
+      "available_ram_bytes": 16893431808,
+      "owned_tree_rss_bytes": 3634831360
+    },
+    {
+      "monotonic_s": 133782.6453302,
+      "available_ram_bytes": 16536256512,
+      "owned_tree_rss_bytes": 3993616384
+    },
+    {
+      "monotonic_s": 133782.7503707,
+      "available_ram_bytes": 16168845312,
+      "owned_tree_rss_bytes": 4347351040
+    },
+    {
+      "monotonic_s": 133782.8553441,
+      "available_ram_bytes": 15829082112,
+      "owned_tree_rss_bytes": 4696338432
+    },
+    {
+      "monotonic_s": 133782.959543,
+      "available_ram_bytes": 15459487744,
+      "owned_tree_rss_bytes": 5059829760
+    },
+    {
+      "monotonic_s": 133783.0645348,
+      "available_ram_bytes": 16213925888,
+      "owned_tree_rss_bytes": 4051902464
+    },
+    {
+      "monotonic_s": 133783.1735326,
+      "available_ram_bytes": 19758669824,
+      "owned_tree_rss_bytes": 623091712
+    },
+    {
+      "monotonic_s": 133783.278918,
+      "available_ram_bytes": 20483293184,
+      "owned_tree_rss_bytes": 54272000
+    },
+    {
+      "monotonic_s": 133783.3834989,
+      "available_ram_bytes": 20483350528,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133783.4881134,
+      "available_ram_bytes": 20486729728,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133783.594054,
+      "available_ram_bytes": 20492075008,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133783.698062,
+      "available_ram_bytes": 20495454208,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133783.8030751,
+      "available_ram_bytes": 20482985984,
+      "owned_tree_rss_bytes": 62451712
+    },
+    {
+      "monotonic_s": 133783.9150793,
+      "available_ram_bytes": 20495028224,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133784.020099,
+      "available_ram_bytes": 20485648384,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133784.1243875,
+      "available_ram_bytes": 20487024640,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133784.2291517,
+      "available_ram_bytes": 20490616832,
+      "owned_tree_rss_bytes": 54276096
+    },
+    {
+      "monotonic_s": 133784.3341186,
+      "available_ram_bytes": 20492947456,
+      "owned_tree_rss_bytes": 73953280
+    },
+    {
+      "monotonic_s": 133784.4431302,
+      "available_ram_bytes": 20489674752,
+      "owned_tree_rss_bytes": 54341632
+    },
+    {
+      "monotonic_s": 133784.5481975,
+      "available_ram_bytes": 20496109568,
+      "owned_tree_rss_bytes": 54341632
+    },
+    {
+      "monotonic_s": 133784.6528423,
+      "available_ram_bytes": 20499632128,
+      "owned_tree_rss_bytes": 54341632
+    },
+    {
+      "monotonic_s": 133784.7578266,
+      "available_ram_bytes": 20486840320,
+      "owned_tree_rss_bytes": 54341632
+    },
+    {
+      "monotonic_s": 133784.8628257,
+      "available_ram_bytes": 20468092928,
+      "owned_tree_rss_bytes": 95551488
+    },
+    {
+      "monotonic_s": 133784.9678263,
+      "available_ram_bytes": 20494979072,
+      "owned_tree_rss_bytes": 54341632
+    },
+    {
+      "monotonic_s": 133785.0728232,
+      "available_ram_bytes": 20488982528,
+      "owned_tree_rss_bytes": 54341632
+    },
+    {
+      "monotonic_s": 133785.1818285,
+      "available_ram_bytes": 20466503680,
+      "owned_tree_rss_bytes": 95641600
+    },
+    {
+      "monotonic_s": 133785.2863679,
+      "available_ram_bytes": 20492300288,
+      "owned_tree_rss_bytes": 90513408
+    },
+    {
+      "monotonic_s": 133785.3983667,
+      "available_ram_bytes": 20488794112,
+      "owned_tree_rss_bytes": 55791616
+    },
+    {
+      "monotonic_s": 133785.5034355,
+      "available_ram_bytes": 20343005184,
+      "owned_tree_rss_bytes": 219201536
+    },
+    {
+      "monotonic_s": 133785.6093723,
+      "available_ram_bytes": 20464115712,
+      "owned_tree_rss_bytes": 95404032
+    },
+    {
+      "monotonic_s": 133785.7143832,
+      "available_ram_bytes": 20373925888,
+      "owned_tree_rss_bytes": 180641792
+    },
+    {
+      "monotonic_s": 133785.8193742,
+      "available_ram_bytes": 20465963008,
+      "owned_tree_rss_bytes": 96907264
+    },
+    {
+      "monotonic_s": 133785.9250824,
+      "available_ram_bytes": 20326592512,
+      "owned_tree_rss_bytes": 226811904
+    },
+    {
+      "monotonic_s": 133786.0300817,
+      "available_ram_bytes": 20191969280,
+      "owned_tree_rss_bytes": 349425664
+    },
+    {
+      "monotonic_s": 133786.1379832,
+      "available_ram_bytes": 20162674688,
+      "owned_tree_rss_bytes": 380108800
+    },
+    {
+      "monotonic_s": 133786.2429288,
+      "available_ram_bytes": 20130918400,
+      "owned_tree_rss_bytes": 411463680
+    },
+    {
+      "monotonic_s": 133786.3476054,
+      "available_ram_bytes": 20125818880,
+      "owned_tree_rss_bytes": 411521024
+    },
+    {
+      "monotonic_s": 133786.4516505,
+      "available_ram_bytes": 20118040576,
+      "owned_tree_rss_bytes": 411828224
+    },
+    {
+      "monotonic_s": 133786.5566142,
+      "available_ram_bytes": 20109430784,
+      "owned_tree_rss_bytes": 412037120
+    },
+    {
+      "monotonic_s": 133786.6606284,
+      "available_ram_bytes": 19951509504,
+      "owned_tree_rss_bytes": 583266304
+    },
+    {
+      "monotonic_s": 133786.7656265,
+      "available_ram_bytes": 19560243200,
+      "owned_tree_rss_bytes": 970649600
+    },
+    {
+      "monotonic_s": 133786.8706383,
+      "available_ram_bytes": 19199627264,
+      "owned_tree_rss_bytes": 1342922752
+    },
+    {
+      "monotonic_s": 133786.9756299,
+      "available_ram_bytes": 18817568768,
+      "owned_tree_rss_bytes": 1710657536
+    },
+    {
+      "monotonic_s": 133787.0806642,
+      "available_ram_bytes": 18461188096,
+      "owned_tree_rss_bytes": 2091614208
+    },
+    {
+      "monotonic_s": 133787.1936174,
+      "available_ram_bytes": 18072715264,
+      "owned_tree_rss_bytes": 2456530944
+    },
+    {
+      "monotonic_s": 133787.2991516,
+      "available_ram_bytes": 17709850624,
+      "owned_tree_rss_bytes": 2913959936
+    },
+    {
+      "monotonic_s": 133787.4288764,
+      "available_ram_bytes": 17268002816,
+      "owned_tree_rss_bytes": 3267055616
+    },
+    {
+      "monotonic_s": 133787.5338787,
+      "available_ram_bytes": 16908591104,
+      "owned_tree_rss_bytes": 3629621248
+    },
+    {
+      "monotonic_s": 133787.6394069,
+      "available_ram_bytes": 16542281728,
+      "owned_tree_rss_bytes": 3986231296
+    },
+    {
+      "monotonic_s": 133787.7443961,
+      "available_ram_bytes": 16190820352,
+      "owned_tree_rss_bytes": 4355584000
+    },
+    {
+      "monotonic_s": 133787.8534964,
+      "available_ram_bytes": 15805374464,
+      "owned_tree_rss_bytes": 4705427456
+    },
+    {
+      "monotonic_s": 133787.9594629,
+      "available_ram_bytes": 15466033152,
+      "owned_tree_rss_bytes": 5064142848
+    },
+    {
+      "monotonic_s": 133788.0655238,
+      "available_ram_bytes": 15367790592,
+      "owned_tree_rss_bytes": 5148479488
+    },
+    {
+      "monotonic_s": 133788.1695776,
+      "available_ram_bytes": 15363915776,
+      "owned_tree_rss_bytes": 5178204160
+    },
+    {
+      "monotonic_s": 133788.2747022,
+      "available_ram_bytes": 15352672256,
+      "owned_tree_rss_bytes": 5170294784
+    },
+    {
+      "monotonic_s": 133788.3798939,
+      "available_ram_bytes": 15347499008,
+      "owned_tree_rss_bytes": 5181050880
+    },
+    {
+      "monotonic_s": 133788.4844166,
+      "available_ram_bytes": 15348584448,
+      "owned_tree_rss_bytes": 5181063168
+    },
+    {
+      "monotonic_s": 133788.5904071,
+      "available_ram_bytes": 15350185984,
+      "owned_tree_rss_bytes": 5182607360
+    },
+    {
+      "monotonic_s": 133788.6954122,
+      "available_ram_bytes": 15350579200,
+      "owned_tree_rss_bytes": 5182607360
+    },
+    {
+      "monotonic_s": 133788.800415,
+      "available_ram_bytes": 15320363008,
+      "owned_tree_rss_bytes": 5183295488
+    },
+    {
+      "monotonic_s": 133788.9054177,
+      "available_ram_bytes": 17085505536,
+      "owned_tree_rss_bytes": 54849536
+    },
+    {
+      "monotonic_s": 133789.0106041,
+      "available_ram_bytes": 20454100992,
+      "owned_tree_rss_bytes": 63037440
+    }
+  ],
+  "post_chain": [
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133789.1403365,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 4.0,
+      "gpu_temperature_c": 43.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12827.8828125,
+      "system_ram_available_mib": 19574.66015625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133790.1406233,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 4.0,
+      "gpu_temperature_c": 41.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12825.640625,
+      "system_ram_available_mib": 19576.90234375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133791.1407186,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 7.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12834.61328125,
+      "system_ram_available_mib": 19567.9296875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133792.140897,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 9.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12834.765625,
+      "system_ram_available_mib": 19567.77734375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133793.1414705,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 12.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12833.00390625,
+      "system_ram_available_mib": 19569.5390625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133794.1418097,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 17.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12835.27734375,
+      "system_ram_available_mib": 19567.265625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133795.1420546,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 20.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12830.671875,
+      "system_ram_available_mib": 19571.87109375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133796.1422758,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 20.0,
+      "gpu_temperature_c": 39.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12830.171875,
+      "system_ram_available_mib": 19572.37109375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133797.1429449,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 39.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12827.40625,
+      "system_ram_available_mib": 19575.13671875,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133798.143084,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 19.0,
+      "gpu_temperature_c": 39.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12828.2421875,
+      "system_ram_available_mib": 19574.30078125,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133799.1433249,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 20.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12832.7578125,
+      "system_ram_available_mib": 19569.78515625,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133800.1436514,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 21.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12841.51953125,
+      "system_ram_available_mib": 19561.0234375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133801.1440098,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 21.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12839.64453125,
+      "system_ram_available_mib": 19562.8984375,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133802.1443072,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 20.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12840.16015625,
+      "system_ram_available_mib": 19562.3828125,
+      "process_tree_rss_mib": null
+    },
+    {
+      "phase": "post_chain",
+      "monotonic_s": 133803.1449467,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1303.0,
+      "gpu_utilization_percent": 21.0,
+      "gpu_temperature_c": 40.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 12840.33203125,
+      "system_ram_available_mib": 19562.2109375,
+      "process_tree_rss_mib": null
+    }
+  ],
+  "abort_reason": null,
+  "hard_limit_confirmed_before_resume": true,
+  "cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 0,
+    "errors": []
+  },
+  "sentinel_survived_cli_cleanup": true,
+  "sentinel_cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 1,
+    "errors": []
+  },
+  "chain_verified": true,
+  "claim_scope": "Bounded CUDA allocator failure and fallback under an 8 GiB Windows Job commit cap; the cause cannot be attributed solely to physical VRAM exhaustion.",
+  "physical_vram_oom_proven": false,
+  "interpretation": "Whole-device sampled settling only; not every app's preservation, not VRAM release before fallback, not physical capacity or maximum usable context. Guard-triggered and host/Job memory failures are inconclusive, not VRAM OOM.",
+  "command": [
+    "D:\\PrismBench-Repro-20260922\\.venv\\Scripts\\python.exe",
+    "-I",
+    "-m",
+    "prismbench",
+    "run",
+    "D:\\PrismBench-Repro-20260922\\outputs\\oom-recovery\\config.resolved.json",
+    "--output",
+    "D:\\PrismBench-Repro-20260922\\outputs\\oom-recovery\\benchmark"
+  ],
+  "windows_job_limits": {
+    "limit_flags": 8704,
+    "job_memory_limit_bytes": 8589934592
+  },
+  "sentinel_outside_cli_job": true,
+  "cli_exit_code": 0,
+  "cli_wall_s": 13.173974000004819,
+  "telemetry_stopped": true,
+  "vram_settled": true,
+  "cuda_allocation_diagnostic": true,
+  "outcome": "PASS"
+}

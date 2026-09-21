@@ -12,7 +12,7 @@ For model fit recommendations, start with [llmfit](https://github.com/AlexsJones
 
 ## Install and one-command demo
 
-Python 3.10+ is required. Download the wheel from the [alpha release](https://github.com/JoeyJia02/prismbench/releases/tag/v0.1.0a1), then install it in a virtual environment:
+Python 3.10+ is required (use 64-bit Python for the Windows x64 runtime). Download the wheel from the [alpha release](https://github.com/JoeyJia02/prismbench/releases/tag/v0.1.0a1), then install it in a virtual environment:
 
 ```console
 python -m venv .venv
@@ -100,7 +100,7 @@ Performance uses exact saved token IDs, one sequence, fixed seed, no context shi
 
 Each attempt has its own directory and terminal status. Confirmed OOM can advance through a **finite list of explicit fallback overrides**, after owned-process cleanup. Each override is relative to the original case, not cumulative. Changed contexts and placements retain separate identities; failed attempts remain in JSON, CSV and Markdown. Errors and timeouts do not automatically trigger OOM fallback. Cleanup failure stops the queue.
 
-The adapter owns a Windows Job Object (suspended assignment before execution), or a process group on Linux. Timeouts and normal cancellation terminate its owned tree. It never kills unrelated GPU applications. Abrupt controller exit is covered on Windows; a Linux controller killed with SIGKILL can leave its process group alive (see limitations). No deliberate hardware OOM was required to test the failure path; process fixtures exercise it safely and reproducibly.
+The adapter owns a Windows Job Object (suspended assignment before execution), or a process group on Linux. Timeouts and normal cancellation terminate its owned tree. It never kills unrelated GPU applications. Abrupt controller exit is covered on Windows; a Linux controller killed with SIGKILL can leave its process group alive (see limitations). Deterministic process fixtures exercise the failure paths. A separate [bounded Windows experiment](docs/validation-20260922.md) observed a real CUDA allocation rejection and successful 2K fallback under an external host-memory cap; it does not establish physical VRAM exhaustion or memory recovery before retry.
 
 Exit codes: `0` all requested case/repetition chains ultimately succeeded; `1` any chain failed or was cancelled; `2` configuration/input error. A recovered OOM remains in the evidence even when the command exits `0`.
 
@@ -122,10 +122,12 @@ Each experiment contains the resolved config, model/runtime/source hashes, hardw
 
 New measurements produced by this package are documented in [validation](docs/validation.md). Prior laboratory scripts and historical model experiments, if present locally, remain outside the distributable project and do not count as validation of this package. Weights, DLLs and personal local outputs are ignored by Git.
 
+The [2026-09-22 follow-up](docs/validation-20260922.md) verifies a public wheel installation in a new directory/venv on the same machine, three new 2K runs and one guarded CUDA failure/fallback chain. It includes the inherited OS dependencies and cache-reuse boundary; it is not independent hardware replication.
+
 To reproduce a result, install the recorded tool/runtime versions, obtain the recorded model hash, restore its config paths, and rerun into a fresh output directory. Bit-for-bit timing or output equality across GPU builds is not promised. All supported claims are restricted to tested combinations.
 
 ## Contributing and release status
 
-See [CONTRIBUTING](CONTRIBUTING.md), [open issues](https://github.com/JoeyJia02/prismbench/issues), [backlog and roadmap](docs/backlog.md), [release checklist](docs/release-checklist.md), and [independent reviews](docs/reviews/). CI exercises CPU fixture tests and wheel installation on Windows/Linux; real GPU integration is opt-in. The [publication audit](docs/reviews/publication-audit.md) records the release checks and their limits. Independent GPU reproduction and real hardware OOM recovery remain open work.
+See [CONTRIBUTING](CONTRIBUTING.md), [open issues](https://github.com/JoeyJia02/prismbench/issues), [backlog and roadmap](docs/backlog.md), [release checklist](docs/release-checklist.md), and [independent reviews](docs/reviews/). CI exercises CPU fixture tests and wheel installation on Windows/Linux; real GPU integration is opt-in. The [publication audit](docs/reviews/publication-audit.md) records the release checks and their limits. Independent GPU reproduction, ordinary memory-pressure recovery and a pre-retry memory admission policy remain open work.
 
 MIT license for this tool. Models and llama.cpp distributions retain their separate upstream licenses.

@@ -2,6 +2,8 @@
 
 Status: **21/21 final real-hardware attempts completed successfully**, 2026-09-21. This record identifies the original measured wheel. Publication builds and remote CI are tracked separately in the [publication audit](reviews/publication-audit.md); the hardware limitations below still apply.
 
+The [2026-09-22 follow-up](validation-20260922.md) adds same-machine fresh-environment reproduction and one bounded CUDA allocation-rejection/fallback experiment. Those are separate protocols and are not merged into this original 21-attempt aggregate.
+
 ## Scope and machine
 
 New measurements run the **installed wheel** from a separate working directory using upstream llama-server build **10964**, commit **b29c606e2**, version string `0.4.1-dev`. Machine: Windows 10 build 19045, Ryzen-class 6-core/12-thread CPU, 32 GB system RAM, RTX 4070 SUPER (12,282 MiB visible), NVIDIA driver 610.88. The supplied runtime bundle uses CUDA 12.4 libraries; the driver-reported CUDA compatibility is not the linked runtime version.
@@ -29,7 +31,7 @@ The complete final sessions live under `benchmarks/rtx4070-super/`. Source, bina
 ## Limits of the release candidate
 
 - No FP16/BF16-versus-Q4 quality degradation was measured. Only same-weight placement probes are included.
-- No deliberate hardware OOM was induced. OOM classification/fallback and process cleanup are exercised using deterministic real-subprocess fixtures.
+- This original dataset did not induce hardware OOM. Deterministic subprocess fixtures cover the failure mechanics; the later bounded CUDA experiment is documented separately and does not establish unconfounded physical VRAM exhaustion.
 - 16K is the largest requested test point, not a discovered maximum.
 - Other GPU capacities, Linux GPU execution, transformers/vLLM/MLX and quantization conversion are unvalidated or deferred.
 - These GPU measurements do not validate Linux GPU execution or additional Python versions. Remote CPU fixture/packaging CI is recorded separately in the publication audit.

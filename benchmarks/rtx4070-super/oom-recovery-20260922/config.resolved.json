@@ -1,0 +1,37 @@
+{
+  "backend": "llama_cpp",
+  "server": "D:\\PrismBench-Repro-20260922\\runtimes\\upstream\\llama-server.exe",
+  "model": "D:\\PrismBench-Repro-20260922\\models\\Qwen3-8B-Q4_K_M.gguf",
+  "model_id": "Qwen/Qwen3-8B",
+  "quantization": "Q4_K_M",
+  "expected_model_sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+  "cases": [
+    {
+      "name": "kv-allocation-recovery",
+      "context_size": 524288,
+      "prompt_tokens": 128,
+      "output_tokens": 16,
+      "gpu_layers": 99,
+      "threads": 6,
+      "batch_size": 128,
+      "ubatch_size": 64,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "flash_attention": "on",
+      "fallbacks": [
+        {
+          "context_size": 2048
+        }
+      ]
+    }
+  ],
+  "repetitions": 1,
+  "seed": 42,
+  "gpu_index": 0,
+  "load_timeout_seconds": 30,
+  "request_timeout_seconds": 15,
+  "sample_interval_seconds": 0.5,
+  "quality": false,
+  "quality_suite": null,
+  "notes": "Opt-in real CUDA allocation-rejection experiment under external 8 GiB host Job commit ceiling; not a maximum usable context or sustained VRAM exhaustion measurement. Uncontrolled desktop; unchanged installed alpha CLI."
+}
