@@ -2,15 +2,15 @@
 
 This is a gate, not a claim that the release has happened. Final evidence is recorded in [validation](validation.md) and [final audit](reviews/final-audit.md).
 
-- [ ] Independent Phase 0 scope/competitor/methodology review.
-- [ ] Core and adapter review; all P1 findings resolved or release blocked.
-- [ ] Config, schema, stream, OOM, timeout, process-tree cleanup and quality tests pass.
-- [ ] Real new-runner GPU benchmark with immutable model/runtime identity and raw evidence.
-- [ ] Repeated tested contexts and explicit offload configuration; no extrapolated claims.
-- [ ] Install wheel into a clean environment and run demo from outside repository.
-- [ ] Built wheel/sdist exclude laboratory assets, credentials and binaries.
-- [ ] README commands, links, limits, issue templates, license and contribution guide verified.
-- [ ] Final audit covers functionality, methodology, usability, reproducibility and overdesign.
+- [x] Independent Phase 0 scope/competitor/methodology review.
+- [x] Core and adapter review; all P1 findings resolved or release blocked.
+- [x] Config, schema, stream, OOM, timeout, process-tree cleanup and quality tests pass.
+- [x] Real new-runner GPU benchmark with immutable model/runtime identity and raw evidence.
+- [x] Repeated tested contexts and explicit offload configuration; no extrapolated claims.
+- [x] Install wheel into a clean environment and run demo from outside repository.
+- [x] Built wheel/sdist exclude laboratory assets, credentials and binaries.
+- [x] README commands, links, limits, issue templates, license and contribution guide verified.
+- [x] Final audit covers functionality, methodology, usability, reproducibility and overdesign.
 - [ ] Choose/check repository and package names before remote publication.
 - [ ] Push to a user-selected GitHub repository and observe Windows/Linux CI.
 - [ ] Confirm third-party replication; then decide alpha vs stable version/tag.

@@ -1,0 +1,8 @@
+{
+  "route": "/tokenize",
+  "body": {
+    "content": "Copy this code exactly: PX-2048\nReply with only the code.\nAnswer:",
+    "add_special": true,
+    "parse_special": false
+  }
+}

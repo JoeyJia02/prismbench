@@ -1,0 +1,32 @@
+{
+  "route": "/completion",
+  "body": {
+    "prompt": [
+      12106,
+      419,
+      3409,
+      6896,
+      25,
+      73165,
+      198,
+      20841,
+      448,
+      1172,
+      279,
+      3409,
+      624,
+      16141,
+      25
+    ],
+    "n_predict": 64,
+    "seed": 42,
+    "temperature": 0,
+    "cache_prompt": false,
+    "stream": false,
+    "ignore_eos": false,
+    "id_slot": 0,
+    "stop": [
+      "\n"
+    ]
+  }
+}

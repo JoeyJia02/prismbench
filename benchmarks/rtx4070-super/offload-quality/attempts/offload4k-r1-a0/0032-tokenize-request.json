@@ -1,0 +1,8 @@
+{
+  "route": "/tokenize",
+  "body": {
+    "content": "Record: color=blue; size=large; count=7.\nWhat is the color? Reply with only the value.\nAnswer:",
+    "add_special": true,
+    "parse_special": false
+  }
+}

@@ -4,16 +4,16 @@
 
 | ID | Work | Acceptance | Status |
 |---|---|---|---|
-| P0-01 | Competition and scope | Primary source comparison; independent ADR review | In progress |
-| P0-02 | Installable CLI/config | Strict validation; offline demo; installed-wheel command | Planned |
-| P0-03 | llama.cpp runner | Exact workload, streaming TTFT, explicit placement, provenance | Planned |
-| P0-04 | Hardware and failures | Sampled metrics with scope; timeout, OOM ledger, owned cleanup | Planned |
-| P0-05 | Evidence/report | Schema-valid JSON, CSV, readable Markdown; no synthetic ranking | Planned |
-| P0-06 | Lightweight quality | Versioned probes; explicit limitations; comparable paired delta | Planned |
-| P0-07 | Tests and integration | Unit tests during development; fake server; opt-in real GPU | Planned |
-| P0-08 | Real benchmark | New package results, hashes and artifacts; repeated tested points | Planned |
-| P0-09 | OSS maintenance | README, contribution guide, CI, roadmap, license, release checklist | Planned |
-| P0-10 | Final independent audit | Functionality, claims, tests, installation, methodology, scope | Planned |
+| P0-01 | Competition and scope | Primary source comparison; independent ADR review | Done |
+| P0-02 | Installable CLI/config | Strict validation; offline demo; installed-wheel command | Done |
+| P0-03 | llama.cpp runner | Exact workload, streaming TTFT, explicit placement, provenance | Done |
+| P0-04 | Hardware and failures | Sampled metrics with scope; timeout, OOM ledger, owned cleanup | Done; hardware OOM not induced |
+| P0-05 | Evidence/report | Schema-valid JSON, CSV, readable Markdown; no synthetic ranking | Done |
+| P0-06 | Lightweight quality | Versioned probes; explicit limitations; comparable paired delta | Done; quantization-loss study deferred |
+| P0-07 | Tests and integration | Unit tests during development; fake server; opt-in real GPU | Done locally; remote CI pending |
+| P0-08 | Real benchmark | New package results, hashes and artifacts; repeated tested points | Done: 21 final attempts, one GPU/model |
+| P0-09 | OSS maintenance | README, contribution guide, CI, roadmap, license, release checklist | Done locally; no remote publication |
+| P0-10 | Final independent audit | Functionality, claims, tests, installation, methodology, scope | Done: local alpha PASS, external gates open |
 
 ## After v0.1 (not promised)
 

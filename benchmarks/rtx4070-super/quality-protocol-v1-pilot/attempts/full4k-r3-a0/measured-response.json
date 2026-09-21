@@ -1,0 +1,18 @@
+{
+  "ttft_s": 0.9864724999933969,
+  "total_latency_s": 2.77769139999873,
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 3840,
+    "prompt_ms": 984.235,
+    "prompt_per_token_ms": 0.2563111979166667,
+    "prompt_per_second": 3901.5072619851962,
+    "predicted_n": 128,
+    "predicted_ms": 1791.132,
+    "predicted_per_token_ms": 14.10340157480315,
+    "predicted_per_second": 70.9048802656644
+  },
+  "content": " preserve every independent result.\nRecord 161: the blue box holds 11 samples. Measure memory and time; preserve every independent result.\nRecord 162: the blue box holds 12 samples. Measure memory and time; preserve every independent result.\nRecord 163: the blue box holds 13 samples. Measure memory and time; preserve every independent result.\nRecord 164: the blue box holds 14 samples. Measure memory and time; preserve every independent result.\nRecord 165: the blue box holds 15 samples. Measure memory and time; preserve every independent",
+  "truncated": false,
+  "ttft_definition": "first_nonempty_generated_text_chunk"
+}

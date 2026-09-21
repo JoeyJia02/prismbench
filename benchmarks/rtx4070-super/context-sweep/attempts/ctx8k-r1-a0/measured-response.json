@@ -1,0 +1,18 @@
+{
+  "ttft_s": 2.167790999999852,
+  "total_latency_s": 4.104784299997846,
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 7936,
+    "prompt_ms": 2153.611,
+    "prompt_per_token_ms": 0.2713723538306451,
+    "prompt_per_second": 3684.973748741068,
+    "predicted_n": 128,
+    "predicted_ms": 1936.459,
+    "predicted_per_token_ms": 15.247708661417324,
+    "predicted_per_second": 65.58362454356121
+  },
+  "content": " box holds 7 samples. Measure memory and time; preserve every independent result.\nRecord 328: the blue box holds 8 samples. Measure memory and time; preserve every independent result.\nRecord 329: the blue box holds 9 samples. Measure memory and time; preserve every independent result.\nRecord 330: the blue box holds 10 samples. Measure memory and time; preserve every independent result.\nRecord 331: the blue box holds 11 samples. Measure memory and time; preserve every independent result.\nRecord 332: the blue box holds 12 samples",
+  "truncated": false,
+  "ttft_definition": "first_nonempty_generated_text_chunk"
+}

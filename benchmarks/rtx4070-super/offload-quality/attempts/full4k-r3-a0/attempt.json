@@ -1,0 +1,211 @@
+{
+  "attempt_id": "full4k-r3-a0",
+  "case_name": "full4k",
+  "repetition": 3,
+  "attempt_index": 0,
+  "parent_attempt_id": null,
+  "status": "SUCCESS",
+  "error": null,
+  "synthetic": false,
+  "requested": {
+    "name": "full4k",
+    "context_size": 4096,
+    "prompt_tokens": 3840,
+    "output_tokens": 128,
+    "gpu_layers": 99,
+    "threads": 6,
+    "batch_size": 512,
+    "ubatch_size": 128,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "on",
+    "fallbacks": []
+  },
+  "runtime": {
+    "load_time_s": 2.3466751000087243,
+    "runtime_version": "version: 0.4.1-dev (build 10964, commit b29c606e2)\nbuilt with Clang 20.1.8 for Windows x86_64",
+    "argv": [
+      "D:\\LocalLargeModel\\runtimes\\upstream\\llama-server.exe",
+      "--model",
+      "D:\\LocalLargeModel\\models\\Qwen3-8B-Q4_K_M.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "55253",
+      "--api-key",
+      "8d3375e2891d4dec87216a91c627b890",
+      "--ctx-size",
+      "4096",
+      "--parallel",
+      "1",
+      "--n-gpu-layers",
+      "99",
+      "--threads",
+      "6",
+      "--batch-size",
+      "512",
+      "--ubatch-size",
+      "128",
+      "--cache-type-k",
+      "f16",
+      "--cache-type-v",
+      "f16",
+      "--flash-attn",
+      "on",
+      "--fit",
+      "off",
+      "--cache-ram",
+      "0",
+      "--no-context-shift",
+      "--no-warmup",
+      "--slots",
+      "--slot-save-path",
+      "D:\\LocalLargeModel\\benchmarks\\rtx4070-super\\offload-quality\\attempts\\full4k-r3-a0\\slot-cache",
+      "--verbosity",
+      "4",
+      "--no-webui"
+    ],
+    "effective": {
+      "context_size": 4096,
+      "parallel": 1,
+      "gpu_layers_loaded": 37,
+      "gpu_layers_total": 37,
+      "cpu_offload": false,
+      "automatic_fit": false,
+      "prompt_cache": false,
+      "context_shift": false,
+      "verification_warnings": [],
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "flash_attention": "on",
+      "gpu_device": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf"
+    },
+    "prompt_sha256": "7837137df5970a8acbccc61aef8a2257e59199169f86982a05c5df49a40fd58e",
+    "cleanup": {
+      "success": true,
+      "remaining_pids": [],
+      "exit_code": 1,
+      "errors": []
+    }
+  },
+  "metrics": {
+    "load_time_s": 2.3466751000087243,
+    "ttft_s": 0.9986525000131223,
+    "total_latency_s": 2.798993700009305,
+    "prompt_tokens_per_second": 3936.8141331627376,
+    "generation_tokens_per_second": 70.55234150444257,
+    "prompt_tokens": 3840,
+    "generated_tokens": 128,
+    "cache_tokens": 0,
+    "baseline_vram_mib": 1356.0,
+    "loaded_idle_vram_mib": 6593.0,
+    "peak_vram_mib": 6607.0,
+    "peak_process_rss_mib": 4899.8203125,
+    "peak_system_ram_used_mib": 16641.609375,
+    "telemetry_samples": 17,
+    "sample_interval_seconds": 0.5,
+    "gpu_process_vram_mib": null,
+    "peak_scope": "sampled whole device across load, warmup, measurement and quality",
+    "after_cleanup_vram_mib": 1337.0
+  },
+  "quality": {
+    "suite_id": "prismbench-basic-probes",
+    "suite_version": "2",
+    "suite_sha256": "3efd69d3ff8759b2f692a0a1d9570f32e71fb24ecd155bf0b07e6c704d776e59",
+    "probe_count": 8,
+    "passed": 8,
+    "score": 1.0,
+    "items": [
+      {
+        "id": "copy_word",
+        "prompt": "Copy this word exactly: lantern\nReply with only the word.\nAnswer:",
+        "expected": "lantern",
+        "prompt_tokens": 15,
+        "prompt_sha256": "1622b347192b9048fbab2756c14f6b91ff1409fbe1f696a4d945021a03a5a08d",
+        "actual": " lantern",
+        "passed": true
+      },
+      {
+        "id": "copy_code",
+        "prompt": "Copy this code exactly: PX-2048\nReply with only the code.\nAnswer:",
+        "expected": "PX-2048",
+        "prompt_tokens": 20,
+        "prompt_sha256": "0ec73a1d732e05b8cb5974fb158c939eacdde0d08abf7279461bab892860df7a",
+        "actual": " PX-2048",
+        "passed": true
+      },
+      {
+        "id": "extract_color",
+        "prompt": "Record: color=blue; size=large; count=7.\nWhat is the color? Reply with only the value.\nAnswer:",
+        "expected": "blue",
+        "prompt_tokens": 27,
+        "prompt_sha256": "2f39a4d569bcdad4cc7d9ad1e5d98df7b5dc607a7e68a6122db8db7f3f0d9ae0",
+        "actual": " blue",
+        "passed": true
+      },
+      {
+        "id": "extract_count",
+        "prompt": "Record: color=green; size=small; count=9.\nWhat is the count? Reply with only the number.\nAnswer:",
+        "expected": "9",
+        "prompt_tokens": 27,
+        "prompt_sha256": "fc52a4f6a013eb84d258e18128642ab32935d9f9eecf881c29d02b6ec1149cd1",
+        "actual": " 9",
+        "passed": true
+      },
+      {
+        "id": "addition",
+        "prompt": "Calculate 17 + 25. Reply with only the integer result.\nAnswer:",
+        "expected": "42",
+        "prompt_tokens": 18,
+        "prompt_sha256": "0d640d8372686ce0d54116afbf4218ce5eacda3403cb8b1000f8be5383784e62",
+        "actual": " 42",
+        "passed": true
+      },
+      {
+        "id": "subtraction",
+        "prompt": "Calculate 91 - 37. Reply with only the integer result.\nAnswer:",
+        "expected": "54",
+        "prompt_tokens": 18,
+        "prompt_sha256": "772a9501026efb5b71bdca9d420c08d192c058715b85a3e7aca14574faa422ad",
+        "actual": " 54",
+        "passed": true
+      },
+      {
+        "id": "multiplication",
+        "prompt": "Calculate 8 * 7. Reply with only the integer result.\nAnswer:",
+        "expected": "56",
+        "prompt_tokens": 16,
+        "prompt_sha256": "60181ff7a2a343e0434a44e3cf6f263263bcc6fdc331fa81b0991f0b81cf1f16",
+        "actual": " 56",
+        "passed": true
+      },
+      {
+        "id": "extract_last",
+        "prompt": "List: pear, plum, peach.\nWhat is the last item? Reply with only that item.\nAnswer:",
+        "expected": "peach",
+        "prompt_tokens": 22,
+        "prompt_sha256": "c30ee9e135432ec9ab29bac77bf7647c94c7a6008c15621967cbd4bb8cc58673",
+        "actual": " peach",
+        "passed": true
+      }
+    ],
+    "generation": {
+      "seed": 42,
+      "n_predict": 64,
+      "context_size": 4096,
+      "temperature": 0,
+      "ignore_eos": false,
+      "prompt_format": "raw_completion",
+      "stop": [
+        "\n"
+      ]
+    },
+    "normalization": "NFKC; collapse whitespace; case-sensitive exact match",
+    "limitation": "Fixed-probe pass rate only; not general model quality or percent quality retained. The model_id is user asserted and does not verify a common base-model revision."
+  },
+  "cleanup_confirmed": true,
+  "evidence_dir": "attempts/full4k-r3-a0",
+  "warnings": [
+    "Preload GPU utilization exceeds 5%; background load may affect results."
+  ]
+}

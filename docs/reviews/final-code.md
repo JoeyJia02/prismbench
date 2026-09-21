@@ -34,3 +34,7 @@ Two nonblocking interface/report polish findings were sent to the maintainer for
 Windows is the first validated real GPU target. POSIX explicit cleanup uses process groups, but SIGKILL of its controller is not crash-safe. Runtime library hashing currently covers bundled Windows DLLs, not arbitrary Linux shared-library dependency graphs. These are limitations of platform coverage, not reasons to claim Linux GPU validation prematurely.
 
 The final release audit must verify the actual final wheel hashes, full test run, README commands, published example files and new GPU measurements. In particular, runs from a wheel preceding the timestamp addition must remain identified as earlier pilots; they cannot certify the final timestamp evidence format. No further inference feature expansion is required before the local alpha candidate is reviewed.
+
+## Maintainer disposition before hardware validation
+
+Both polish findings were fixed before the final installed-wheel runs: CLI catches schema validation failures as input errors; grouping and matched comparisons include prompt hash and runtime version. Focused regressions are included in the **142 passed, 1 optional GPU test skipped** complete run. The final code commit is `267f39b`; benchmark JSON additionally captures exact package source hashes. No benchmark scalar was backfilled into an earlier pilot.

@@ -1,0 +1,8 @@
+{
+  "route": "/tokenize",
+  "body": {
+    "content": "List: pear, plum, peach.\nWhat is the last item? Reply with only that item.\nAnswer:",
+    "add_special": true,
+    "parse_special": false
+  }
+}

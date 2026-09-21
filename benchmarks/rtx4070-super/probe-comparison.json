@@ -1,0 +1,88 @@
+{
+  "reference_attempt_id": "full4k-r1-a0",
+  "candidate_attempt_id": "offload4k-r1-a0",
+  "suite_id": "prismbench-basic-probes",
+  "suite_sha256": "3efd69d3ff8759b2f692a0a1d9570f32e71fb24ecd155bf0b07e6c704d776e59",
+  "probe_count": 8,
+  "reference_score": 1.0,
+  "candidate_score": 1.0,
+  "probe_score_delta_percentage_points": 0.0,
+  "regressions": 0,
+  "improvements": 0,
+  "items": [
+    {
+      "id": "copy_word",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " lantern",
+      "candidate_actual": " lantern"
+    },
+    {
+      "id": "copy_code",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " PX-2048",
+      "candidate_actual": " PX-2048"
+    },
+    {
+      "id": "extract_color",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " blue",
+      "candidate_actual": " blue"
+    },
+    {
+      "id": "extract_count",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " 9",
+      "candidate_actual": " 9"
+    },
+    {
+      "id": "addition",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " 42",
+      "candidate_actual": " 42"
+    },
+    {
+      "id": "subtraction",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " 54",
+      "candidate_actual": " 54"
+    },
+    {
+      "id": "multiplication",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " 56",
+      "candidate_actual": " 56"
+    },
+    {
+      "id": "extract_last",
+      "reference_passed": true,
+      "candidate_passed": true,
+      "reference_actual": " peach",
+      "candidate_actual": " peach"
+    }
+  ],
+  "configuration_differences": [
+    {
+      "field": "requested.gpu_layers",
+      "reference": 99,
+      "candidate": 20
+    },
+    {
+      "field": "effective.gpu_layers_loaded",
+      "reference": 37,
+      "candidate": 20
+    },
+    {
+      "field": "effective.cpu_offload",
+      "reference": false,
+      "candidate": true
+    }
+  ],
+  "limitation": "Fixed-probe pass rate only; not general model quality or percent quality retained. The model_id is user asserted and does not verify a common base-model revision."
+}
