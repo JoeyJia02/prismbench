@@ -82,7 +82,7 @@ Exit codes: `0` all requested case/repetition chains ultimately succeeded; `1` a
 
 ## Lightweight quality checks
 
-Enable `quality` for bundled deterministic raw-completion probes, or supply `quality_suite` as a local JSON file following [the bundled format](src/prismbench/data/probes.json). They check exact answers to a small set of extraction/copy/arithmetic tasks. They are **smoke probes, not a general benchmark or a percentage of quality retained**. Some instruction models require custom prompt templates; the bundled suite deliberately does not apply a hidden chat template.
+Enable `quality` for bundled deterministic raw-completion probes, or supply `quality_suite` as a local JSON file following [the bundled format](src/prismbench/data/probes.json). The version 2 protocol requests a **single-line answer**, stops generation at the first newline, and compares the entire returned answer exactly after Unicode/whitespace normalization. It does not extract a correct substring from a longer response. They are **smoke probes, not a general benchmark or a percentage of quality retained**. Some instruction models require custom prompt templates; the bundled suite deliberately does not apply a hidden chat template.
 
 Compare two results only with matched model identity, suite, seed, runtime and workload. When a session has multiple eligible attempts, select the desired attempt IDs:
 

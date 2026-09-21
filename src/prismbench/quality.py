@@ -82,7 +82,7 @@ def load_suite(path: Path | None = None) -> dict:
 def run_quality(backend, suite: dict, seed: int, timeout_s: float, *, context_size: int = 2048) -> dict:
     """Run EOS-enabled raw-completion probes after performance collection finishes.
 
-    Backend.probe must use greedy sampling and no chat template. Errors propagate
+    Backend.probe must use greedy sampling, a newline stop and no chat template. Errors propagate
     to the attempt controller; this function never turns partial probes into success.
     """
     _validate_suite(suite)
@@ -115,7 +115,8 @@ def run_quality(backend, suite: dict, seed: int, timeout_s: float, *, context_si
         "suite_id": suite["id"], "suite_version": suite["version"], "suite_sha256": _hash(suite),
         "probe_count": len(items), "passed": passed, "score": passed / len(items), "items": items,
         "generation": {"seed": seed, "n_predict": OUTPUT_TOKENS, "context_size": context_size,
-                       "temperature": 0, "ignore_eos": False, "prompt_format": "raw_completion"},
+                       "temperature": 0, "ignore_eos": False, "prompt_format": "raw_completion",
+                       "stop": ["\n"]},
         "normalization": NORMALIZATION, "limitation": LIMITATION,
     }
 
@@ -146,10 +147,12 @@ def _validated_quality(attempt):
         if type(quality["score"]) not in (int, float) or not math.isfinite(quality["score"]) or quality["score"] != passed / count:
             raise ValueError("quality score is inconsistent")
         generation = quality["generation"]
-        if set(generation) != {"seed", "n_predict", "context_size", "temperature", "ignore_eos", "prompt_format"}:
+        if set(generation) != {"seed", "n_predict", "context_size", "temperature", "ignore_eos", "prompt_format", "stop"}:
             raise ValueError("quality generation provenance is incomplete")
         if generation["temperature"] != 0 or generation["ignore_eos"] is not False or generation["prompt_format"] != "raw_completion":
             raise ValueError("quality generation protocol is unsupported")
+        if generation["stop"] != ["\n"]:
+            raise ValueError("quality one-line completion stop protocol is unsupported")
         if type(generation["seed"]) is not int or not 0 <= generation["seed"] <= 2147483647:
             raise ValueError("quality seed is invalid")
         if type(generation["n_predict"]) is not int or generation["n_predict"] != OUTPUT_TOKENS:

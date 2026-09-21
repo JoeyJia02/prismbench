@@ -55,7 +55,10 @@ class Handler(BaseHTTPRequestHandler):
             self.reply({"error": "CUDA out of memory" if mode == "oom_request" else "internal error"}, 500)
             return
         if not body.get("stream"):
-            self.reply({"content": "42", "truncated": mode == "probe_truncated",
+            content = "42"
+            if mode == "probe_leading_newline":
+                content = "" if body.get("stop") == ["\n"] else "\n42"
+            self.reply({"content": content, "truncated": mode == "probe_truncated",
                         "timings": {"prompt_n": len(body["prompt"]),
                                     "cache_n": 1 if mode == "probe_cached" else 0}})
             return

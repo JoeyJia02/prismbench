@@ -56,6 +56,7 @@ def test_real_subprocess_http_protocol_and_evidence(backend_factory):
     completions = [r["body"] for r in requests if r["route"] == "/completion"]
     assert completions[0]["ignore_eos"] is True
     assert completions[-1]["ignore_eos"] is False
+    assert completions[-1]["stop"] == ["\n"]
     assert isinstance(completions[-1]["prompt"], list)
     assert result["ttft_definition"] == "first_nonempty_generated_text_chunk"
     arrival_path = next(backend.out.glob("*-events-arrival.jsonl"))
@@ -118,6 +119,19 @@ def test_quality_probe_invalid_workload_is_rejected(backend_factory, mode):
     with pytest.raises(BackendError) as error:
         backend.probe("test prompt", 64, 42, 2)
     assert error.value.status == "INVALID_WORKLOAD"
+
+
+def test_one_line_probe_leading_newline_is_empty_and_fails_exact_match(backend_factory):
+    from prismbench.quality import run_quality
+
+    backend = backend_factory("probe_leading_newline")
+    backend.start()
+    suite = {"id": "empty-answer", "version": "2",
+             "probes": [{"id": "addition", "prompt": "17 + 25 =", "expected": "42"}]}
+    result = run_quality(backend, suite, 42, 2)
+    assert result["items"][0]["actual"] == ""
+    assert result["items"][0]["passed"] is False
+    assert result["passed"] == 0
 
 
 @pytest.mark.parametrize("message", ["HTTP 500", "server exited 137", "context exhausted",

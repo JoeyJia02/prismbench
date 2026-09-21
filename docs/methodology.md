@@ -176,10 +176,21 @@ v0.1 includes eight versioned public copy, extraction and arithmetic probes.
 Scoring is a case-sensitive exact match after Unicode NFKC and whitespace
 normalization. Records save every prompt, raw answer, expected answer, score,
 seed, token-ID fingerprint, EOS policy and generation budget. The adapter uses
-greedy raw completion, no implicit chat template, and a 64-token output budget.
+greedy raw completion, no implicit chat template, a 64-token output budget, and
+an explicit newline stop. The stopping sequence is saved in both request and
+generation provenance. Scoring still checks the entire returned answer; it
+does not extract a favorable first line from an unconstrained response.
 Every prompt must fit with output plus an eight-token margin. Instruction
 models that require a template may need a custom suite with explicit formatting.
 The result is **probe pass rate**, not model quality or retained intelligence.
+
+Bundled suite version 2 defines this one-line completion contract. A pre-release
+version 1 pilot had no newline stop: the tested model often produced a correct
+first line followed by more examples/reasoning, which failed strict whole-answer
+matching. Those original 0/8 pilot outcomes remain unchanged and are excluded
+from version 2 comparisons. Fresh version 2 runs are required; historical
+outputs are never rescored by truncating them. An 8/8 result on this basic suite
+also has a ceiling effect and cannot establish general quality preservation.
 
 To estimate a change, run exactly the same suite against an explicit reference
 artifact and candidate. Report paired item outcomes and percentage-point score

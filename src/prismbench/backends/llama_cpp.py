@@ -322,7 +322,7 @@ class LlamaCppBackend:
         response = self._request("/completion", {
             "prompt": tokens, "n_predict": n_predict, "seed": seed, "temperature": 0,
             "cache_prompt": False, "stream": False, "ignore_eos": False,
-            "id_slot": 0,
+            "id_slot": 0, "stop": ["\n"],
         }, timeout_s)
         timings = response.get("timings", {})
         if (timings.get("prompt_n") != len(tokens) or timings.get("cache_n") != 0

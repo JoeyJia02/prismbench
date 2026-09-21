@@ -66,6 +66,7 @@ def test_scores_and_cache_erasure_are_per_probe():
     assert result["passed"] == 7
     assert result["score"] == 7 / 8
     assert result["generation"]["prompt_format"] == "raw_completion"
+    assert result["generation"]["stop"] == ["\n"]
     assert "not general model quality" in result["limitation"]
     assert len(backend.calls) == 16
     for idx in range(0, len(backend.calls), 2):
@@ -195,8 +196,33 @@ def test_unstable_repeated_scores_cannot_be_cherry_picked():
 def test_suite_change_is_not_quantization_change():
     reference, candidate = make_session(), make_session()
     suite = load_suite()
-    suite["version"] = "2"
+    suite["version"] = "3"
     candidate["attempts"][0]["quality"] = run_quality(ProbeBackend(suite), suite, 42, 10)
     with pytest.raises(ValueError, match="suite"):
         compare_quality(reference, candidate)
+
+
+@pytest.mark.parametrize("stops", [[], ["."], ["\n", "END"], "\n", None])
+def test_comparison_rejects_different_stopping_protocol(stops):
+    reference, candidate = make_session(), make_session()
+    candidate["attempts"][0]["quality"]["generation"]["stop"] = stops
+    with pytest.raises(ValueError, match="stop protocol"):
+        compare_quality(reference, candidate)
+
+
+def test_comparison_rejects_old_unstopped_generation():
+    reference, candidate = make_session(), make_session()
+    del candidate["attempts"][0]["quality"]["generation"]["stop"]
+    with pytest.raises(ValueError, match="provenance"):
+        compare_quality(reference, candidate)
+
+
+def test_scoring_does_not_extract_first_line_from_unstopped_output():
+    suite = load_suite()
+    backend = ProbeBackend(suite)
+    first = suite["probes"][0]
+    backend.answers[first["prompt"]] = first["expected"] + "\nadditional text"
+    result = run_quality(backend, suite, 42, 10)
+    assert result["items"][0]["passed"] is False
+    assert result["passed"] == 7
 

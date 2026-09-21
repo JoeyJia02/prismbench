@@ -1,6 +1,6 @@
 {
   "id": "prismbench-basic-probes",
-  "version": "1",
+  "version": "2",
   "probes": [
     {"id": "copy_word", "prompt": "Copy this word exactly: lantern\nReply with only the word.\nAnswer:", "expected": "lantern"},
     {"id": "copy_code", "prompt": "Copy this code exactly: PX-2048\nReply with only the code.\nAnswer:", "expected": "PX-2048"},
