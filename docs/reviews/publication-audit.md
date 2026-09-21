@@ -4,7 +4,7 @@
 
 Target: public repository `JoeyJia02/prismbench`, prerelease tag `v0.1.0a1`. The user authorized public repository creation, remote CI validation, an experimental GitHub Release and initial issues. No PyPI publication or stable support claim is included.
 
-Publication is in progress. This record will be completed with observed CI and installation evidence before tagging.
+Publication is in progress. The [public repository](https://github.com/JoeyJia02/prismbench) and [five initial issues](https://github.com/JoeyJia02/prismbench/issues) exist. This record will be completed with observed CI and installation evidence before tagging.
 
 ## Independent review
 
@@ -12,7 +12,15 @@ Two independent reviewers inspected publication content/history and installation
 
 The history scan examined all seven original commits and 979 unique blobs (about 10.6 MB), with a largest blob of approximately 214 KB. No binary blobs, common GitHub/OpenAI/AWS credentials, private keys or credential-bearing URLs were found. This is a bounded review, not proof that arbitrary secrets cannot exist. Commit authors use the GitHub noreply address. Models, runtimes, local authorization files and the preserved laboratory are excluded from the tracked project.
 
+The independent packaging reviewer also found that the source archive omitted the three benchmark CSV files. The manifest now includes them. The pinned quickstart was checked against the actual CLI, its seven PowerShell blocks parsed, all generated configs validated, and the same-session paired quality command executed on existing evidence without inference.
+
 Published benchmark commands contain per-attempt keys for terminated localhost servers and original local paths as documented in `benchmarks/README.md`. They are not external account credentials. Benchmark bytes and the historical measured wheel identity remain unchanged.
+
+## First external checks and repairs
+
+The [first CI run](https://github.com/JoeyJia02/prismbench/actions/runs/35618109362) at `f135ff8` passed five jobs and failed Ubuntu/Python 3.12. An integration test read filesystem glob results as though enumeration order matched request order, mixing performance and probe requests. That is a test evidence-selection problem, not a demonstrated inference defect; the correction must explicitly select the intended ordered request and matching timing evidence.
+
+The first committed-source build also caught a byte-identity mismatch: Git normalized a single CRLF ending on the final line of `quality.py`. The measured wheel retained that ending. Runtime source/data now use exact-byte Git attributes, restoring the recorded bytes without changing Python behavior. Raw benchmark records are not rewritten or their hashes reinterpreted. The final package must match all 14 recorded Python hashes and both packaged data files exactly.
 
 ## Evidence to complete before release
 

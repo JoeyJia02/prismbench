@@ -6,3 +6,5 @@
 *.toml text eol=lf
 # Evidence is an exact byte record, including HTTP payload line endings.
 benchmarks/** -text
+# Runtime provenance hashes refer to exact source/data bytes across checkouts.
+src/prismbench/** -text

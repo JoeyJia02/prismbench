@@ -37,7 +37,9 @@ def backend_factory(tmp_path, monkeypatch):
         backend.close()
 
 
-def test_real_subprocess_http_protocol_and_evidence(backend_factory):
+@pytest.mark.parametrize("reverse_evidence_order", [False, True], ids=["forward", "reverse"])
+def test_real_subprocess_http_protocol_and_evidence(
+        backend_factory, monkeypatch, reverse_evidence_order):
     backend = backend_factory()
     startup = backend.start()
     assert startup["effective"]["context_size"] == 2048
@@ -51,15 +53,30 @@ def test_real_subprocess_http_protocol_and_evidence(backend_factory):
     assert result["timings"]["prompt_n"] == 3
     assert result["timings"]["predicted_per_second"] == 40
     assert backend.probe("17+25=", 64, 42, 2) == "42"
+    original_glob = Path.glob
+
+    def enumerated_glob(path, pattern):
+        return iter(sorted(original_glob(path, pattern), reverse=reverse_evidence_order))
+
+    # Directory enumeration is unspecified and differed between Windows and Linux CI.
+    monkeypatch.setattr(Path, "glob", enumerated_glob)
     assert list(backend.out.glob("*-response.sse"))
-    requests = [json.loads(p.read_text()) for p in backend.out.glob("*-request.json")]
-    completions = [r["body"] for r in requests if r["route"] == "/completion"]
-    assert completions[0]["ignore_eos"] is True
-    assert completions[-1]["ignore_eos"] is False
-    assert completions[-1]["stop"] == ["\n"]
-    assert isinstance(completions[-1]["prompt"], list)
+    completion_paths = sorted(backend.out.glob("*-completion-request.json"),
+                              key=lambda path: int(path.name.split("-", 1)[0]))
+    performance_path, probe_path = completion_paths
+    performance, probe = [json.loads(path.read_text(encoding="utf-8"))
+                          for path in (performance_path, probe_path)]
+    assert performance["route"] == probe["route"] == "/completion"
+    assert performance["body"]["prompt"] == [0, 1, 2]
+    assert performance["body"]["n_predict"] == 4
+    assert performance["body"]["ignore_eos"] is True
+    assert probe["body"]["n_predict"] == 64
+    assert probe["body"]["ignore_eos"] is False
+    assert probe["body"]["stop"] == ["\n"]
+    assert isinstance(probe["body"]["prompt"], list)
     assert result["ttft_definition"] == "first_nonempty_generated_text_chunk"
-    arrival_path = next(backend.out.glob("*-events-arrival.jsonl"))
+    arrival_path = performance_path.with_name(
+        performance_path.name.replace("-request.json", "-events-arrival.jsonl"))
     arrivals = [json.loads(line) for line in arrival_path.read_text().splitlines()]
     assert [row["event_index"] for row in arrivals] == [0, 1, 2, 3]
     assert [row["elapsed_s"] for row in arrivals] == sorted(row["elapsed_s"] for row in arrivals)
@@ -89,7 +106,8 @@ def test_request_failures_retain_raw_evidence(backend_factory, mode, status):
     assert error.value.status == status
     assert list(backend.out.glob("*-response.sse"))
     if mode == "missing_terminal":
-        arrivals = next(backend.out.glob("*-events-arrival.jsonl")).read_text().splitlines()
+        arrival_path, = backend.out.glob("*-events-arrival.jsonl")
+        arrivals = arrival_path.read_text(encoding="utf-8").splitlines()
         assert len(arrivals) == 3
     assert backend.close()
 
