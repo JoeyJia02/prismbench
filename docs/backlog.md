@@ -10,10 +10,10 @@
 | P0-04 | Hardware and failures | Sampled metrics with scope; timeout, OOM ledger, owned cleanup | Done; hardware OOM not induced |
 | P0-05 | Evidence/report | Schema-valid JSON, CSV, readable Markdown; no synthetic ranking | Done |
 | P0-06 | Lightweight quality | Versioned probes; explicit limitations; comparable paired delta | Done; quantization-loss study deferred |
-| P0-07 | Tests and integration | Unit tests during development; fake server; opt-in real GPU | Local suite passes; remote outcomes in publication audit |
+| P0-07 | Tests and integration | Unit tests during development; fake server; opt-in real GPU | Done: local 151 tests and all six remote CI jobs pass |
 | P0-08 | Real benchmark | New package results, hashes and artifacts; repeated tested points | Done: 21 final attempts, one GPU/model |
-| P0-09 | OSS maintenance | README, contribution guide, CI, roadmap, license, release checklist | Public repository and first issues created; release checks tracked separately |
-| P0-10 | Final independent audit | Functionality, claims, tests, installation, methodology, scope | Local alpha PASS; see publication audit for external gates |
+| P0-09 | OSS maintenance | README, contribution guide, CI, roadmap, license, release checklist | Public repository, five issues, pinned onboarding and alpha release assets |
+| P0-10 | Final independent audit | Functionality, claims, tests, installation, methodology, scope | Alpha publication PASS; stable support gates remain open |
 
 ## Public issues
 

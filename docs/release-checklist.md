@@ -12,9 +12,11 @@ These gates distinguish the experimental alpha from a future stable release. Har
 - [x] README commands, links, limits, issue templates, license and contribution guide verified.
 - [x] Final audit covers functionality, methodology, usability, reproducibility and overdesign.
 - [x] Check repository/package names: `JoeyJia02/prismbench` available; PyPI returned 404 on 2026-09-21. This is not a PyPI name reservation or trademark clearance.
-- [ ] Push to the authorized public GitHub repository and observe all six Windows/Linux CI jobs.
-- [ ] Build release artifacts from the committed source and verify a clean installed-wheel demo/report.
-- [ ] Publish **experimental `v0.1.0a1`** only after the alpha gates pass; attach checksums and release notes.
+- [x] Push to the public GitHub repository and observe all six Windows/Linux CI jobs (run linked in publication audit).
+- [x] Build release artifacts from committed source and verify a clean installed-wheel demo/report and complete raw evidence.
+- [x] Prepare **experimental `v0.1.0a1`** with a pinned quickstart, checksums and release notes; final tag-target CI must pass before upload.
+
+The [release page](https://github.com/JoeyJia02/prismbench/releases/tag/v0.1.0a1) records actual publication time and final assets. This committed checklist is a readiness record, not a replacement for the release's tag, CI link or checksums.
 
 ## Gates for a future stable release
 
