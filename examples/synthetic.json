@@ -1,0 +1,9 @@
+{
+  "backend": "synthetic",
+  "repetitions": 1,
+  "quality": false,
+  "cases": [
+    {"name": "demo"},
+    {"name": "oom-demo", "fallbacks": [{"gpu_layers": 16}]}
+  ]
+}

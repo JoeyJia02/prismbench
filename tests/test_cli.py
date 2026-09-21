@@ -30,3 +30,10 @@ def test_report_export_rebases_evidence(tmp_path):
     assert main(["report", str(original / "results.json"), "--output", str(exported)]) == 0
     report = (exported / "report.md").read_text(encoding="utf-8")
     assert "../original/attempts/demo-r1-a0" in report
+
+
+def test_invalid_result_schema_exits_as_input_error(tmp_path, capsys):
+    result = tmp_path / "bad.json"
+    result.write_text('{}')
+    assert main(["report", str(result), "--output", str(tmp_path / "out")]) == 2
+    assert "prismbench:" in capsys.readouterr().err

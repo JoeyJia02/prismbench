@@ -1,0 +1,23 @@
+{
+  "backend": "llama_cpp",
+  "server": "../runtimes/upstream/llama-server.exe",
+  "model": "../models/Qwen3-8B-Q4_K_M.gguf",
+  "model_id": "Qwen/Qwen3-8B",
+  "quantization": "Q4_K_M",
+  "repetitions": 3,
+  "quality": true,
+  "cases": [
+    {
+      "name": "ctx4k",
+      "context_size": 4096,
+      "prompt_tokens": 3840,
+      "output_tokens": 128,
+      "gpu_layers": 99,
+      "fallbacks": [
+        {"gpu_layers": 20},
+        {"gpu_layers": 0},
+        {"gpu_layers": 0, "context_size": 2048, "prompt_tokens": 1792}
+      ]
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+from jsonschema import ValidationError
+
 from . import __version__
 from .config import Case, Config, load_config
 from .hardware import detect
@@ -83,7 +85,7 @@ def main(argv=None):
                 finals[(row["case_name"], row["repetition"])] = row
             expected = len(config.cases) * config.repetitions
             return 0 if len(finals) == expected and all(r["status"] == "SUCCESS" for r in finals.values()) else 1
-    except (ValueError, OSError, KeyError) as exc:
+    except (ValueError, OSError, KeyError, ValidationError) as exc:
         print(f"prismbench: {exc}", file=sys.stderr)
         return 2
     except KeyboardInterrupt:

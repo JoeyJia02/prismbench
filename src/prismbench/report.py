@@ -100,7 +100,9 @@ def _number(value, digits=3) -> str:
 
 def _config_key(attempt):
     return (attempt["case_name"], canonical(attempt["requested"]),
-            canonical(attempt["runtime"].get("effective", {})))
+            canonical(attempt["runtime"].get("effective", {})),
+            canonical(attempt["runtime"].get("prompt_sha256")),
+            canonical(attempt["runtime"].get("runtime_version")))
 
 
 def _table(headers, rows):
@@ -172,8 +174,8 @@ def render_markdown(session: dict, *, report_dir: Path | None = None,
         lines += ["No real successful context measurement is available.", ""]
 
     lines += ["## Exact deployment configurations", "",
-              "Each row keeps one case, exact requested configuration and observed effective "
-              "settings. Changed fallback configurations have separate rows; failed attempts "
+              "Each row keeps one case, exact requested configuration, observed effective "
+              "settings, prompt hash and runtime version. Changed fallback configurations have separate rows; failed attempts "
               "remain in the ledger.", ""]
     rows = []
     for key, items in groups.items():
@@ -203,14 +205,15 @@ def render_markdown(session: dict, *, report_dir: Path | None = None,
                 request = items[0]["requested"]
                 workload = (*tuple(request[field] for field in (
                     "context_size", "prompt_tokens", "output_tokens")),
-                    items[0]["runtime"]["prompt_sha256"])
+                    items[0]["runtime"]["prompt_sha256"],
+                    items[0]["runtime"]["runtime_version"])
                 if len({x["runtime"]["prompt_sha256"] for x in items}) != 1:
                     continue
                 matched[workload].append((group_ids[key], _summary(items)))
     comparable = [items for items in matched.values() if len(items) >= 2]
     if comparable:
         lines += ["Only complete successful repeat sets within the same session model, "
-                  "context, input and output lengths and prompt hash are ordered below. "
+                  "runtime version, context, input and output lengths and prompt hash are ordered below. "
                   "This is a generation-speed comparison, not a quality or value recommendation.", ""]
         for items in comparable:
             ordered = sorted(items, key=lambda item: item[1]["generation_tokens_per_second"],

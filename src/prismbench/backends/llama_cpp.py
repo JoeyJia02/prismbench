@@ -13,6 +13,7 @@ import time
 import urllib.error
 import urllib.request
 import uuid
+from contextlib import nullcontext
 from pathlib import Path
 
 from prismbench.backends.base import BackendError
@@ -237,7 +238,9 @@ class LlamaCppBackend:
             raw = exc.read()
             raw_path.write_bytes(raw)
             raise self._error(f"HTTP {exc.code} {route}: {raw.decode('utf-8', errors='replace')[:4096]}") from exc
-        with response, raw_path.open("wb") as evidence:
+        arrival_context = ((self.out / (prefix + "-events-arrival.jsonl")).open("w", encoding="utf-8")
+                           if stream else nullcontext(None))
+        with response, raw_path.open("wb") as evidence, arrival_context as arrivals:
             if not stream:
                 raw = response.read()
                 evidence.write(raw)
@@ -259,6 +262,9 @@ class LlamaCppBackend:
                     if event_text == "[DONE]":
                         break
                     event = json.loads(event_text)
+                    elapsed = time.perf_counter() - started
+                    arrivals.write(json.dumps({"event_index": len(events), "elapsed_s": elapsed}) + "\n")
+                    arrivals.flush()
                     events.append(event)
                     if "error" in event:
                         raise self._error("Stream error: " + json.dumps(event["error"]))
@@ -269,7 +275,7 @@ class LlamaCppBackend:
                         # Some protocol variants attach aggregate text to the
                         # terminal record. It does not establish a first-text event.
                         if first_text is None and event.get("stop") is not True:
-                            first_text = time.perf_counter() - started
+                            first_text = elapsed
                         contents.append(content)
                     if event.get("stop") is True:
                         terminal = event

@@ -25,7 +25,8 @@ def attempt(name="case", repetition=1, index=0, parent=None, status="SUCCESS", *
             "attempt_index": index, "parent_attempt_id": parent, "status": status,
             "error": None if status == "SUCCESS" else "example failure", "synthetic": True,
             "requested": asdict(case),
-            "runtime": {"effective": {"context_size": case.context_size}, "prompt_sha256": "c" * 64}
+            "runtime": {"effective": {"context_size": case.context_size}, "prompt_sha256": "c" * 64,
+                        "runtime_version": "fixture-v1"}
             if status == "SUCCESS" else {},
             "metrics": metrics, "quality": None,
             "cleanup_confirmed": status != "CLEANUP_FAILED", "evidence_dir": f"attempts/{ident}",
@@ -170,12 +171,44 @@ def test_different_prompt_hashes_are_not_ranked(tmp_path):
     assert "No recommendation" in (tmp_path / "report.md").read_text("utf-8")
 
 
+def test_different_runtime_versions_are_not_ranked(tmp_path):
+    data = session(*(attempt(name, repetition=i, gpu_layers=layers)
+                     for name, layers in (("gpu", 99), ("offload", 16))
+                     for i in range(1, 4)), synthetic=False)
+    for item in data["attempts"][3:]:
+        item["runtime"]["runtime_version"] = "different-runtime"
+    write_reports(data, tmp_path)
+    assert "No recommendation" in (tmp_path / "report.md").read_text("utf-8")
+
+
+def test_success_requires_nonempty_runtime_version():
+    data = session(attempt())
+    data["attempts"][0]["runtime"]["runtime_version"] = ""
+    with pytest.raises(ValidationError):
+        validate_result(data)
+
+
 def test_effective_placement_changes_do_not_mix_repeat_means(tmp_path):
     data = session(*(attempt(repetition=i) for i in range(1, 4)), synthetic=False)
     data["attempts"][2]["runtime"]["effective"]["gpu_layers_loaded"] = 0
     write_reports(data, tmp_path)
     report = (tmp_path / "report.md").read_text("utf-8")
     assert "| C1 |" in report and "| C2 |" in report
+    assert "No recommendation" in report
+
+
+@pytest.mark.parametrize("field,changed", [("prompt_sha256", "d" * 64),
+                                           ("runtime_version", "different-runtime")])
+def test_summary_does_not_mix_prompt_or_runtime_identity(tmp_path, field, changed):
+    data = session(*(attempt(repetition=i) for i in range(1, 4)), synthetic=False)
+    for item in data["attempts"]:
+        item["runtime"]["runtime_version"] = "fixture-v1"
+    data["attempts"][2]["runtime"][field] = changed
+    data["attempts"][2]["metrics"]["generation_tokens_per_second"] = 1000
+    write_reports(data, tmp_path)
+    report = (tmp_path / "report.md").read_text("utf-8")
+    assert "| C1 |" in report and "| C2 |" in report
+    assert "360.00" not in report  # Mean across different identities would be misleading.
     assert "No recommendation" in report
 
 

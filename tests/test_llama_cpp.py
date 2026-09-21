@@ -58,6 +58,12 @@ def test_real_subprocess_http_protocol_and_evidence(backend_factory):
     assert completions[-1]["ignore_eos"] is False
     assert isinstance(completions[-1]["prompt"], list)
     assert result["ttft_definition"] == "first_nonempty_generated_text_chunk"
+    arrival_path = next(backend.out.glob("*-events-arrival.jsonl"))
+    arrivals = [json.loads(line) for line in arrival_path.read_text().splitlines()]
+    assert [row["event_index"] for row in arrivals] == [0, 1, 2, 3]
+    assert [row["elapsed_s"] for row in arrivals] == sorted(row["elapsed_s"] for row in arrivals)
+    assert result["ttft_s"] == arrivals[1]["elapsed_s"]
+    assert arrivals[-1]["elapsed_s"] <= result["total_latency_s"]
     assert backend.close()
     assert backend.cleanup["remaining_pids"] == []
 
@@ -81,6 +87,9 @@ def test_request_failures_retain_raw_evidence(backend_factory, mode, status):
         backend.complete([1, 2, 3], 4, 42, 2)
     assert error.value.status == status
     assert list(backend.out.glob("*-response.sse"))
+    if mode == "missing_terminal":
+        arrivals = next(backend.out.glob("*-events-arrival.jsonl")).read_text().splitlines()
+        assert len(arrivals) == 3
     assert backend.close()
 
 

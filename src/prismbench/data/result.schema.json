@@ -122,8 +122,9 @@
             "error": {"type": "null"},
             "cleanup_confirmed": {"const": true},
             "runtime": {
-              "required": ["effective", "prompt_sha256"],
+              "required": ["effective", "prompt_sha256", "runtime_version"],
               "properties": {
+                "runtime_version": {"type": "string", "minLength": 1},
                 "prompt_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
                 "effective": {
                   "type": "object",
