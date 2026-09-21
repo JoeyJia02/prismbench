@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PrismBench session evidence v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "tool_version", "session_id", "created_at", "synthetic", "config", "hardware", "provenance", "attempts", "warnings"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "tool_version": {"type": "string", "minLength": 1},
+    "session_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "synthetic": {"type": "boolean"},
+    "config": {
+      "type": "object",
+      "required": ["backend", "model_id", "quantization", "repetitions", "seed"],
+      "properties": {
+        "backend": {"enum": ["llama_cpp", "synthetic"]},
+        "model_id": {"type": "string", "minLength": 1},
+        "quantization": {"type": "string", "minLength": 1},
+        "repetitions": {"type": "integer", "minimum": 1, "maximum": 100},
+        "seed": {"type": "integer", "minimum": 0, "maximum": 2147483647}
+      }
+    },
+    "hardware": {"type": "object"},
+    "provenance": {
+      "type": "object",
+      "required": ["model_sha256", "model_size_bytes", "server_sha256"],
+      "properties": {
+        "model_sha256": {"$ref": "#/$defs/hash"},
+        "server_sha256": {"$ref": "#/$defs/hash"},
+        "model_size_bytes": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "attempts": {"type": "array", "items": {"$ref": "#/$defs/attempt"}},
+    "warnings": {"$ref": "#/$defs/warnings"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"synthetic": {"const": true}}},
+      "then": {"properties": {"config": {"properties": {"backend": {"const": "synthetic"}}}}},
+      "else": {
+        "properties": {
+          "config": {"properties": {"backend": {"const": "llama_cpp"}}},
+          "provenance": {"properties": {
+            "model_sha256": {"type": "string"},
+            "server_sha256": {"type": "string"},
+            "model_size_bytes": {"type": "integer", "minimum": 1}
+          }}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "nonnegative": {"type": ["number", "null"], "minimum": 0},
+    "positive": {"type": "number", "exclusiveMinimum": 0},
+    "tokens": {"type": ["integer", "null"], "minimum": 0},
+    "requested": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "context_size", "prompt_tokens", "output_tokens", "gpu_layers", "threads", "batch_size", "ubatch_size", "cache_type_k", "cache_type_v", "flash_attention"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$"},
+        "context_size": {"type": "integer", "minimum": 128, "maximum": 1048576},
+        "prompt_tokens": {"type": "integer", "minimum": 1, "maximum": 1048576},
+        "output_tokens": {"type": "integer", "minimum": 2, "maximum": 65536},
+        "gpu_layers": {"type": "integer", "minimum": 0, "maximum": 999},
+        "threads": {"type": "integer", "minimum": 1, "maximum": 256},
+        "batch_size": {"type": "integer", "minimum": 1, "maximum": 65536},
+        "ubatch_size": {"type": "integer", "minimum": 1, "maximum": 65536},
+        "cache_type_k": {"enum": ["f16", "bf16", "q8_0", "q4_0"]},
+        "cache_type_v": {"enum": ["f16", "bf16", "q8_0", "q4_0"]},
+        "flash_attention": {"enum": ["on", "off"]},
+        "fallbacks": {"type": "array", "maxItems": 0}
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["load_time_s", "ttft_s", "total_latency_s", "prompt_tokens_per_second", "generation_tokens_per_second", "prompt_tokens", "generated_tokens", "cache_tokens", "baseline_vram_mib", "loaded_idle_vram_mib", "peak_vram_mib", "peak_process_rss_mib", "peak_system_ram_used_mib"],
+      "properties": {
+        "load_time_s": {"$ref": "#/$defs/nonnegative"},
+        "ttft_s": {"$ref": "#/$defs/nonnegative"},
+        "total_latency_s": {"$ref": "#/$defs/nonnegative"},
+        "prompt_tokens_per_second": {"$ref": "#/$defs/nonnegative"},
+        "generation_tokens_per_second": {"$ref": "#/$defs/nonnegative"},
+        "prompt_tokens": {"$ref": "#/$defs/tokens"},
+        "generated_tokens": {"$ref": "#/$defs/tokens"},
+        "cache_tokens": {"$ref": "#/$defs/tokens"},
+        "baseline_vram_mib": {"$ref": "#/$defs/nonnegative"},
+        "loaded_idle_vram_mib": {"$ref": "#/$defs/nonnegative"},
+        "peak_vram_mib": {"$ref": "#/$defs/nonnegative"},
+        "peak_process_rss_mib": {"$ref": "#/$defs/nonnegative"},
+        "peak_system_ram_used_mib": {"$ref": "#/$defs/nonnegative"}
+      }
+    },
+    "attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt_id", "case_name", "repetition", "attempt_index", "parent_attempt_id", "status", "error", "synthetic", "requested", "runtime", "metrics", "quality", "cleanup_confirmed", "evidence_dir", "warnings"],
+      "properties": {
+        "attempt_id": {"type": "string", "minLength": 1},
+        "case_name": {"type": "string", "minLength": 1},
+        "repetition": {"type": "integer", "minimum": 1, "maximum": 100},
+        "attempt_index": {"type": "integer", "minimum": 0, "maximum": 8},
+        "parent_attempt_id": {"type": ["string", "null"], "minLength": 1},
+        "status": {"enum": ["SUCCESS", "OOM", "TIMEOUT", "ERROR", "INVALID_WORKLOAD", "CLEANUP_FAILED", "CANCELLED"]},
+        "error": {"type": ["string", "null"], "minLength": 1},
+        "synthetic": {"type": "boolean"},
+        "requested": {"$ref": "#/$defs/requested"},
+        "runtime": {"type": "object"},
+        "metrics": {"$ref": "#/$defs/metrics"},
+        "quality": {"type": ["object", "null"]},
+        "cleanup_confirmed": {"type": "boolean"},
+        "evidence_dir": {"type": "string", "minLength": 1},
+        "warnings": {"$ref": "#/$defs/warnings"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "SUCCESS"}}},
+          "then": {"properties": {
+            "error": {"type": "null"},
+            "cleanup_confirmed": {"const": true},
+            "runtime": {
+              "required": ["effective", "prompt_sha256"],
+              "properties": {
+                "prompt_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "effective": {
+                  "type": "object",
+                  "required": ["context_size"],
+                  "properties": {
+                    "context_size": {"type": "integer", "minimum": 128, "maximum": 1048576},
+                    "gpu_layers_loaded": {"type": ["integer", "null"], "minimum": 0},
+                    "gpu_layers_total": {"type": ["integer", "null"], "minimum": 0},
+                    "cpu_offload": {"type": ["boolean", "null"]}
+                  }
+                }
+              }
+            },
+            "metrics": {"properties": {
+              "load_time_s": {"$ref": "#/$defs/positive"},
+              "ttft_s": {"$ref": "#/$defs/positive"},
+              "total_latency_s": {"$ref": "#/$defs/positive"},
+              "prompt_tokens_per_second": {"$ref": "#/$defs/positive"},
+              "generation_tokens_per_second": {"$ref": "#/$defs/positive"},
+              "prompt_tokens": {"type": "integer", "minimum": 1},
+              "generated_tokens": {"type": "integer", "minimum": 2},
+              "cache_tokens": {"const": 0}
+            }}
+          }},
+          "else": {"properties": {"error": {"type": "string", "minLength": 1}}}
+        },
+        {
+          "if": {"properties": {"status": {"const": "CLEANUP_FAILED"}}},
+          "then": {"properties": {"cleanup_confirmed": {"const": false}}}
+        },
+        {
+          "if": {"properties": {"cleanup_confirmed": {"const": false}}},
+          "then": {"properties": {"status": {"const": "CLEANUP_FAILED"}}}
+        }
+      ]
+    }
+  }
+}

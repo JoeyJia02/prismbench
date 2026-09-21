@@ -1,6 +1,6 @@
 # Benchmark methodology
 
-This is the measurement contract for the packaged v0.1 tool. A successful run
+This describes the implemented v0.1 protocol. A successful run
 answers whether one exact workload completed under one exact configuration on
 the measured machine. It does not predict every model, GPU, or application.
 Historical laboratory measurements have a separate protocol; they must be
@@ -17,7 +17,7 @@ GGUF is a container, not a precision. FP16/BF16, weight quantization, and KV-cac
 precision are separate settings.
 
 The v0.1 target is a user-supplied local GGUF and compatible llama.cpp binary.
-The default recipe should use a small Qwen GGUF already known to work locally;
+The sample recipes use Qwen GGUFs;
 other model families need validation before they are advertised as supported.
 No model-download, quantization, inference-kernel, or tokenizer implementation
 is necessary. Reuse the selected runtime for these operations.
@@ -31,8 +31,9 @@ prompt_tokens + generated_token_budget + safety_margin <= effective_context
 ```
 
 Construct a deterministic public synthetic source, tokenize with the running
-model, and take exactly the configured number of token IDs. Store source text,
-token IDs, and a SHA256 of the exact request. The performance path uses raw
+model, and take exactly the configured number of token IDs. Store those IDs,
+their SHA256, and raw requests/responses. The source generator is preserved in
+the package code, whose hashes are recorded. The performance path uses raw
 completion with token IDs, so a chat template cannot silently change its size.
 Check the final response's actual token counts, zero reused prompt tokens, and
 absence of truncation/context shift. Force the requested output count with
@@ -48,16 +49,15 @@ timestamps identify artifacts and must not be used to calculate latency.
 | Metric | Boundary / source | Interpretation |
 | --- | --- | --- |
 | Process-to-ready load time | Immediately before process start until the owned server is healthy | Includes process startup and model initialization; excludes model download and hashing |
-| Client TTFT | Immediately before HTTP send to first generated token-bearing SSE event | Includes localhost transport, queueing, prompt processing, sampling, and stream delivery |
+| Client TTFT | Immediately before HTTP send to first nonempty generated text SSE event | First-text approximation; includes localhost transport, queueing, prompt processing, sampling, and stream delivery |
 | Client total latency | Same request start to terminal completion event | User-observed completion latency; excludes model loading and warmup |
 | Engine prompt throughput | Final `timings.prompt_per_second` | Runtime-reported prompt processing rate |
 | Engine generation throughput | Final `timings.predicted_per_second` | Runtime-reported decode rate; retain runtime's denominator convention |
-| End-to-end output rate, if reported | Actual generated tokens / client total seconds | Includes prompt processing; never label this engine decode TPS |
 
 SSE comments, ping events, progress events, empty events, and terminal metadata
-are not first tokens. Prefer a nonempty generated token-ID array; if the runtime
-does not expose token IDs, first nonempty generated content is an explicitly
-labelled approximation (Unicode bytes may be buffered across multiple tokens).
+are not first text. The adapter measures first nonempty generated content. This
+is an approximation to first token because Unicode bytes may be buffered across
+multiple tokens; it is not an engine-internal token timestamp.
 An absent first token yields `null`, never zero. A broken stream or missing
 terminal timing record is a failed/incomplete measurement. Parse complete SSE
 events and UTF-8 correctly across arbitrary network boundaries. A socket read
@@ -68,35 +68,34 @@ Store original final timings alongside normalized fields. Do not replace
 `predicted_per_second` with `predicted_n / predicted_ms`: runtime revisions may
 treat the first sampled token differently. In the local historical 8B example,
 128 predicted tokens and 1593.501 ms accompany 79.6987 token/s, which uses 127
-timed decode intervals. Tests should protect this exact distinction. The server
+timed decode intervals. A regression test protects this distinction. The server
 documents raw token IDs, streaming events, cache counters, and timing fields;
 pin a tested runtime release because these interfaces evolve.
 [llama.cpp server API](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
 
 Process restart does not evict Windows/Linux filesystem caches. Repeated
 process-to-ready measurements are normally warm filesystem-cache loads and
-must not be called cold disk loading. v0.1 must not drop system caches.
+must not be called cold disk loading. v0.1 does not drop system caches.
 
 ## Resource measurements
 
 | Metric | Measurement | Limitation |
 | --- | --- | --- |
 | Model size | Exact local file size in bytes plus SHA256 | File size is not resident VRAM or RAM |
-| Pre-load idle VRAM | Median sampled device memory before launch | Includes desktop and other applications |
-| Loaded idle VRAM | Samples after readiness, before warmup or requests | Keep the phase long enough to obtain a sample |
+| Pre-load idle VRAM | One explicit sample before launch | Includes desktop and other applications; not a quiet-period median |
+| Loaded idle VRAM | One explicit sample after readiness, before warmup | Snapshot rather than a stable idle-period estimate |
 | Peak VRAM | Maximum device memory sample during the owned process lifetime | Sampled peak; short allocation spikes can be missed |
-| VRAM above baseline | Sampled device peak minus pre-load median | Approximate incremental usage, not process allocation |
 | Process RAM | Sampled sum of owned process-tree RSS | Shared pages can be counted more than once |
 | System RAM | Used/available physical RAM from the OS | Includes unrelated processes and filesystem caching |
-| Windows commit, if available | Used and limit from `GetPerformanceInfo` | Distinct from RSS and physical RAM |
 
-Use MiB = 1024² bytes and retain the actual sample interval, timestamp, source,
-device index, and telemetry errors. Faster sampling reduces missed peaks but
-increases measurement overhead; v0.1 must report the interval, not claim an
-exact allocator high-water mark. Sampling must continue through loading,
-warmup, inference, and shutdown with phase labels where supported. Resource
-values unavailable on a platform remain `null`; partial telemetry must be
-visible, including a GPU that was detected but could not be sampled.
+Use MiB = 1024² bytes. Samples include monotonic time and phase; config records
+the requested interval, default 0.5 seconds. Actual gaps can be longer because
+`nvidia-smi` and explicit samples take time. Sampling continues through loading,
+warmup, inference, optional quality probes and process shutdown; the reported
+peak spans that lifetime. These are not exact allocator high-water marks.
+Unavailable values stay `null`. Raw samples retain telemetry errors, and failed
+resource finalization creates an attempt warning. Windows commit memory and
+process-attributed GPU memory are not measured by the package.
 
 Use NVIDIA's device-wide `memory.used`/NVML equivalent for portable NVIDIA
 telemetry. Windows WDDM can return N/A for process GPU memory because Windows
@@ -107,7 +106,7 @@ weight buffers. Derive layer placement from effective runtime logs; missing
 placement evidence gives an unknown offload state. Record CPU model, threads,
 RAM, driver, OS, and runtime build whenever offload results are compared.
 
-Record idle GPU utilization and obvious background activity. A normal desktop
+The package records pre-load GPU utilization and warns above 5%. A normal desktop
 session can support a useful diagnostic run, but small performance differences
 need quiet-machine repeats. Do not label an unattended diagnostic run
 `CLEAN_LOCAL` merely because the benchmark succeeded. The historical lab's
@@ -116,21 +115,19 @@ be implicitly inherited as a claim of the package.
 
 ## Repeats and cache policy
 
-At least three successful measured requests per unchanged cell are the default
-for a report; a single run is a smoke test. Retain all raw attempts, failures,
-warmup outcomes, and sample counts. Report median, minimum, maximum, and number
-of successful/attempted repeats. Do not publish p95 latency from three samples
-or describe a few-percent difference as established without additional repeats.
-Record whether repeats reuse a loaded process or restart it; never pool those
-protocols for load-time comparisons. Counterbalance configuration order for
-deliberate quantization comparisons to reduce thermal and order effects.
+The default is three independent server lifetimes per configured case, with
+one performance request per lifetime. Raw attempts, failures, warmup outcomes,
+and sample counts are retained. The report shows mean TTFT, mean generation
+rate, sample standard deviation of generation rate, and success/attempt counts.
+A single run is a smoke test. No p95 is inferred from three samples. Small
+differences require additional repeats; configuration order is sequential,
+so deliberate comparisons should also consider thermal/order effects.
 
 Warm up once per loaded configuration using a separately recorded small
 workload, then exclude that request from inference statistics. Set
-`cache_prompt=false`; where supported, erase the slot after warmup. Require the
-final cache counter to be zero. A fresh process is a valid alternative when
-cache erasure is unavailable, but restarting also changes the warmup protocol.
-Never silently accept cached throughput as fresh-prompt throughput.
+`cache_prompt=false`, erase the slot before warmup and again before measurement,
+and require the final cache counter to be zero. The adapter rejects runtimes
+without the required slot/cache interfaces instead of changing this protocol.
 
 The effective context/parallel settings and actual processed/generated token
 counts must match the planned workload. An allocation success is not an
@@ -141,18 +138,21 @@ that precise artifact, placement, workload, and available-memory state.
 
 ## Failure, OOM, and fallback
 
-Record distinct outcomes for success, invalid workload/context, load failure,
-runtime error, OOM, timeout, interruption, and cleanup failure. Classify OOM
+Outcomes are `SUCCESS`, `INVALID_WORKLOAD`, `ERROR`, `OOM`, `TIMEOUT`,
+`CANCELLED`, and `CLEANUP_FAILED`. Load and other runtime errors use `ERROR`
+with a diagnostic message. Classify OOM
 from an explicit allocation/CUDA out-of-memory diagnostic or structured backend
 error. Exit code 137, an HTTP 500, a timeout, or low sampled free VRAM alone does
 not prove OOM. Preserve enough bounded log output to audit the classification.
 
 After an owned attempt exits or fails, terminate and reap its owned process
 tree. On Windows, a kill-on-close Job Object assigned before child execution is
-the strongest existing local reference; avoid global process-name termination.
-Check that owned PIDs are gone before a retry. Resource recovery evidence should
-include post-stop samples where collected; process disappearance does not itself
-prove VRAM returned to baseline. Stop the sequence on cleanup failure.
+used by the adapter. Linux uses an owned process group. No global process-name
+termination is used. Owned process cleanup must be confirmed before retry.
+Post-stop samples are saved when available; the package does not wait for a
+stable return to baseline. Process disappearance alone does not prove VRAM
+recovery. Cleanup failure stops the sequence. Windows Job ownership covers an
+abrupt controller exit; Linux SIGKILL can leave the owned process group alive.
 
 Fallback is an opt-in ordered list of explicit configurations with a bounded
 attempt count. A safe initial policy is fewer GPU layers at the same context;
@@ -172,19 +172,26 @@ invent a universal best-value scalar.
 
 ## Lightweight quality assessment
 
-v0.1 can provide a versioned set of public fixed probes for elementary exact
-answers, formatting, extraction, and short reasoning, with deterministic
-normalization and per-item expected answers. Save every prompt, raw answer,
-score, seed, template, EOS policy, and generation budget. Prefer greedy decoding
-and a fixed template. The suite should contain enough independent items to
-identify an obvious regression, while staying small enough to run locally.
-Call its result **probe pass rate**, not model quality or retained intelligence.
+v0.1 includes eight versioned public copy, extraction and arithmetic probes.
+Scoring is a case-sensitive exact match after Unicode NFKC and whitespace
+normalization. Records save every prompt, raw answer, expected answer, score,
+seed, token-ID fingerprint, EOS policy and generation budget. The adapter uses
+greedy raw completion, no implicit chat template, and a 64-token output budget.
+Every prompt must fit with output plus an eight-token margin. Instruction
+models that require a template may need a custom suite with explicit formatting.
+The result is **probe pass rate**, not model quality or retained intelligence.
 
 To estimate a change, run exactly the same suite against an explicit reference
 artifact and candidate. Report paired item outcomes and percentage-point score
 change. The reference must share model revision, tokenizer, prompt formatting,
 and evaluator; a different base model is a deployment comparison, not isolated
-quantization loss. A missing baseline means loss is unknown. CPU placement with
+quantization loss. The comparison validates suite, token-ID hashes, seed,
+context/workload, runtime executable/library hashes, and known GPU placement.
+Quantization, GPU-layer and KV changes are explicitly listed. The `model_id`
+is user asserted; the package cannot prove a common base-model revision.
+Multiple eligible attempts require explicit selection, and inconsistent paired
+pass/fail outcomes across same-configuration repeats block comparison.
+A missing baseline means loss is unknown. CPU placement with
 the same weights is not itself lower precision, although backend numerical
 differences can alter generation. Record such changes instead of attributing
 them automatically to quantization.
