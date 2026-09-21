@@ -74,6 +74,18 @@ def test_preserves_engine_tps_definition():
     assert measured_metrics(r, c)["generation_tokens_per_second"] == 79.698726
 
 
+@pytest.mark.parametrize("load_time", [None, 0, float("nan")])
+def test_bad_backend_startup_metrics_keep_failure_evidence(tmp_path, load_time):
+    class BadTiming(SyntheticBackend):
+        def start(self):
+            return {**super().start(), "load_time_s": load_time}
+    result = run(Config(quality=False, repetitions=1), tmp_path / "out", factory=BadTiming,
+                 progress=lambda _: None)
+    assert result["attempts"][0]["status"] == "INVALID_WORKLOAD"
+    assert result["attempts"][0]["metrics"]["load_time_s"] is None
+    assert (tmp_path / "out" / "results.json").is_file()
+
+
 def test_telemetry_finalization_failure_preserves_completed_attempt(tmp_path, monkeypatch):
     """No real hardware/process runs: exercise only the resource finalization branch."""
     import json

@@ -10,7 +10,7 @@ from . import __version__
 from .backends.base import BackendError
 from .config import Config
 from .hardware import Collector, detect, sample
-from .io import digest, hash_file, save_json
+from .io import canonical, digest, hash_file, save_json
 
 METRICS = ("load_time_s", "ttft_s", "total_latency_s", "prompt_tokens_per_second",
            "generation_tokens_per_second", "prompt_tokens", "generated_tokens", "cache_tokens",
@@ -120,9 +120,18 @@ def run(config: Config, output: Path, *, factory=backend_factory, progress=print
                         collector = Collector(directory / "telemetry.jsonl", config.gpu_index,
                                               config.sample_interval_seconds, lambda: backend.pid)
                         collector.start()
-                    row["runtime"] = backend.start()
+                    runtime = backend.start()
+                    try:
+                        canonical(runtime)
+                    except (ValueError, TypeError) as exc:
+                        (directory / "invalid-runtime.txt").write_text(repr(runtime), encoding="utf-8")
+                        raise BackendError("INVALID_WORKLOAD", "Backend startup returned non-JSON or nonfinite data") from exc
+                    row["runtime"] = runtime
                     row["warnings"].extend(row["runtime"].get("effective", {}).get("verification_warnings", []))
-                    row["metrics"]["load_time_s"] = row["runtime"].get("load_time_s")
+                    load_time = row["runtime"].get("load_time_s")
+                    if type(load_time) not in (int, float) or not math.isfinite(load_time) or load_time <= 0:
+                        raise BackendError("INVALID_WORKLOAD", "Backend startup has no finite positive load time")
+                    row["metrics"]["load_time_s"] = load_time
                     if row["runtime"].get("effective", {}).get("context_size") != case.context_size:
                         raise BackendError("INVALID_WORKLOAD", "Effective context does not match requested context")
                     if collector:
