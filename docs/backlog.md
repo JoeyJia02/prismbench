@@ -10,10 +10,20 @@
 | P0-04 | Hardware and failures | Sampled metrics with scope; timeout, OOM ledger, owned cleanup | Done; hardware OOM not induced |
 | P0-05 | Evidence/report | Schema-valid JSON, CSV, readable Markdown; no synthetic ranking | Done |
 | P0-06 | Lightweight quality | Versioned probes; explicit limitations; comparable paired delta | Done; quantization-loss study deferred |
-| P0-07 | Tests and integration | Unit tests during development; fake server; opt-in real GPU | Done locally; remote CI pending |
+| P0-07 | Tests and integration | Unit tests during development; fake server; opt-in real GPU | Local suite passes; remote outcomes in publication audit |
 | P0-08 | Real benchmark | New package results, hashes and artifacts; repeated tested points | Done: 21 final attempts, one GPU/model |
-| P0-09 | OSS maintenance | README, contribution guide, CI, roadmap, license, release checklist | Done locally; no remote publication |
-| P0-10 | Final independent audit | Functionality, claims, tests, installation, methodology, scope | Done: local alpha PASS, external gates open |
+| P0-09 | OSS maintenance | README, contribution guide, CI, roadmap, license, release checklist | Public repository and first issues created; release checks tracked separately |
+| P0-10 | Final independent audit | Functionality, claims, tests, installation, methodology, scope | Local alpha PASS; see publication audit for external gates |
+
+## Public issues
+
+| Priority | Work and acceptance criteria | Issue |
+|---|---|---|
+| High | Independent GPU/Linux reproductions with hashes, three lifetimes, failures and raw evidence | [#1](https://github.com/JoeyJia02/prismbench/issues/1) |
+| High | Real hardware OOM, owned cleanup, bounded fallback and post-stop memory observations | [#2](https://github.com/JoeyJia02/prismbench/issues/2) |
+| High | Licensed pinned corpus and same-model high-precision quantization reference | [#3](https://github.com/JoeyJia02/prismbench/issues/3) |
+| Medium | First-time wheel installation and onboarding on external machines | [#4](https://github.com/JoeyJia02/prismbench/issues/4) |
+| Medium | Measured llama.cpp runtime compatibility matrix | [#5](https://github.com/JoeyJia02/prismbench/issues/5) |
 
 ## After v0.1 (not promised)
 
@@ -22,6 +32,6 @@
 3. Support consuming llama-autotune profiles and llama-bench cross-checks instead of duplicating search.
 4. Add transformers only when a concrete user workload needs it; vLLM/MLX follow measured demand.
 5. Recovery admission gates for memory pressure; hardware OOM experiments in an isolated environment.
-6. Packaging name check, PyPI release, reproducibility issue templates and external contributors.
+6. PyPI publication after fresh name/packaging checks and external installation feedback. No PyPI name is reserved by the GitHub alpha release.
 
 No distributed scheduling, multi-GPU orchestration, website or accounts in this roadmap.

@@ -1,6 +1,6 @@
 # v0.1 validation record
 
-Status: **21/21 final real-hardware attempts completed successfully**, 2026-09-21. This is a local experimental release candidate, with the limitations below.
+Status: **21/21 final real-hardware attempts completed successfully**, 2026-09-21. This record identifies the original measured wheel. Publication builds and remote CI are tracked separately in the [publication audit](reviews/publication-audit.md); the hardware limitations below still apply.
 
 ## Scope and machine
 
@@ -32,7 +32,7 @@ The complete final sessions live under `benchmarks/rtx4070-super/`. Source, bina
 - No deliberate hardware OOM was induced. OOM classification/fallback and process cleanup are exercised using deterministic real-subprocess fixtures.
 - 16K is the largest requested test point, not a discovered maximum.
 - Other GPU capacities, Linux GPU execution, transformers/vLLM/MLX and quantization conversion are unvalidated or deferred.
-- GitHub CI is configured, but no remote repository/CI result or published package is claimed.
+- These GPU measurements do not validate Linux GPU execution or additional Python versions. Remote CPU fixture/packaging CI is recorded separately in the publication audit.
 
 ## Verification results
 

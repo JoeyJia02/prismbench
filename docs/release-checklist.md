@@ -1,6 +1,6 @@
 # Release checklist
 
-This is a gate, not a claim that the release has happened. Final evidence is recorded in [validation](validation.md) and [final audit](reviews/final-audit.md).
+These gates distinguish the experimental alpha from a future stable release. Hardware evidence is recorded in [validation](validation.md); the [local audit](reviews/final-audit.md) is a historical snapshot. Current publication evidence belongs in the [publication audit](reviews/publication-audit.md).
 
 - [x] Independent Phase 0 scope/competitor/methodology review.
 - [x] Core and adapter review; all P1 findings resolved or release blocked.
@@ -11,10 +11,19 @@ This is a gate, not a claim that the release has happened. Final evidence is rec
 - [x] Built wheel/sdist exclude laboratory assets, credentials and binaries.
 - [x] README commands, links, limits, issue templates, license and contribution guide verified.
 - [x] Final audit covers functionality, methodology, usability, reproducibility and overdesign.
-- [ ] Choose/check repository and package names before remote publication.
-- [ ] Push to a user-selected GitHub repository and observe Windows/Linux CI.
-- [ ] Confirm third-party replication; then decide alpha vs stable version/tag.
-- [ ] Publish release only after its declared gates are met; attach build hashes and changelog.
+- [x] Check repository/package names: `JoeyJia02/prismbench` available; PyPI returned 404 on 2026-09-21. This is not a PyPI name reservation or trademark clearance.
+- [ ] Push to the authorized public GitHub repository and observe all six Windows/Linux CI jobs.
+- [ ] Build release artifacts from the committed source and verify a clean installed-wheel demo/report.
+- [ ] Publish **experimental `v0.1.0a1`** only after the alpha gates pass; attach checksums and release notes.
+
+## Gates for a future stable release
+
+Independent GPU reproduction is follow-up work for the alpha, and a requirement before stable support claims. Experimental alpha publication permits those measurements to remain open when the limitation is explicit.
+
+- [ ] Obtain independent GPU results and a documented runtime compatibility matrix.
+- [ ] Validate real hardware OOM cleanup/recovery before promising tested hardware recovery.
+- [ ] Establish a licensed, pinned high-precision comparison before claiming quantization quality loss.
+- [ ] Resolve reported installation/reliability issues and define the exact stable support matrix.
 
 ## Codex for Open Source assessment
 

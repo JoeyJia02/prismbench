@@ -1,5 +1,7 @@
 # Final release-readiness audit
 
+Historical local audit at commit `720c445`, before remote publication. Subsequent release checks and status are in [publication audit](publication-audit.md); the local evidence below is retained as originally reviewed.
+
 Decision: **PASS for an experimental 0.1.0a1 local release candidate** after independent review and final version 2 hardware evidence audit. This is not a declaration of stable v0.1 or public publication.
 
 ## Independent reviews

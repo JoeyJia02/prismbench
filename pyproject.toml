@@ -23,6 +23,11 @@ classifiers = [
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "build>=1,<2", "ruff>=0.11,<1"]
 
+[project.urls]
+Repository = "https://github.com/JoeyJia02/prismbench"
+Issues = "https://github.com/JoeyJia02/prismbench/issues"
+Changelog = "https://github.com/JoeyJia02/prismbench/blob/main/CHANGELOG.md"
+
 [project.scripts]
 prismbench = "prismbench.cli:main"
 

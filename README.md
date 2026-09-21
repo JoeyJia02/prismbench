@@ -2,7 +2,9 @@
 
 **Local llama.cpp deployment measurements, with the evidence behind every result.**
 
-PrismBench starts a local model, checks the workload that actually ran, records latency and memory, and preserves failed attempts and explicit OOM fallbacks. It is a small Python CLI for developers working with consumer GPUs. This repository is an **experimental v0.1 release candidate**, not a published PyPI package.
+PrismBench starts a local model, checks the workload that actually ran, records latency and memory, and preserves failed attempts and explicit OOM fallbacks. It is a small Python CLI for developers working with consumer GPUs. **0.1.0a1 is an experimental alpha**, distributed through [GitHub Releases](https://github.com/JoeyJia02/prismbench/releases). It is not published on PyPI.
+
+[![Tests and package](https://github.com/JoeyJia02/prismbench/actions/workflows/ci.yml/badge.svg)](https://github.com/JoeyJia02/prismbench/actions/workflows/ci.yml)
 
 It answers: “Did this GGUF complete this context on my machine, at what cost, and what happened after a failure?” A successful 16K run means **16K was tested**, not that 16K is the model or device's maximum.
 
@@ -10,7 +12,27 @@ For model fit recommendations, start with [llmfit](https://github.com/AlexsJones
 
 ## Install and one-command demo
 
-Python 3.10+ is required. From a downloaded or cloned checkout:
+Python 3.10+ is required. Download the wheel from the [alpha release](https://github.com/JoeyJia02/prismbench/releases/tag/v0.1.0a1), then install it in a virtual environment:
+
+```console
+python -m venv .venv
+```
+
+Windows PowerShell (no activation needed):
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install .\prismbench-0.1.0a1-py3-none-any.whl
+.\.venv\Scripts\prismbench.exe demo
+```
+
+Linux/WSL:
+
+```sh
+.venv/bin/python -m pip install ./prismbench-0.1.0a1-py3-none-any.whl
+.venv/bin/prismbench demo
+```
+
+For a source checkout, activate a virtual environment and run:
 
 ```console
 python -m pip install .
@@ -33,6 +55,8 @@ python -m pytest
 ```
 
 ## Run a real model
+
+For complete Windows download, checksum and first-run commands, follow the [RTX 4070 SUPER quickstart](docs/quickstart-rtx4070-super.md). The model alone is about 5 GB; the offline demo above does not download it.
 
 1. Obtain a compatible [llama.cpp release](https://github.com/ggml-org/llama.cpp/releases) for your OS/GPU, keeping its bundled libraries beside `llama-server`. Tested release details are recorded in [validation](docs/validation.md); this is a version-sensitive adapter.
 2. Download a GGUF from its publisher, comply with its model license, and keep it locally. PrismBench does not download weights or need Hugging Face credentials.
@@ -102,6 +126,6 @@ To reproduce a result, install the recorded tool/runtime versions, obtain the re
 
 ## Contributing and release status
 
-See [CONTRIBUTING](CONTRIBUTING.md), [backlog and roadmap](docs/backlog.md), [release checklist](docs/release-checklist.md), and [independent reviews](docs/reviews/). CI exercises CPU fixture tests and wheel installation on Windows/Linux; real GPU integration is opt-in. No remote CI result or published release is claimed until it actually exists.
+See [CONTRIBUTING](CONTRIBUTING.md), [open issues](https://github.com/JoeyJia02/prismbench/issues), [backlog and roadmap](docs/backlog.md), [release checklist](docs/release-checklist.md), and [independent reviews](docs/reviews/). CI exercises CPU fixture tests and wheel installation on Windows/Linux; real GPU integration is opt-in. The [publication audit](docs/reviews/publication-audit.md) records the release checks and their limits. Independent GPU reproduction and real hardware OOM recovery remain open work.
 
 MIT license for this tool. Models and llama.cpp distributions retain their separate upstream licenses.
