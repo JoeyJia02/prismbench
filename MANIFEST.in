@@ -6,3 +6,4 @@ include experiments/requirements-quality.txt
 recursive-include tests *.py
 recursive-include src/prismbench/data *.json
 recursive-include benchmarks *.json *.jsonl *.md *.txt *.log *.sse *.csv
+include benchmarks/rtx4070-super/quantization-quality-20260922/performance-controller.py

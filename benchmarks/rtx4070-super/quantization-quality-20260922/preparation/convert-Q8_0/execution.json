@@ -1,0 +1,11 @@
+{
+  "status": "SUCCESS",
+  "exit_code": 0,
+  "cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 0,
+    "errors": []
+  },
+  "wall_time_s": 10.39000000001397
+}

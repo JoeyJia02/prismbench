@@ -15,3 +15,11 @@ Read [validation and reproduction](../docs/validation.md), [methodology](../docs
 Each directory includes schema-valid results, CSV, report, resolved local config and raw attempt subdirectories. All source, model and Windows bundled-library hashes are recorded. Paths in provenance describe the original execution machine; adjust config paths for your checkout. Runtime API keys visible in recorded local commands were random per-attempt loopback tokens for servers which were terminated; they are not external service credentials.
 
 The machine was an active desktop, and the report retains preload GPU-utilization warnings. Whole-device VRAM includes desktop applications and sampled peaks can miss transients. Cleanup confirms owned processes exited; it is not a guarantee of sustained VRAM recovery or a clean laboratory environment. Largest tested context is not an exact limit.
+
+## Quantization reference pilot
+
+[Qwen3-1.7B F16/Q8/Q4 evidence](rtx4070-super/quantization-quality-20260922/README.md)
+contains a paired 32-chunk English corpus diagnostic and separate deployment
+measurements. See [its validation report](../docs/validation-quantization-20260922.md)
+for lineage, deliberately omitted corpus-derived files and limits. PPL change is
+not a percentage of general quality lost.

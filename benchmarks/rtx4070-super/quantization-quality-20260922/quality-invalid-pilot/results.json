@@ -1,0 +1,1145 @@
+{
+  "schema_version": "1",
+  "created_at": "2026-09-22T02:31:34.709946+00:00",
+  "protocol": {
+    "context_size": 2048,
+    "chunks": 32,
+    "batch_size": 512,
+    "ubatch_size": 128,
+    "threads": 6,
+    "gpu_layers": 99,
+    "parallel": 1,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "on",
+    "fit": "off",
+    "escape": false,
+    "parse_special": false,
+    "stride": 0,
+    "gpu_index": 0,
+    "timeout_seconds": 600,
+    "tokenize_timeout_seconds": 30,
+    "sample_interval_seconds": 0.5,
+    "minimum_start_ram_gib": 10,
+    "minimum_start_free_vram_gib": 7,
+    "minimum_run_ram_gib": 6,
+    "token_prefix_length": 65536
+  },
+  "status": "ERROR",
+  "error": "ValueError: Missing or unexpected effective context: []",
+  "manifest": {
+    "schema_version": "1",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "runtime_dir": "D:\\LocalLargeModel\\runtimes\\upstream",
+    "expected_runtime": {
+      "llama-perplexity.exe": "cc9b6422ac9bb7aaba390ecf19fc3d6d73e38072cfc87cae5e0ed6d7087f3c39",
+      "llama-quantize.exe": "ff306a447997d2c1deed5b02d1347580ea41dc8c3803fa33b93686ef91700653",
+      "llama-tokenize.exe": "49ac76768cc968b55096c3a2e97e7d5a5f1078c76f8ab06e1f79461eb9543fbb",
+      "llama-server.exe": "aa2e1f5c67be55f11be26ae58d643a545ca07c6de498f6f870330ac2f4dfec73",
+      "cublas64_12.dll": "e40202fe4223c1cd2d2dce7beec59e1ed61c7801bd827309183be9b50e358f4c",
+      "cublasLt64_12.dll": "2a896460bef60ed57ef32b0875812f355a6984e671d638bb632f5e8c1d7a831f",
+      "cudart64_12.dll": "d28e42265da7462162a54da6b7a99ea4fa2caf8139d862bb500db875d0b32dfc",
+      "ggml-base.dll": "645538131f61107314a1fb38ee43b392ce76a16d1a6811f065b693c9552d8e18",
+      "ggml-cpu-alderlake.dll": "79bd5a3a21e574963312518c43c99ce76d10aa80651f658ac00003aae1f3fe01",
+      "ggml-cpu-cannonlake.dll": "9959698ba5b224a2541d72f711ec856133e010ee95854b70fd034f2c56a4ee05",
+      "ggml-cpu-cascadelake.dll": "edf3ffb10c59cbce92880c82f9580aae8dbf9c41d7e798a5cd8b4ca0acb10167",
+      "ggml-cpu-cooperlake.dll": "b726f7689ec7b5f5b67aa37bacb8c36348450f535aaf86f68a6756b9f90c98a0",
+      "ggml-cpu-haswell.dll": "97302fa13b3fd496828e6f4936ac01433532880cf8277de6bc8b0117add0b816",
+      "ggml-cpu-icelake.dll": "d29a2b47db63d0acb29ca6314cc4a9e0579592d0bbde42926bcab525296bd464",
+      "ggml-cpu-ivybridge.dll": "b742628d4a73f24dad4a4c516d8600b7d50d2e7c07cf6011592bb0f0bda45349",
+      "ggml-cpu-piledriver.dll": "04540f47f6a6d1ccabbb9a92470a9d27ddff6c47cb015b38f9383ac83a93fc5f",
+      "ggml-cpu-sandybridge.dll": "96d99740a206893d081e61a2e2c32ea2b999be0cc82410182e232d2d8041a392",
+      "ggml-cpu-sapphirerapids.dll": "858ea2d8375a94d61d9a80e98ef8f8a88f1ef7c537e98eb69752129fab7cedd2",
+      "ggml-cpu-skylakex.dll": "2b6ac583bbea84b6649ebfbf771907df208c9bfac33d024adb430a853018b396",
+      "ggml-cpu-sse42.dll": "5c23106448a1edfb2683fcc955df017e8e4bdb3330114afa948c1870f8d7a91f",
+      "ggml-cpu-x64.dll": "9241c4023de3b08eadcb56314bf51ac2bd338b12c4008fa4950c30068c11afb6",
+      "ggml-cpu-zen4.dll": "b8f6bd5d70bc608cd2d752ae74bbf85925c2945267bb0eded15aab324ff9716a",
+      "ggml-cuda.dll": "8ca6d2e63709cab79f6c87ca3153e61e409aba6592e83c0c74bac74e222952d1",
+      "ggml-rpc.dll": "39948a2e2e40454421ac819cda1b4da56a12df93e2c00c2ebdd24df2c448c857",
+      "ggml.dll": "9865b315ce521f45b79c50f1d5cfb56cf9f94f186aac3ed0fceebd67f46e48c7",
+      "libomp.dll": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "llama-batched-bench-impl.dll": "ae139d30f4aa2a6b47279e6b9d1848c69f8ac7572c1f3ef3b9a239900fcc8c01",
+      "llama-bench-impl.dll": "52b07f0fd3a6004b2de6485c1f7f8f5438bf3709eea14dfcd30fc4ec2f57f067",
+      "llama-cli-impl.dll": "4d35886296714799c6ca5aece1ef3e036da7982abacd1056fdf6424a31f13b61",
+      "llama-common.dll": "a9590b558f417f54d17fc688961959b3f4a95038195732adc41faab1999b69e3",
+      "llama-completion-impl.dll": "04526c3dfea986a6e058609fb7d2944612b4f9f7fd5a50235e3b60fd4fbe2d94",
+      "llama-fit-params-impl.dll": "567911c481d9d6d9111b128de622bd9e1a201fe2fb6f060034b030794cc861a2",
+      "llama-perplexity-impl.dll": "52a6213fcb4f06494c8c0b72d52d863124877f4cf87301375a2fe0fa4b075fe2",
+      "llama-quantize-impl.dll": "bcaa4cf05a476f06a09f3911f84b6e2576280b5fd9f23e775c9997b4fce7b8f3",
+      "llama-server-impl.dll": "16913f79cdf57f0f80e618aeff139aa0ae096f8f935b06a02510c556e976d9d4",
+      "llama.dll": "d5fed9f3fe95f03dce3714500903763356122faf1ae98a6179e6490f090c3798",
+      "mtmd.dll": "5a8a0e95ea7b3da360e1ace6325fa441834a2b01fbe9c50639fb7f0c5d57c479"
+    },
+    "corpus": {
+      "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+      "sha256": "8f3f3e7ac2b0b69ad89472eb847012088036c371b22a37bf7a25176458b7eb2c",
+      "rows": 4358,
+      "source": {
+        "repo": "Salesforce/wikitext",
+        "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "file": "wikitext-2-raw-v1/test-00000-of-00001.parquet",
+        "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+        "extraction": "UTF-8 encode two-LF join of every text row in order; rstrip LF only",
+        "license": "upstream metadata: CC BY-SA 3.0 + GFDL; prose links CC BY-SA 4.0; corpus is not MIT"
+      }
+    },
+    "models": [
+      {
+        "label": "F16",
+        "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+        "sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "parent_sha256": "199b4df12194e24ac097d4fcbd279ce62bd4959bed9f0d4719d05a6ab1501861",
+        "size_bytes": 4069679264,
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+        "tensor_count": 311,
+        "tensor_types": {
+          "F16": 198,
+          "F32": 113
+        },
+        "architecture": "qwen3",
+        "general_file_type": 1,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      },
+      {
+        "label": "Q8_0",
+        "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+        "sha256": "eaf3c2bedbd50a31e1ea12d2c3fe2915b76d387f6928b0663870f36effa9c1fb",
+        "parent_sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "size_bytes": 2165039264,
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+        "tensor_count": 311,
+        "tensor_types": {
+          "Q8_0": 198,
+          "F32": 113
+        },
+        "architecture": "qwen3",
+        "general_file_type": 7,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      },
+      {
+        "label": "Q4_K_M",
+        "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+        "sha256": "f65e47f0fc79b76415cb4ae7871a91e6922fdb90fe64690a13d307974cd0d289",
+        "parent_sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "size_bytes": 1282439328,
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+        "tensor_count": 311,
+        "tensor_types": {
+          "Q6_K": 29,
+          "F32": 113,
+          "Q4_K": 169
+        },
+        "architecture": "qwen3",
+        "general_file_type": 15,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      }
+    ],
+    "preparation": {
+      "parent": {
+        "path": "D:\\LocalLargeModel\\models\\quality-study\\Qwen_Qwen3-1.7B-bf16.gguf",
+        "sha256": "199b4df12194e24ac097d4fcbd279ce62bd4959bed9f0d4719d05a6ab1501861",
+        "size_bytes": 4069679264,
+        "repo": "bartowski/Qwen_Qwen3-1.7B-GGUF",
+        "revision": "dcb19155b962dbb6389f4691a982043a8e651022",
+        "metadata": {
+          "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+          "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+          "tensor_count": 311,
+          "tensor_types": {
+            "BF16": 198,
+            "F32": 113
+          },
+          "architecture": "qwen3",
+          "general_file_type": 32,
+          "add_bos_token": false,
+          "add_eos_token": null,
+          "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+        }
+      },
+      "helper_sha256": "12ba7d154040f32395cb593e5a05dd23acb34adf7a28d97495928c06d56f1480",
+      "dependencies": {
+        "gguf": "0.19.0",
+        "numpy": "2.5.3",
+        "pyarrow": "25.0.1",
+        "prismbench": "0.1.0a1"
+      },
+      "quantization": "BF16 -> F16; independently F16 -> Q8_0 and F16 -> Q4_K_M; no imatrix or requantize",
+      "limitation": "Community BF16 parent; equality to the official checkpoint is not independently verified."
+    }
+  },
+  "helper_sha256": "c31b7d41ba55f794be3b241033ec524f965b160f72ae350d0a220cc666a86d60",
+  "tokenization": [
+    {
+      "label": "F16",
+      "status": "SUCCESS",
+      "evidence_dir": "tokenization/F16",
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "--ids",
+          "--no-escape",
+          "--no-parse-special"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 30,
+        "wall_s": 1.0150000000139698,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {},
+        "guards": [
+          {
+            "elapsed_s": 0.062000000005355105,
+            "available_ram_bytes": 18994425856
+          },
+          {
+            "elapsed_s": 0.17100000000209548,
+            "available_ram_bytes": 18840498176
+          },
+          {
+            "elapsed_s": 0.26500000001396984,
+            "available_ram_bytes": 18779000832
+          },
+          {
+            "elapsed_s": 0.375,
+            "available_ram_bytes": 18686455808
+          },
+          {
+            "elapsed_s": 0.48399999999674037,
+            "available_ram_bytes": 18640289792
+          },
+          {
+            "elapsed_s": 0.5929999999934807,
+            "available_ram_bytes": 18624204800
+          },
+          {
+            "elapsed_s": 0.6870000000053551,
+            "available_ram_bytes": 18622287872
+          },
+          {
+            "elapsed_s": 0.7960000000020955,
+            "available_ram_bytes": 18618859520
+          },
+          {
+            "elapsed_s": 0.9059999999881256,
+            "available_ram_bytes": 18736300032
+          }
+        ],
+        "streams": "separate stdout.log and stderr.log"
+      },
+      "fingerprint": {
+        "total_tokens": 299078,
+        "total_token_sha256": "78d6abffa9200444c0a55b83aba2ce8f2c306f253f5fc79af31445e50987ce1d",
+        "prefix_tokens": 65536,
+        "prefix_token_sha256": "62db2daae48a271371b36c41ad6e30b7b6b2faa269214775b743279357e21c86",
+        "hash_encoding": "SHA256 of compact JSON integer array",
+        "add_special": true,
+        "parse_special": false,
+        "escape": false,
+        "stdout_rights": "Corpus-derived token IDs; local-only, not licensed under tool MIT"
+      }
+    },
+    {
+      "label": "Q8_0",
+      "status": "SUCCESS",
+      "evidence_dir": "tokenization/Q8_0",
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "--ids",
+          "--no-escape",
+          "--no-parse-special"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 30,
+        "wall_s": 0.9059999999881256,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {},
+        "guards": [
+          {
+            "elapsed_s": 0.046999999991385266,
+            "available_ram_bytes": 18990960640
+          },
+          {
+            "elapsed_s": 0.15599999998812564,
+            "available_ram_bytes": 18786185216
+          },
+          {
+            "elapsed_s": 0.264999999984866,
+            "available_ram_bytes": 18718191616
+          },
+          {
+            "elapsed_s": 0.375,
+            "available_ram_bytes": 18634362880
+          },
+          {
+            "elapsed_s": 0.48399999999674037,
+            "available_ram_bytes": 18617974784
+          },
+          {
+            "elapsed_s": 0.5779999999795109,
+            "available_ram_bytes": 18611286016
+          },
+          {
+            "elapsed_s": 0.6870000000053551,
+            "available_ram_bytes": 18607751168
+          },
+          {
+            "elapsed_s": 0.7969999999913853,
+            "available_ram_bytes": 18679169024
+          }
+        ],
+        "streams": "separate stdout.log and stderr.log"
+      },
+      "fingerprint": {
+        "total_tokens": 299078,
+        "total_token_sha256": "78d6abffa9200444c0a55b83aba2ce8f2c306f253f5fc79af31445e50987ce1d",
+        "prefix_tokens": 65536,
+        "prefix_token_sha256": "62db2daae48a271371b36c41ad6e30b7b6b2faa269214775b743279357e21c86",
+        "hash_encoding": "SHA256 of compact JSON integer array",
+        "add_special": true,
+        "parse_special": false,
+        "escape": false,
+        "stdout_rights": "Corpus-derived token IDs; local-only, not licensed under tool MIT"
+      }
+    },
+    {
+      "label": "Q4_K_M",
+      "status": "SUCCESS",
+      "evidence_dir": "tokenization/Q4_K_M",
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "--ids",
+          "--no-escape",
+          "--no-parse-special"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 30,
+        "wall_s": 0.9070000000065193,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {},
+        "guards": [
+          {
+            "elapsed_s": 0.046999999991385266,
+            "available_ram_bytes": 18966970368
+          },
+          {
+            "elapsed_s": 0.15700000000651926,
+            "available_ram_bytes": 18777903104
+          },
+          {
+            "elapsed_s": 0.26600000000325963,
+            "available_ram_bytes": 18701168640
+          },
+          {
+            "elapsed_s": 0.375,
+            "available_ram_bytes": 18615193600
+          },
+          {
+            "elapsed_s": 0.48499999998603016,
+            "available_ram_bytes": 18603597824
+          },
+          {
+            "elapsed_s": 0.5789999999979045,
+            "available_ram_bytes": 18600448000
+          },
+          {
+            "elapsed_s": 0.6879999999946449,
+            "available_ram_bytes": 18597199872
+          },
+          {
+            "elapsed_s": 0.7969999999913853,
+            "available_ram_bytes": 18623504384
+          }
+        ],
+        "streams": "separate stdout.log and stderr.log"
+      },
+      "fingerprint": {
+        "total_tokens": 299078,
+        "total_token_sha256": "78d6abffa9200444c0a55b83aba2ce8f2c306f253f5fc79af31445e50987ce1d",
+        "prefix_tokens": 65536,
+        "prefix_token_sha256": "62db2daae48a271371b36c41ad6e30b7b6b2faa269214775b743279357e21c86",
+        "hash_encoding": "SHA256 of compact JSON integer array",
+        "add_special": true,
+        "parse_special": false,
+        "escape": false,
+        "stdout_rights": "Corpus-derived token IDs; local-only, not licensed under tool MIT"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "label": "F16",
+      "repeat": 1,
+      "status": "INVALID_WORKLOAD",
+      "metrics": {},
+      "error": "Missing or unexpected effective context: []",
+      "evidence_dir": "perplexity/F16-r1",
+      "baseline": {
+        "monotonic_s": 144958.265,
+        "gpu_index": "0",
+        "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+        "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+        "driver_version": "610.88",
+        "vram_total_mib": 12282.0,
+        "vram_used_mib": 1470.0,
+        "gpu_utilization_percent": 7.0,
+        "gpu_temperature_c": 49.0,
+        "gpu_telemetry_error": null,
+        "system_ram_total_mib": 32402.54296875,
+        "system_ram_used_mib": 14310.41796875,
+        "system_ram_available_mib": 18092.125,
+        "process_tree_rss_mib": null
+      },
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "-c",
+          "2048",
+          "-b",
+          "512",
+          "-ub",
+          "128",
+          "-t",
+          "6",
+          "-ngl",
+          "99",
+          "-fa",
+          "on",
+          "--fit",
+          "off",
+          "-ctk",
+          "f16",
+          "-ctv",
+          "f16",
+          "--chunks",
+          "32",
+          "--ppl-output-type",
+          "1",
+          "--no-escape"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 600,
+        "wall_s": 14.26600000000326,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {
+          "peak_vram_mib": 5292.0,
+          "peak_process_rss_mib": 4749.78125,
+          "peak_system_ram_used_mib": 19090.7578125,
+          "telemetry_samples": 28,
+          "sample_interval_seconds": 0.5,
+          "gpu_process_vram_mib": null
+        },
+        "guards": [
+          {
+            "elapsed_s": 0.0470000000204891,
+            "available_ram_bytes": 18966065152
+          },
+          {
+            "elapsed_s": 0.15700000000651926,
+            "available_ram_bytes": 18768998400
+          },
+          {
+            "elapsed_s": 0.26600000000325963,
+            "available_ram_bytes": 18703532032
+          },
+          {
+            "elapsed_s": 0.375,
+            "available_ram_bytes": 18611036160
+          },
+          {
+            "elapsed_s": 0.46900000001187436,
+            "available_ram_bytes": 18601832448
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18572226560
+          },
+          {
+            "elapsed_s": 0.6879999999946449,
+            "available_ram_bytes": 18598416384
+          },
+          {
+            "elapsed_s": 0.7970000000204891,
+            "available_ram_bytes": 18572296192
+          },
+          {
+            "elapsed_s": 0.9070000000065193,
+            "available_ram_bytes": 18196480000
+          },
+          {
+            "elapsed_s": 1.0,
+            "available_ram_bytes": 17841790976
+          },
+          {
+            "elapsed_s": 1.125,
+            "available_ram_bytes": 17485815808
+          },
+          {
+            "elapsed_s": 1.2190000000118744,
+            "available_ram_bytes": 17153314816
+          },
+          {
+            "elapsed_s": 1.3280000000086147,
+            "available_ram_bytes": 16809713664
+          },
+          {
+            "elapsed_s": 1.437999999994645,
+            "available_ram_bytes": 16468094976
+          },
+          {
+            "elapsed_s": 1.547000000020489,
+            "available_ram_bytes": 16120254464
+          },
+          {
+            "elapsed_s": 1.6570000000065193,
+            "available_ram_bytes": 15783194624
+          },
+          {
+            "elapsed_s": 1.75,
+            "available_ram_bytes": 15436689408
+          },
+          {
+            "elapsed_s": 1.860000000015134,
+            "available_ram_bytes": 15141015552
+          },
+          {
+            "elapsed_s": 1.9690000000118744,
+            "available_ram_bytes": 15072104448
+          },
+          {
+            "elapsed_s": 2.0780000000086147,
+            "available_ram_bytes": 15058522112
+          },
+          {
+            "elapsed_s": 2.187999999994645,
+            "available_ram_bytes": 15057424384
+          },
+          {
+            "elapsed_s": 2.297000000020489,
+            "available_ram_bytes": 14969536512
+          },
+          {
+            "elapsed_s": 2.3910000000032596,
+            "available_ram_bytes": 14808633344
+          },
+          {
+            "elapsed_s": 2.5,
+            "available_ram_bytes": 14605389824
+          },
+          {
+            "elapsed_s": 2.610000000015134,
+            "available_ram_bytes": 14335037440
+          },
+          {
+            "elapsed_s": 2.7190000000118744,
+            "available_ram_bytes": 14055759872
+          },
+          {
+            "elapsed_s": 2.8280000000086147,
+            "available_ram_bytes": 14053249024
+          },
+          {
+            "elapsed_s": 2.937999999994645,
+            "available_ram_bytes": 14050136064
+          },
+          {
+            "elapsed_s": 3.047000000020489,
+            "available_ram_bytes": 14047862784
+          },
+          {
+            "elapsed_s": 3.172000000020489,
+            "available_ram_bytes": 14040834048
+          },
+          {
+            "elapsed_s": 3.2660000000032596,
+            "available_ram_bytes": 14039670784
+          },
+          {
+            "elapsed_s": 3.4070000000065193,
+            "available_ram_bytes": 14038835200
+          },
+          {
+            "elapsed_s": 3.5160000000032596,
+            "available_ram_bytes": 14046240768
+          },
+          {
+            "elapsed_s": 3.625,
+            "available_ram_bytes": 14025351168
+          },
+          {
+            "elapsed_s": 3.735000000015134,
+            "available_ram_bytes": 14043697152
+          },
+          {
+            "elapsed_s": 3.8440000000118744,
+            "available_ram_bytes": 14043508736
+          },
+          {
+            "elapsed_s": 3.9530000000086147,
+            "available_ram_bytes": 14042320896
+          },
+          {
+            "elapsed_s": 4.047000000020489,
+            "available_ram_bytes": 14026674176
+          },
+          {
+            "elapsed_s": 4.157000000006519,
+            "available_ram_bytes": 14031556608
+          },
+          {
+            "elapsed_s": 4.26600000000326,
+            "available_ram_bytes": 14039388160
+          },
+          {
+            "elapsed_s": 4.375,
+            "available_ram_bytes": 14039011328
+          },
+          {
+            "elapsed_s": 4.485000000015134,
+            "available_ram_bytes": 14038982656
+          },
+          {
+            "elapsed_s": 4.594000000011874,
+            "available_ram_bytes": 14039228416
+          },
+          {
+            "elapsed_s": 4.703000000008615,
+            "available_ram_bytes": 14020186112
+          },
+          {
+            "elapsed_s": 4.812999999994645,
+            "available_ram_bytes": 14039506944
+          },
+          {
+            "elapsed_s": 4.922000000020489,
+            "available_ram_bytes": 14039220224
+          },
+          {
+            "elapsed_s": 5.01600000000326,
+            "available_ram_bytes": 14022656000
+          },
+          {
+            "elapsed_s": 5.125,
+            "available_ram_bytes": 14025818112
+          },
+          {
+            "elapsed_s": 5.235000000015134,
+            "available_ram_bytes": 14013566976
+          },
+          {
+            "elapsed_s": 5.344000000011874,
+            "available_ram_bytes": 14036160512
+          },
+          {
+            "elapsed_s": 5.453000000008615,
+            "available_ram_bytes": 14036475904
+          },
+          {
+            "elapsed_s": 5.562999999994645,
+            "available_ram_bytes": 14036373504
+          },
+          {
+            "elapsed_s": 5.672000000020489,
+            "available_ram_bytes": 14035685376
+          },
+          {
+            "elapsed_s": 5.782000000006519,
+            "available_ram_bytes": 14034108416
+          },
+          {
+            "elapsed_s": 5.89100000000326,
+            "available_ram_bytes": 14033817600
+          },
+          {
+            "elapsed_s": 5.985000000015134,
+            "available_ram_bytes": 14016749568
+          },
+          {
+            "elapsed_s": 6.094000000011874,
+            "available_ram_bytes": 14019944448
+          },
+          {
+            "elapsed_s": 6.203000000008615,
+            "available_ram_bytes": 14009880576
+          },
+          {
+            "elapsed_s": 6.312999999994645,
+            "available_ram_bytes": 14033514496
+          },
+          {
+            "elapsed_s": 6.422000000020489,
+            "available_ram_bytes": 14032773120
+          },
+          {
+            "elapsed_s": 6.51600000000326,
+            "available_ram_bytes": 14032089088
+          },
+          {
+            "elapsed_s": 6.64100000000326,
+            "available_ram_bytes": 14031929344
+          },
+          {
+            "elapsed_s": 6.75,
+            "available_ram_bytes": 14008770560
+          },
+          {
+            "elapsed_s": 6.844000000011874,
+            "available_ram_bytes": 14027427840
+          },
+          {
+            "elapsed_s": 6.969000000011874,
+            "available_ram_bytes": 14025158656
+          },
+          {
+            "elapsed_s": 7.078000000008615,
+            "available_ram_bytes": 14009520128
+          },
+          {
+            "elapsed_s": 7.187999999994645,
+            "available_ram_bytes": 14003240960
+          },
+          {
+            "elapsed_s": 7.312999999994645,
+            "available_ram_bytes": 13996318720
+          },
+          {
+            "elapsed_s": 7.422000000020489,
+            "available_ram_bytes": 13994426368
+          },
+          {
+            "elapsed_s": 7.51600000000326,
+            "available_ram_bytes": 13980327936
+          },
+          {
+            "elapsed_s": 7.625,
+            "available_ram_bytes": 13980786688
+          },
+          {
+            "elapsed_s": 7.75,
+            "available_ram_bytes": 13951418368
+          },
+          {
+            "elapsed_s": 7.860000000015134,
+            "available_ram_bytes": 13969608704
+          },
+          {
+            "elapsed_s": 7.953000000008615,
+            "available_ram_bytes": 13957169152
+          },
+          {
+            "elapsed_s": 8.062999999994645,
+            "available_ram_bytes": 13954891776
+          },
+          {
+            "elapsed_s": 8.172000000020489,
+            "available_ram_bytes": 13956657152
+          },
+          {
+            "elapsed_s": 8.28200000000652,
+            "available_ram_bytes": 13959434240
+          },
+          {
+            "elapsed_s": 8.375,
+            "available_ram_bytes": 13960433664
+          },
+          {
+            "elapsed_s": 8.51600000000326,
+            "available_ram_bytes": 13962297344
+          },
+          {
+            "elapsed_s": 8.625,
+            "available_ram_bytes": 13961883648
+          },
+          {
+            "elapsed_s": 8.735000000015134,
+            "available_ram_bytes": 13943373824
+          },
+          {
+            "elapsed_s": 8.844000000011874,
+            "available_ram_bytes": 14026039296
+          },
+          {
+            "elapsed_s": 8.953000000008615,
+            "available_ram_bytes": 14025449472
+          },
+          {
+            "elapsed_s": 9.062999999994645,
+            "available_ram_bytes": 14017318912
+          },
+          {
+            "elapsed_s": 9.172000000020489,
+            "available_ram_bytes": 14013927424
+          },
+          {
+            "elapsed_s": 9.28200000000652,
+            "available_ram_bytes": 13979394048
+          },
+          {
+            "elapsed_s": 9.375,
+            "available_ram_bytes": 14016815104
+          },
+          {
+            "elapsed_s": 9.485000000015134,
+            "available_ram_bytes": 14016421888
+          },
+          {
+            "elapsed_s": 9.594000000011874,
+            "available_ram_bytes": 14015713280
+          },
+          {
+            "elapsed_s": 9.703000000008615,
+            "available_ram_bytes": 14006915072
+          },
+          {
+            "elapsed_s": 9.812999999994645,
+            "available_ram_bytes": 14005923840
+          },
+          {
+            "elapsed_s": 9.922000000020489,
+            "available_ram_bytes": 14005985280
+          },
+          {
+            "elapsed_s": 10.03200000000652,
+            "available_ram_bytes": 13990748160
+          },
+          {
+            "elapsed_s": 10.14100000000326,
+            "available_ram_bytes": 13995012096
+          },
+          {
+            "elapsed_s": 10.25,
+            "available_ram_bytes": 13998059520
+          },
+          {
+            "elapsed_s": 10.360000000015134,
+            "available_ram_bytes": 13968539648
+          },
+          {
+            "elapsed_s": 10.469000000011874,
+            "available_ram_bytes": 14001909760
+          },
+          {
+            "elapsed_s": 10.562999999994645,
+            "available_ram_bytes": 13995999232
+          },
+          {
+            "elapsed_s": 10.672000000020489,
+            "available_ram_bytes": 14000787456
+          },
+          {
+            "elapsed_s": 10.78200000000652,
+            "available_ram_bytes": 13983596544
+          },
+          {
+            "elapsed_s": 10.89100000000326,
+            "available_ram_bytes": 14006349824
+          },
+          {
+            "elapsed_s": 11.0,
+            "available_ram_bytes": 14007341056
+          },
+          {
+            "elapsed_s": 11.110000000015134,
+            "available_ram_bytes": 13996675072
+          },
+          {
+            "elapsed_s": 11.219000000011874,
+            "available_ram_bytes": 13999783936
+          },
+          {
+            "elapsed_s": 11.360000000015134,
+            "available_ram_bytes": 14001692672
+          },
+          {
+            "elapsed_s": 11.469000000011874,
+            "available_ram_bytes": 14005059584
+          },
+          {
+            "elapsed_s": 11.562999999994645,
+            "available_ram_bytes": 13996654592
+          },
+          {
+            "elapsed_s": 11.672000000020489,
+            "available_ram_bytes": 14005190656
+          },
+          {
+            "elapsed_s": 11.78200000000652,
+            "available_ram_bytes": 14005977088
+          },
+          {
+            "elapsed_s": 11.89100000000326,
+            "available_ram_bytes": 14007631872
+          },
+          {
+            "elapsed_s": 12.0,
+            "available_ram_bytes": 13991469056
+          },
+          {
+            "elapsed_s": 12.110000000015134,
+            "available_ram_bytes": 13995397120
+          },
+          {
+            "elapsed_s": 12.219000000011874,
+            "available_ram_bytes": 13998096384
+          },
+          {
+            "elapsed_s": 12.312999999994645,
+            "available_ram_bytes": 13983428608
+          },
+          {
+            "elapsed_s": 12.422000000020489,
+            "available_ram_bytes": 13999583232
+          },
+          {
+            "elapsed_s": 12.53200000000652,
+            "available_ram_bytes": 13993984000
+          },
+          {
+            "elapsed_s": 12.64100000000326,
+            "available_ram_bytes": 14000373760
+          },
+          {
+            "elapsed_s": 12.75,
+            "available_ram_bytes": 14000943104
+          },
+          {
+            "elapsed_s": 12.860000000015134,
+            "available_ram_bytes": 13981589504
+          },
+          {
+            "elapsed_s": 12.969000000011874,
+            "available_ram_bytes": 14004047872
+          },
+          {
+            "elapsed_s": 13.078000000008615,
+            "available_ram_bytes": 13990146048
+          },
+          {
+            "elapsed_s": 13.172000000020489,
+            "available_ram_bytes": 13993799680
+          },
+          {
+            "elapsed_s": 13.28200000000652,
+            "available_ram_bytes": 13998919680
+          },
+          {
+            "elapsed_s": 13.39100000000326,
+            "available_ram_bytes": 13998571520
+          },
+          {
+            "elapsed_s": 13.5,
+            "available_ram_bytes": 13988806656
+          },
+          {
+            "elapsed_s": 13.610000000015134,
+            "available_ram_bytes": 13990948864
+          },
+          {
+            "elapsed_s": 13.719000000011874,
+            "available_ram_bytes": 13997101056
+          },
+          {
+            "elapsed_s": 13.828000000008615,
+            "available_ram_bytes": 13995827200
+          },
+          {
+            "elapsed_s": 13.937999999994645,
+            "available_ram_bytes": 14580346880
+          },
+          {
+            "elapsed_s": 14.047000000020489,
+            "available_ram_bytes": 16780193792
+          },
+          {
+            "elapsed_s": 14.15700000000652,
+            "available_ram_bytes": 18494439424
+          }
+        ],
+        "streams": "stdout.log merges stdout and stderr"
+      }
+    }
+  ],
+  "comparisons": [],
+  "reference_repeat": null,
+  "preflight": [
+    {
+      "argv": [
+        "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+        "--version"
+      ],
+      "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+      "status": "SUCCESS",
+      "error": null,
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "wall_s": 0.26600000000325963,
+      "cleanup": {
+        "success": true,
+        "remaining_pids": [],
+        "exit_code": 0,
+        "errors": []
+      },
+      "resources": {},
+      "guards": [
+        {
+          "elapsed_s": 0.046999999991385266,
+          "available_ram_bytes": 18995802112
+        },
+        {
+          "elapsed_s": 0.15600000001722947,
+          "available_ram_bytes": 18812538880
+        }
+      ],
+      "streams": "separate stdout.log and stderr.log"
+    }
+  ],
+  "metrics_helper_sha256": "03c24150c6b6815fdaecfd8b1890191df5aaba51abc732fc47e9249cbfe68224",
+  "manifest_sha256": "161aec7bc371b2c718d4378dc8f92a62316d9ac7e10b25a76f6ed8d80993e6a3",
+  "asset_receipts": {
+    "runtime": {
+      "llama-perplexity.exe": "cc9b6422ac9bb7aaba390ecf19fc3d6d73e38072cfc87cae5e0ed6d7087f3c39",
+      "llama-quantize.exe": "ff306a447997d2c1deed5b02d1347580ea41dc8c3803fa33b93686ef91700653",
+      "llama-tokenize.exe": "49ac76768cc968b55096c3a2e97e7d5a5f1078c76f8ab06e1f79461eb9543fbb",
+      "llama-server.exe": "aa2e1f5c67be55f11be26ae58d643a545ca07c6de498f6f870330ac2f4dfec73",
+      "cublas64_12.dll": "e40202fe4223c1cd2d2dce7beec59e1ed61c7801bd827309183be9b50e358f4c",
+      "cublasLt64_12.dll": "2a896460bef60ed57ef32b0875812f355a6984e671d638bb632f5e8c1d7a831f",
+      "cudart64_12.dll": "d28e42265da7462162a54da6b7a99ea4fa2caf8139d862bb500db875d0b32dfc",
+      "ggml-base.dll": "645538131f61107314a1fb38ee43b392ce76a16d1a6811f065b693c9552d8e18",
+      "ggml-cpu-alderlake.dll": "79bd5a3a21e574963312518c43c99ce76d10aa80651f658ac00003aae1f3fe01",
+      "ggml-cpu-cannonlake.dll": "9959698ba5b224a2541d72f711ec856133e010ee95854b70fd034f2c56a4ee05",
+      "ggml-cpu-cascadelake.dll": "edf3ffb10c59cbce92880c82f9580aae8dbf9c41d7e798a5cd8b4ca0acb10167",
+      "ggml-cpu-cooperlake.dll": "b726f7689ec7b5f5b67aa37bacb8c36348450f535aaf86f68a6756b9f90c98a0",
+      "ggml-cpu-haswell.dll": "97302fa13b3fd496828e6f4936ac01433532880cf8277de6bc8b0117add0b816",
+      "ggml-cpu-icelake.dll": "d29a2b47db63d0acb29ca6314cc4a9e0579592d0bbde42926bcab525296bd464",
+      "ggml-cpu-ivybridge.dll": "b742628d4a73f24dad4a4c516d8600b7d50d2e7c07cf6011592bb0f0bda45349",
+      "ggml-cpu-piledriver.dll": "04540f47f6a6d1ccabbb9a92470a9d27ddff6c47cb015b38f9383ac83a93fc5f",
+      "ggml-cpu-sandybridge.dll": "96d99740a206893d081e61a2e2c32ea2b999be0cc82410182e232d2d8041a392",
+      "ggml-cpu-sapphirerapids.dll": "858ea2d8375a94d61d9a80e98ef8f8a88f1ef7c537e98eb69752129fab7cedd2",
+      "ggml-cpu-skylakex.dll": "2b6ac583bbea84b6649ebfbf771907df208c9bfac33d024adb430a853018b396",
+      "ggml-cpu-sse42.dll": "5c23106448a1edfb2683fcc955df017e8e4bdb3330114afa948c1870f8d7a91f",
+      "ggml-cpu-x64.dll": "9241c4023de3b08eadcb56314bf51ac2bd338b12c4008fa4950c30068c11afb6",
+      "ggml-cpu-zen4.dll": "b8f6bd5d70bc608cd2d752ae74bbf85925c2945267bb0eded15aab324ff9716a",
+      "ggml-cuda.dll": "8ca6d2e63709cab79f6c87ca3153e61e409aba6592e83c0c74bac74e222952d1",
+      "ggml-rpc.dll": "39948a2e2e40454421ac819cda1b4da56a12df93e2c00c2ebdd24df2c448c857",
+      "ggml.dll": "9865b315ce521f45b79c50f1d5cfb56cf9f94f186aac3ed0fceebd67f46e48c7",
+      "libomp.dll": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "llama-batched-bench-impl.dll": "ae139d30f4aa2a6b47279e6b9d1848c69f8ac7572c1f3ef3b9a239900fcc8c01",
+      "llama-bench-impl.dll": "52b07f0fd3a6004b2de6485c1f7f8f5438bf3709eea14dfcd30fc4ec2f57f067",
+      "llama-cli-impl.dll": "4d35886296714799c6ca5aece1ef3e036da7982abacd1056fdf6424a31f13b61",
+      "llama-common.dll": "a9590b558f417f54d17fc688961959b3f4a95038195732adc41faab1999b69e3",
+      "llama-completion-impl.dll": "04526c3dfea986a6e058609fb7d2944612b4f9f7fd5a50235e3b60fd4fbe2d94",
+      "llama-fit-params-impl.dll": "567911c481d9d6d9111b128de622bd9e1a201fe2fb6f060034b030794cc861a2",
+      "llama-perplexity-impl.dll": "52a6213fcb4f06494c8c0b72d52d863124877f4cf87301375a2fe0fa4b075fe2",
+      "llama-quantize-impl.dll": "bcaa4cf05a476f06a09f3911f84b6e2576280b5fd9f23e775c9997b4fce7b8f3",
+      "llama-server-impl.dll": "16913f79cdf57f0f80e618aeff139aa0ae096f8f935b06a02510c556e976d9d4",
+      "llama.dll": "d5fed9f3fe95f03dce3714500903763356122faf1ae98a6179e6490f090c3798",
+      "mtmd.dll": "5a8a0e95ea7b3da360e1ace6325fa441834a2b01fbe9c50639fb7f0c5d57c479"
+    },
+    "models": {
+      "F16": {
+        "sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "size_bytes": 4069679264
+      },
+      "Q8_0": {
+        "sha256": "eaf3c2bedbd50a31e1ea12d2c3fe2915b76d387f6928b0663870f36effa9c1fb",
+        "size_bytes": 2165039264
+      },
+      "Q4_K_M": {
+        "sha256": "f65e47f0fc79b76415cb4ae7871a91e6922fdb90fe64690a13d307974cd0d289",
+        "size_bytes": 1282439328
+      }
+    },
+    "corpus": {
+      "sha256": "8f3f3e7ac2b0b69ad89472eb847012088036c371b22a37bf7a25176458b7eb2c",
+      "size_bytes": 1296367
+    }
+  },
+  "hardware": {
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.3",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "physical_cpu_count": 6,
+    "telemetry_scope": "whole selected device; process-tree RSS may double-count shared pages",
+    "snapshot": {
+      "monotonic_s": 144954.921,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1470.0,
+      "gpu_utilization_percent": 32.0,
+      "gpu_temperature_c": 48.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 14284.27734375,
+      "system_ram_available_mib": 18118.265625,
+      "process_tree_rss_mib": null
+    }
+  },
+  "environment": {
+    "removed_names": [],
+    "explicit": {
+      "CUDA_VISIBLE_DEVICES": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf"
+    }
+  },
+  "runtime_version": "version: 0.4.1-dev (build 10964, commit b29c606e2)\nbuilt with Clang 20.1.8 for Windows x86_64"
+}

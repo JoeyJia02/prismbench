@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+    "--version"
+  ],
+  "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+  "status": "SUCCESS",
+  "error": null,
+  "exit_code": 0,
+  "timeout_seconds": 30,
+  "wall_s": 0.26600000000325963,
+  "cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 0,
+    "errors": []
+  },
+  "resources": {},
+  "guards": [
+    {
+      "elapsed_s": 0.046999999991385266,
+      "available_ram_bytes": 18995802112
+    },
+    {
+      "elapsed_s": 0.15600000001722947,
+      "available_ram_bytes": 18812538880
+    }
+  ],
+  "streams": "separate stdout.log and stderr.log"
+}

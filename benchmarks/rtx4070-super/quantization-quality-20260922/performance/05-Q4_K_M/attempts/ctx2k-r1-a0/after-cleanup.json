@@ -1,0 +1,16 @@
+{
+  "monotonic_s": 145162.093,
+  "gpu_index": "0",
+  "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+  "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+  "driver_version": "610.88",
+  "vram_total_mib": 12282.0,
+  "vram_used_mib": 1470.0,
+  "gpu_utilization_percent": 93.0,
+  "gpu_temperature_c": 58.0,
+  "gpu_telemetry_error": null,
+  "system_ram_total_mib": 32402.54296875,
+  "system_ram_used_mib": 14155.21484375,
+  "system_ram_available_mib": 18247.328125,
+  "process_tree_rss_mib": null
+}
