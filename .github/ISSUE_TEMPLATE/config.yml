@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Start with the short first-run guide
+    url: https://github.com/JoeyJia02/prismbench/blob/main/docs/first-run.md
+    about: Install the alpha, inspect a synthetic demo, then use an existing GGUF.
+  - name: Check what is actually measured and supported
+    url: https://github.com/JoeyJia02/prismbench/blob/main/docs/validation.md
+    about: Tested combinations and limits; CI is not independent GPU validation.

@@ -29,6 +29,22 @@ The [2026-09-22 evidence](validation-20260922.md) partially addresses #2 and #4.
 
 The separate [quantization pilot](validation-quantization-20260922.md) adds four accepted likelihood lifetimes and nine deployment lifetimes on one smaller model, retaining an invalid logging pilot. It completes the scoped reference study in #3; general task accuracy, other languages/models and a larger representative corpus remain untested.
 
+## First external users
+
+The [first-user plan](community-launch.md) and [English/Chinese launch drafts](launch-posts.md)
+are ready for maintainer review. Start with the [short first-run guide](first-run.md)
+and optional [first-run feedback](https://github.com/JoeyJia02/prismbench/issues/new?template=first_run.md);
+full hardware evidence is a later step. [Sharing guidance](sharing-results.md)
+explains local paths, identifiers, reconstructible token IDs and redaction limits.
+
+Track real outcomes in existing issues #4 (installation) and #1 (hardware), not a
+second reporting system. Initial targets after an invitation is actually posted:
+three independent installations, two external real reports and one user returning
+for their own comparison. These are goals, not observed adoption. The drafts have
+not been posted to external communities, and maintainer reruns do not close either
+issue. No new backend, telemetry service, website or release version is needed
+for this first-user pilot.
+
 ## After v0.1 (not promised)
 
 1. Obtain independent 8/16/24 GB and Linux GPU reproductions; record runtime compatibility matrix.
