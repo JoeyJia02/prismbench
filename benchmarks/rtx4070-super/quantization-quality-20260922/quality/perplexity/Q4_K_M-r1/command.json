@@ -1,0 +1,477 @@
+{
+  "argv": [
+    "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+    "-m",
+    "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+    "-f",
+    "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+    "-c",
+    "2048",
+    "-b",
+    "512",
+    "-ub",
+    "128",
+    "-t",
+    "6",
+    "-ngl",
+    "99",
+    "-fa",
+    "on",
+    "--fit",
+    "off",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "--chunks",
+    "32",
+    "--ppl-output-type",
+    "1",
+    "--no-escape",
+    "--verbosity",
+    "4"
+  ],
+  "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+  "status": "SUCCESS",
+  "error": null,
+  "exit_code": 0,
+  "timeout_seconds": 600,
+  "wall_s": 11.453000000008615,
+  "cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 0,
+    "errors": []
+  },
+  "resources": {
+    "peak_vram_mib": 3014.0,
+    "peak_process_rss_mib": 2405.49609375,
+    "peak_system_ram_used_mib": 16713.37890625,
+    "telemetry_samples": 23,
+    "sample_interval_seconds": 0.5,
+    "gpu_process_vram_mib": null
+  },
+  "guards": [
+    {
+      "elapsed_s": 0.046999999991385266,
+      "available_ram_bytes": 18998759424
+    },
+    {
+      "elapsed_s": 0.15599999998812564,
+      "available_ram_bytes": 18797961216
+    },
+    {
+      "elapsed_s": 0.26600000000325963,
+      "available_ram_bytes": 18726305792
+    },
+    {
+      "elapsed_s": 0.375,
+      "available_ram_bytes": 18646675456
+    },
+    {
+      "elapsed_s": 0.46899999998277053,
+      "available_ram_bytes": 18631811072
+    },
+    {
+      "elapsed_s": 0.5780000000086147,
+      "available_ram_bytes": 18447200256
+    },
+    {
+      "elapsed_s": 0.6879999999946449,
+      "available_ram_bytes": 18102026240
+    },
+    {
+      "elapsed_s": 0.7969999999913853,
+      "available_ram_bytes": 17759236096
+    },
+    {
+      "elapsed_s": 0.8910000000032596,
+      "available_ram_bytes": 17483771904
+    },
+    {
+      "elapsed_s": 1.0,
+      "available_ram_bytes": 17449877504
+    },
+    {
+      "elapsed_s": 1.1089999999967404,
+      "available_ram_bytes": 17425752064
+    },
+    {
+      "elapsed_s": 1.2189999999827705,
+      "available_ram_bytes": 17433350144
+    },
+    {
+      "elapsed_s": 1.312999999994645,
+      "available_ram_bytes": 17425620992
+    },
+    {
+      "elapsed_s": 1.4219999999913853,
+      "available_ram_bytes": 16943255552
+    },
+    {
+      "elapsed_s": 1.5309999999881256,
+      "available_ram_bytes": 16522162176
+    },
+    {
+      "elapsed_s": 1.6410000000032596,
+      "available_ram_bytes": 16454144000
+    },
+    {
+      "elapsed_s": 1.75,
+      "available_ram_bytes": 16485494784
+    },
+    {
+      "elapsed_s": 1.875,
+      "available_ram_bytes": 16484925440
+    },
+    {
+      "elapsed_s": 1.9839999999967404,
+      "available_ram_bytes": 16480182272
+    },
+    {
+      "elapsed_s": 2.0939999999827705,
+      "available_ram_bytes": 16482193408
+    },
+    {
+      "elapsed_s": 2.2189999999827705,
+      "available_ram_bytes": 16474783744
+    },
+    {
+      "elapsed_s": 2.3280000000086147,
+      "available_ram_bytes": 16482537472
+    },
+    {
+      "elapsed_s": 2.437999999994645,
+      "available_ram_bytes": 16479817728
+    },
+    {
+      "elapsed_s": 2.5469999999913853,
+      "available_ram_bytes": 16477536256
+    },
+    {
+      "elapsed_s": 2.6410000000032596,
+      "available_ram_bytes": 16478179328
+    },
+    {
+      "elapsed_s": 2.75,
+      "available_ram_bytes": 16478900224
+    },
+    {
+      "elapsed_s": 2.8589999999967404,
+      "available_ram_bytes": 16478494720
+    },
+    {
+      "elapsed_s": 2.9689999999827705,
+      "available_ram_bytes": 16472743936
+    },
+    {
+      "elapsed_s": 3.0780000000086147,
+      "available_ram_bytes": 16478158848
+    },
+    {
+      "elapsed_s": 3.187999999994645,
+      "available_ram_bytes": 16446988288
+    },
+    {
+      "elapsed_s": 3.2969999999913853,
+      "available_ram_bytes": 16479395840
+    },
+    {
+      "elapsed_s": 3.437999999994645,
+      "available_ram_bytes": 16474767360
+    },
+    {
+      "elapsed_s": 3.5469999999913853,
+      "available_ram_bytes": 16473014272
+    },
+    {
+      "elapsed_s": 3.6410000000032596,
+      "available_ram_bytes": 16476057600
+    },
+    {
+      "elapsed_s": 3.7660000000032596,
+      "available_ram_bytes": 16465805312
+    },
+    {
+      "elapsed_s": 3.875,
+      "available_ram_bytes": 16472293376
+    },
+    {
+      "elapsed_s": 3.9839999999967404,
+      "available_ram_bytes": 16467054592
+    },
+    {
+      "elapsed_s": 4.0939999999827705,
+      "available_ram_bytes": 16471740416
+    },
+    {
+      "elapsed_s": 4.203000000008615,
+      "available_ram_bytes": 16443912192
+    },
+    {
+      "elapsed_s": 4.296999999991385,
+      "available_ram_bytes": 16475488256
+    },
+    {
+      "elapsed_s": 4.405999999988126,
+      "available_ram_bytes": 16472588288
+    },
+    {
+      "elapsed_s": 4.51600000000326,
+      "available_ram_bytes": 16465797120
+    },
+    {
+      "elapsed_s": 4.625,
+      "available_ram_bytes": 16476532736
+    },
+    {
+      "elapsed_s": 4.7189999999827705,
+      "available_ram_bytes": 16461742080
+    },
+    {
+      "elapsed_s": 4.828000000008615,
+      "available_ram_bytes": 16473595904
+    },
+    {
+      "elapsed_s": 4.937999999994645,
+      "available_ram_bytes": 16465629184
+    },
+    {
+      "elapsed_s": 5.046999999991385,
+      "available_ram_bytes": 16469270528
+    },
+    {
+      "elapsed_s": 5.155999999988126,
+      "available_ram_bytes": 16471748608
+    },
+    {
+      "elapsed_s": 5.26600000000326,
+      "available_ram_bytes": 16471592960
+    },
+    {
+      "elapsed_s": 5.375,
+      "available_ram_bytes": 16472477696
+    },
+    {
+      "elapsed_s": 5.48399999999674,
+      "available_ram_bytes": 16460238848
+    },
+    {
+      "elapsed_s": 5.5939999999827705,
+      "available_ram_bytes": 16468803584
+    },
+    {
+      "elapsed_s": 5.703000000008615,
+      "available_ram_bytes": 16455487488
+    },
+    {
+      "elapsed_s": 5.812999999994645,
+      "available_ram_bytes": 16469348352
+    },
+    {
+      "elapsed_s": 5.937999999994645,
+      "available_ram_bytes": 16462061568
+    },
+    {
+      "elapsed_s": 6.046999999991385,
+      "available_ram_bytes": 16464158720
+    },
+    {
+      "elapsed_s": 6.155999999988126,
+      "available_ram_bytes": 16469966848
+    },
+    {
+      "elapsed_s": 6.26600000000326,
+      "available_ram_bytes": 16463319040
+    },
+    {
+      "elapsed_s": 6.35899999999674,
+      "available_ram_bytes": 16470233088
+    },
+    {
+      "elapsed_s": 6.4689999999827705,
+      "available_ram_bytes": 16457297920
+    },
+    {
+      "elapsed_s": 6.578000000008615,
+      "available_ram_bytes": 16468381696
+    },
+    {
+      "elapsed_s": 6.687999999994645,
+      "available_ram_bytes": 16472092672
+    },
+    {
+      "elapsed_s": 6.796999999991385,
+      "available_ram_bytes": 16438435840
+    },
+    {
+      "elapsed_s": 6.89100000000326,
+      "available_ram_bytes": 16467398656
+    },
+    {
+      "elapsed_s": 7.0,
+      "available_ram_bytes": 16463175680
+    },
+    {
+      "elapsed_s": 7.10899999999674,
+      "available_ram_bytes": 16467898368
+    },
+    {
+      "elapsed_s": 7.2189999999827705,
+      "available_ram_bytes": 16469434368
+    },
+    {
+      "elapsed_s": 7.328000000008615,
+      "available_ram_bytes": 16467705856
+    },
+    {
+      "elapsed_s": 7.421999999991385,
+      "available_ram_bytes": 16468283392
+    },
+    {
+      "elapsed_s": 7.546999999991385,
+      "available_ram_bytes": 16457330688
+    },
+    {
+      "elapsed_s": 7.64100000000326,
+      "available_ram_bytes": 16465940480
+    },
+    {
+      "elapsed_s": 7.75,
+      "available_ram_bytes": 16468987904
+    },
+    {
+      "elapsed_s": 7.85899999999674,
+      "available_ram_bytes": 16443109376
+    },
+    {
+      "elapsed_s": 7.9689999999827705,
+      "available_ram_bytes": 16457777152
+    },
+    {
+      "elapsed_s": 8.09399999998277,
+      "available_ram_bytes": 16460861440
+    },
+    {
+      "elapsed_s": 8.203000000008615,
+      "available_ram_bytes": 16466075648
+    },
+    {
+      "elapsed_s": 8.296999999991385,
+      "available_ram_bytes": 16467423232
+    },
+    {
+      "elapsed_s": 8.421999999991385,
+      "available_ram_bytes": 16467554304
+    },
+    {
+      "elapsed_s": 8.530999999988126,
+      "available_ram_bytes": 16459821056
+    },
+    {
+      "elapsed_s": 8.64100000000326,
+      "available_ram_bytes": 16467734528
+    },
+    {
+      "elapsed_s": 8.75,
+      "available_ram_bytes": 16457252864
+    },
+    {
+      "elapsed_s": 8.84399999998277,
+      "available_ram_bytes": 16437981184
+    },
+    {
+      "elapsed_s": 8.953000000008615,
+      "available_ram_bytes": 16457707520
+    },
+    {
+      "elapsed_s": 9.062999999994645,
+      "available_ram_bytes": 16464175104
+    },
+    {
+      "elapsed_s": 9.171999999991385,
+      "available_ram_bytes": 16463659008
+    },
+    {
+      "elapsed_s": 9.26600000000326,
+      "available_ram_bytes": 16457666560
+    },
+    {
+      "elapsed_s": 9.375,
+      "available_ram_bytes": 16458756096
+    },
+    {
+      "elapsed_s": 9.48399999999674,
+      "available_ram_bytes": 16453574656
+    },
+    {
+      "elapsed_s": 9.59399999998277,
+      "available_ram_bytes": 16464494592
+    },
+    {
+      "elapsed_s": 9.703000000008615,
+      "available_ram_bytes": 16456667136
+    },
+    {
+      "elapsed_s": 9.812999999994645,
+      "available_ram_bytes": 16453046272
+    },
+    {
+      "elapsed_s": 9.953000000008615,
+      "available_ram_bytes": 16454664192
+    },
+    {
+      "elapsed_s": 10.046999999991385,
+      "available_ram_bytes": 16458092544
+    },
+    {
+      "elapsed_s": 10.155999999988126,
+      "available_ram_bytes": 16462028800
+    },
+    {
+      "elapsed_s": 10.26600000000326,
+      "available_ram_bytes": 16453967872
+    },
+    {
+      "elapsed_s": 10.375,
+      "available_ram_bytes": 16443097088
+    },
+    {
+      "elapsed_s": 10.48399999999674,
+      "available_ram_bytes": 16449998848
+    },
+    {
+      "elapsed_s": 10.59399999998277,
+      "available_ram_bytes": 16454225920
+    },
+    {
+      "elapsed_s": 10.703000000008615,
+      "available_ram_bytes": 16450805760
+    },
+    {
+      "elapsed_s": 10.812999999994645,
+      "available_ram_bytes": 16454479872
+    },
+    {
+      "elapsed_s": 10.905999999988126,
+      "available_ram_bytes": 16457105408
+    },
+    {
+      "elapsed_s": 11.01600000000326,
+      "available_ram_bytes": 16456220672
+    },
+    {
+      "elapsed_s": 11.125,
+      "available_ram_bytes": 16458899456
+    },
+    {
+      "elapsed_s": 11.23399999999674,
+      "available_ram_bytes": 16819949568
+    },
+    {
+      "elapsed_s": 11.34399999998277,
+      "available_ram_bytes": 18598522880
+    }
+  ],
+  "streams": "stdout.log merges stdout and stderr"
+}

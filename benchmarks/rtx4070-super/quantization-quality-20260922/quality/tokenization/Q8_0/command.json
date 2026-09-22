@@ -1,0 +1,60 @@
+{
+  "argv": [
+    "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+    "-m",
+    "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+    "-f",
+    "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+    "--ids",
+    "--no-escape",
+    "--no-parse-special"
+  ],
+  "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+  "status": "SUCCESS",
+  "error": null,
+  "exit_code": 0,
+  "timeout_seconds": 30,
+  "wall_s": 0.8900000000139698,
+  "cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 0,
+    "errors": []
+  },
+  "resources": {},
+  "guards": [
+    {
+      "elapsed_s": 0.046000000002095476,
+      "available_ram_bytes": 19003994112
+    },
+    {
+      "elapsed_s": 0.15599999998812564,
+      "available_ram_bytes": 18809507840
+    },
+    {
+      "elapsed_s": 0.26500000001396984,
+      "available_ram_bytes": 18733895680
+    },
+    {
+      "elapsed_s": 0.35899999999674037,
+      "available_ram_bytes": 18651242496
+    },
+    {
+      "elapsed_s": 0.46799999999348074,
+      "available_ram_bytes": 18634235904
+    },
+    {
+      "elapsed_s": 0.5780000000086147,
+      "available_ram_bytes": 18632101888
+    },
+    {
+      "elapsed_s": 0.6870000000053551,
+      "available_ram_bytes": 18628263936
+    },
+    {
+      "elapsed_s": 0.7809999999881256,
+      "available_ram_bytes": 18696830976
+    }
+  ],
+  "streams": "separate stdout.log and stderr.log"
+}

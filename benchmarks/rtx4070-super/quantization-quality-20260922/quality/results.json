@@ -1,0 +1,3981 @@
+{
+  "schema_version": "1",
+  "created_at": "2026-09-22T02:33:06.730534+00:00",
+  "protocol": {
+    "context_size": 2048,
+    "chunks": 32,
+    "batch_size": 512,
+    "ubatch_size": 128,
+    "threads": 6,
+    "gpu_layers": 99,
+    "parallel": 1,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "on",
+    "fit": "off",
+    "escape": false,
+    "parse_special": false,
+    "stride": 0,
+    "gpu_index": 0,
+    "timeout_seconds": 600,
+    "tokenize_timeout_seconds": 30,
+    "sample_interval_seconds": 0.5,
+    "minimum_start_ram_gib": 10,
+    "minimum_start_free_vram_gib": 7,
+    "minimum_run_ram_gib": 6,
+    "token_prefix_length": 65536,
+    "log_verbosity": 4
+  },
+  "status": "SUCCESS",
+  "error": null,
+  "manifest": {
+    "schema_version": "1",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "runtime_dir": "D:\\LocalLargeModel\\runtimes\\upstream",
+    "expected_runtime": {
+      "llama-perplexity.exe": "cc9b6422ac9bb7aaba390ecf19fc3d6d73e38072cfc87cae5e0ed6d7087f3c39",
+      "llama-quantize.exe": "ff306a447997d2c1deed5b02d1347580ea41dc8c3803fa33b93686ef91700653",
+      "llama-tokenize.exe": "49ac76768cc968b55096c3a2e97e7d5a5f1078c76f8ab06e1f79461eb9543fbb",
+      "llama-server.exe": "aa2e1f5c67be55f11be26ae58d643a545ca07c6de498f6f870330ac2f4dfec73",
+      "cublas64_12.dll": "e40202fe4223c1cd2d2dce7beec59e1ed61c7801bd827309183be9b50e358f4c",
+      "cublasLt64_12.dll": "2a896460bef60ed57ef32b0875812f355a6984e671d638bb632f5e8c1d7a831f",
+      "cudart64_12.dll": "d28e42265da7462162a54da6b7a99ea4fa2caf8139d862bb500db875d0b32dfc",
+      "ggml-base.dll": "645538131f61107314a1fb38ee43b392ce76a16d1a6811f065b693c9552d8e18",
+      "ggml-cpu-alderlake.dll": "79bd5a3a21e574963312518c43c99ce76d10aa80651f658ac00003aae1f3fe01",
+      "ggml-cpu-cannonlake.dll": "9959698ba5b224a2541d72f711ec856133e010ee95854b70fd034f2c56a4ee05",
+      "ggml-cpu-cascadelake.dll": "edf3ffb10c59cbce92880c82f9580aae8dbf9c41d7e798a5cd8b4ca0acb10167",
+      "ggml-cpu-cooperlake.dll": "b726f7689ec7b5f5b67aa37bacb8c36348450f535aaf86f68a6756b9f90c98a0",
+      "ggml-cpu-haswell.dll": "97302fa13b3fd496828e6f4936ac01433532880cf8277de6bc8b0117add0b816",
+      "ggml-cpu-icelake.dll": "d29a2b47db63d0acb29ca6314cc4a9e0579592d0bbde42926bcab525296bd464",
+      "ggml-cpu-ivybridge.dll": "b742628d4a73f24dad4a4c516d8600b7d50d2e7c07cf6011592bb0f0bda45349",
+      "ggml-cpu-piledriver.dll": "04540f47f6a6d1ccabbb9a92470a9d27ddff6c47cb015b38f9383ac83a93fc5f",
+      "ggml-cpu-sandybridge.dll": "96d99740a206893d081e61a2e2c32ea2b999be0cc82410182e232d2d8041a392",
+      "ggml-cpu-sapphirerapids.dll": "858ea2d8375a94d61d9a80e98ef8f8a88f1ef7c537e98eb69752129fab7cedd2",
+      "ggml-cpu-skylakex.dll": "2b6ac583bbea84b6649ebfbf771907df208c9bfac33d024adb430a853018b396",
+      "ggml-cpu-sse42.dll": "5c23106448a1edfb2683fcc955df017e8e4bdb3330114afa948c1870f8d7a91f",
+      "ggml-cpu-x64.dll": "9241c4023de3b08eadcb56314bf51ac2bd338b12c4008fa4950c30068c11afb6",
+      "ggml-cpu-zen4.dll": "b8f6bd5d70bc608cd2d752ae74bbf85925c2945267bb0eded15aab324ff9716a",
+      "ggml-cuda.dll": "8ca6d2e63709cab79f6c87ca3153e61e409aba6592e83c0c74bac74e222952d1",
+      "ggml-rpc.dll": "39948a2e2e40454421ac819cda1b4da56a12df93e2c00c2ebdd24df2c448c857",
+      "ggml.dll": "9865b315ce521f45b79c50f1d5cfb56cf9f94f186aac3ed0fceebd67f46e48c7",
+      "libomp.dll": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "llama-batched-bench-impl.dll": "ae139d30f4aa2a6b47279e6b9d1848c69f8ac7572c1f3ef3b9a239900fcc8c01",
+      "llama-bench-impl.dll": "52b07f0fd3a6004b2de6485c1f7f8f5438bf3709eea14dfcd30fc4ec2f57f067",
+      "llama-cli-impl.dll": "4d35886296714799c6ca5aece1ef3e036da7982abacd1056fdf6424a31f13b61",
+      "llama-common.dll": "a9590b558f417f54d17fc688961959b3f4a95038195732adc41faab1999b69e3",
+      "llama-completion-impl.dll": "04526c3dfea986a6e058609fb7d2944612b4f9f7fd5a50235e3b60fd4fbe2d94",
+      "llama-fit-params-impl.dll": "567911c481d9d6d9111b128de622bd9e1a201fe2fb6f060034b030794cc861a2",
+      "llama-perplexity-impl.dll": "52a6213fcb4f06494c8c0b72d52d863124877f4cf87301375a2fe0fa4b075fe2",
+      "llama-quantize-impl.dll": "bcaa4cf05a476f06a09f3911f84b6e2576280b5fd9f23e775c9997b4fce7b8f3",
+      "llama-server-impl.dll": "16913f79cdf57f0f80e618aeff139aa0ae096f8f935b06a02510c556e976d9d4",
+      "llama.dll": "d5fed9f3fe95f03dce3714500903763356122faf1ae98a6179e6490f090c3798",
+      "mtmd.dll": "5a8a0e95ea7b3da360e1ace6325fa441834a2b01fbe9c50639fb7f0c5d57c479"
+    },
+    "corpus": {
+      "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+      "sha256": "8f3f3e7ac2b0b69ad89472eb847012088036c371b22a37bf7a25176458b7eb2c",
+      "rows": 4358,
+      "source": {
+        "repo": "Salesforce/wikitext",
+        "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "file": "wikitext-2-raw-v1/test-00000-of-00001.parquet",
+        "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+        "extraction": "UTF-8 encode two-LF join of every text row in order; rstrip LF only",
+        "license": "upstream metadata: CC BY-SA 3.0 + GFDL; prose links CC BY-SA 4.0; corpus is not MIT"
+      }
+    },
+    "models": [
+      {
+        "label": "F16",
+        "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+        "sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "parent_sha256": "199b4df12194e24ac097d4fcbd279ce62bd4959bed9f0d4719d05a6ab1501861",
+        "size_bytes": 4069679264,
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+        "tensor_count": 311,
+        "tensor_types": {
+          "F16": 198,
+          "F32": 113
+        },
+        "architecture": "qwen3",
+        "general_file_type": 1,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      },
+      {
+        "label": "Q8_0",
+        "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+        "sha256": "eaf3c2bedbd50a31e1ea12d2c3fe2915b76d387f6928b0663870f36effa9c1fb",
+        "parent_sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "size_bytes": 2165039264,
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+        "tensor_count": 311,
+        "tensor_types": {
+          "Q8_0": 198,
+          "F32": 113
+        },
+        "architecture": "qwen3",
+        "general_file_type": 7,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      },
+      {
+        "label": "Q4_K_M",
+        "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+        "sha256": "f65e47f0fc79b76415cb4ae7871a91e6922fdb90fe64690a13d307974cd0d289",
+        "parent_sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "size_bytes": 1282439328,
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+        "tensor_count": 311,
+        "tensor_types": {
+          "Q6_K": 29,
+          "F32": 113,
+          "Q4_K": 169
+        },
+        "architecture": "qwen3",
+        "general_file_type": 15,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      }
+    ],
+    "preparation": {
+      "parent": {
+        "path": "D:\\LocalLargeModel\\models\\quality-study\\Qwen_Qwen3-1.7B-bf16.gguf",
+        "sha256": "199b4df12194e24ac097d4fcbd279ce62bd4959bed9f0d4719d05a6ab1501861",
+        "size_bytes": 4069679264,
+        "repo": "bartowski/Qwen_Qwen3-1.7B-GGUF",
+        "revision": "dcb19155b962dbb6389f4691a982043a8e651022",
+        "metadata": {
+          "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+          "tensor_shape_sha256": "3fa6c9d0f6a9b1ffe7c138d0e0fc6b0253b9d49f177276360106afe48ba942ea",
+          "tensor_count": 311,
+          "tensor_types": {
+            "BF16": 198,
+            "F32": 113
+          },
+          "architecture": "qwen3",
+          "general_file_type": 32,
+          "add_bos_token": false,
+          "add_eos_token": null,
+          "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+        }
+      },
+      "helper_sha256": "12ba7d154040f32395cb593e5a05dd23acb34adf7a28d97495928c06d56f1480",
+      "dependencies": {
+        "gguf": "0.19.0",
+        "numpy": "2.5.3",
+        "pyarrow": "25.0.1",
+        "prismbench": "0.1.0a1"
+      },
+      "quantization": "BF16 -> F16; independently F16 -> Q8_0 and F16 -> Q4_K_M; no imatrix or requantize",
+      "limitation": "Community BF16 parent; equality to the official checkpoint is not independently verified."
+    }
+  },
+  "helper_sha256": "7d812a0036a16e6e37455088ae8784b32c8718210eda87f319120703357b7980",
+  "tokenization": [
+    {
+      "label": "F16",
+      "status": "SUCCESS",
+      "evidence_dir": "tokenization/F16",
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "--ids",
+          "--no-escape",
+          "--no-parse-special"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 30,
+        "wall_s": 0.875,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {},
+        "guards": [
+          {
+            "elapsed_s": 0.03200000000651926,
+            "available_ram_bytes": 19014635520
+          },
+          {
+            "elapsed_s": 0.14100000000325963,
+            "available_ram_bytes": 18832121856
+          },
+          {
+            "elapsed_s": 0.25,
+            "available_ram_bytes": 18805268480
+          },
+          {
+            "elapsed_s": 0.34400000001187436,
+            "available_ram_bytes": 18690641920
+          },
+          {
+            "elapsed_s": 0.4539999999979045,
+            "available_ram_bytes": 18645594112
+          },
+          {
+            "elapsed_s": 0.5629999999946449,
+            "available_ram_bytes": 18652381184
+          },
+          {
+            "elapsed_s": 0.6719999999913853,
+            "available_ram_bytes": 18646261760
+          },
+          {
+            "elapsed_s": 0.7820000000065193,
+            "available_ram_bytes": 18660126720
+          }
+        ],
+        "streams": "separate stdout.log and stderr.log"
+      },
+      "fingerprint": {
+        "total_tokens": 299078,
+        "total_token_sha256": "78d6abffa9200444c0a55b83aba2ce8f2c306f253f5fc79af31445e50987ce1d",
+        "prefix_tokens": 65536,
+        "prefix_token_sha256": "62db2daae48a271371b36c41ad6e30b7b6b2faa269214775b743279357e21c86",
+        "hash_encoding": "SHA256 of compact JSON integer array",
+        "add_special": true,
+        "parse_special": false,
+        "escape": false,
+        "stdout_rights": "Corpus-derived token IDs; local-only, not licensed under tool MIT"
+      }
+    },
+    {
+      "label": "Q8_0",
+      "status": "SUCCESS",
+      "evidence_dir": "tokenization/Q8_0",
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "--ids",
+          "--no-escape",
+          "--no-parse-special"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 30,
+        "wall_s": 0.8900000000139698,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {},
+        "guards": [
+          {
+            "elapsed_s": 0.046000000002095476,
+            "available_ram_bytes": 19003994112
+          },
+          {
+            "elapsed_s": 0.15599999998812564,
+            "available_ram_bytes": 18809507840
+          },
+          {
+            "elapsed_s": 0.26500000001396984,
+            "available_ram_bytes": 18733895680
+          },
+          {
+            "elapsed_s": 0.35899999999674037,
+            "available_ram_bytes": 18651242496
+          },
+          {
+            "elapsed_s": 0.46799999999348074,
+            "available_ram_bytes": 18634235904
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18632101888
+          },
+          {
+            "elapsed_s": 0.6870000000053551,
+            "available_ram_bytes": 18628263936
+          },
+          {
+            "elapsed_s": 0.7809999999881256,
+            "available_ram_bytes": 18696830976
+          }
+        ],
+        "streams": "separate stdout.log and stderr.log"
+      },
+      "fingerprint": {
+        "total_tokens": 299078,
+        "total_token_sha256": "78d6abffa9200444c0a55b83aba2ce8f2c306f253f5fc79af31445e50987ce1d",
+        "prefix_tokens": 65536,
+        "prefix_token_sha256": "62db2daae48a271371b36c41ad6e30b7b6b2faa269214775b743279357e21c86",
+        "hash_encoding": "SHA256 of compact JSON integer array",
+        "add_special": true,
+        "parse_special": false,
+        "escape": false,
+        "stdout_rights": "Corpus-derived token IDs; local-only, not licensed under tool MIT"
+      }
+    },
+    {
+      "label": "Q4_K_M",
+      "status": "SUCCESS",
+      "evidence_dir": "tokenization/Q4_K_M",
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-tokenize.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "--ids",
+          "--no-escape",
+          "--no-parse-special"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 30,
+        "wall_s": 0.8910000000032596,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {},
+        "guards": [
+          {
+            "elapsed_s": 0.03200000000651926,
+            "available_ram_bytes": 18986860544
+          },
+          {
+            "elapsed_s": 0.15700000000651926,
+            "available_ram_bytes": 18794151936
+          },
+          {
+            "elapsed_s": 0.25,
+            "available_ram_bytes": 18717929472
+          },
+          {
+            "elapsed_s": 0.360000000015134,
+            "available_ram_bytes": 18637099008
+          },
+          {
+            "elapsed_s": 0.46900000001187436,
+            "available_ram_bytes": 18619371520
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18614583296
+          },
+          {
+            "elapsed_s": 0.6720000000204891,
+            "available_ram_bytes": 18613424128
+          },
+          {
+            "elapsed_s": 0.7820000000065193,
+            "available_ram_bytes": 18680680448
+          }
+        ],
+        "streams": "separate stdout.log and stderr.log"
+      },
+      "fingerprint": {
+        "total_tokens": 299078,
+        "total_token_sha256": "78d6abffa9200444c0a55b83aba2ce8f2c306f253f5fc79af31445e50987ce1d",
+        "prefix_tokens": 65536,
+        "prefix_token_sha256": "62db2daae48a271371b36c41ad6e30b7b6b2faa269214775b743279357e21c86",
+        "hash_encoding": "SHA256 of compact JSON integer array",
+        "add_special": true,
+        "parse_special": false,
+        "escape": false,
+        "stdout_rights": "Corpus-derived token IDs; local-only, not licensed under tool MIT"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "label": "F16",
+      "repeat": 1,
+      "status": "SUCCESS",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "context_size": 2048,
+        "chunks": 32,
+        "batch_size": 512,
+        "n_seq": 1,
+        "targets_per_chunk": 1023,
+        "total_scored_tokens": 32736,
+        "cumulative": [
+          {
+            "offset": 0,
+            "ppl": 12.1435,
+            "mean_nll": 2.496792,
+            "nll_standard_error": 0.105796
+          },
+          {
+            "offset": 2048,
+            "ppl": 15.7097,
+            "mean_nll": 2.754278,
+            "nll_standard_error": 0.076861
+          },
+          {
+            "offset": 4096,
+            "ppl": 15.9392,
+            "mean_nll": 2.768784,
+            "nll_standard_error": 0.062291
+          },
+          {
+            "offset": 6144,
+            "ppl": 15.7427,
+            "mean_nll": 2.75638,
+            "nll_standard_error": 0.054027
+          },
+          {
+            "offset": 8192,
+            "ppl": 16.3725,
+            "mean_nll": 2.795601,
+            "nll_standard_error": 0.049696
+          },
+          {
+            "offset": 10240,
+            "ppl": 14.1078,
+            "mean_nll": 2.646731,
+            "nll_standard_error": 0.04441
+          },
+          {
+            "offset": 12288,
+            "ppl": 12.6489,
+            "mean_nll": 2.537572,
+            "nll_standard_error": 0.040505
+          },
+          {
+            "offset": 14336,
+            "ppl": 12.8178,
+            "mean_nll": 2.550839,
+            "nll_standard_error": 0.038116
+          },
+          {
+            "offset": 16384,
+            "ppl": 13.5409,
+            "mean_nll": 2.605711,
+            "nll_standard_error": 0.035998
+          },
+          {
+            "offset": 18432,
+            "ppl": 13.602,
+            "mean_nll": 2.610219,
+            "nll_standard_error": 0.034324
+          },
+          {
+            "offset": 20480,
+            "ppl": 13.8441,
+            "mean_nll": 2.627856,
+            "nll_standard_error": 0.032783
+          },
+          {
+            "offset": 22528,
+            "ppl": 14.1717,
+            "mean_nll": 2.651247,
+            "nll_standard_error": 0.031321
+          },
+          {
+            "offset": 24576,
+            "ppl": 14.1564,
+            "mean_nll": 2.650165,
+            "nll_standard_error": 0.030028
+          },
+          {
+            "offset": 26624,
+            "ppl": 14.3717,
+            "mean_nll": 2.665258,
+            "nll_standard_error": 0.028896
+          },
+          {
+            "offset": 28672,
+            "ppl": 14.496,
+            "mean_nll": 2.673873,
+            "nll_standard_error": 0.027891
+          },
+          {
+            "offset": 30720,
+            "ppl": 14.8018,
+            "mean_nll": 2.694748,
+            "nll_standard_error": 0.026973
+          },
+          {
+            "offset": 32768,
+            "ppl": 14.8454,
+            "mean_nll": 2.697692,
+            "nll_standard_error": 0.026123
+          },
+          {
+            "offset": 34816,
+            "ppl": 14.9691,
+            "mean_nll": 2.705987,
+            "nll_standard_error": 0.025369
+          },
+          {
+            "offset": 36864,
+            "ppl": 14.7053,
+            "mean_nll": 2.688211,
+            "nll_standard_error": 0.024757
+          },
+          {
+            "offset": 38912,
+            "ppl": 14.3253,
+            "mean_nll": 2.662025,
+            "nll_standard_error": 0.024064
+          },
+          {
+            "offset": 40960,
+            "ppl": 14.4073,
+            "mean_nll": 2.667735,
+            "nll_standard_error": 0.023506
+          },
+          {
+            "offset": 43008,
+            "ppl": 14.5717,
+            "mean_nll": 2.679084,
+            "nll_standard_error": 0.023057
+          },
+          {
+            "offset": 45056,
+            "ppl": 14.7202,
+            "mean_nll": 2.68922,
+            "nll_standard_error": 0.022552
+          },
+          {
+            "offset": 47104,
+            "ppl": 14.8174,
+            "mean_nll": 2.6958,
+            "nll_standard_error": 0.022174
+          },
+          {
+            "offset": 49152,
+            "ppl": 14.8988,
+            "mean_nll": 2.701278,
+            "nll_standard_error": 0.021731
+          },
+          {
+            "offset": 51200,
+            "ppl": 14.9274,
+            "mean_nll": 2.703201,
+            "nll_standard_error": 0.02136
+          },
+          {
+            "offset": 53248,
+            "ppl": 15.1784,
+            "mean_nll": 2.719871,
+            "nll_standard_error": 0.020982
+          },
+          {
+            "offset": 55296,
+            "ppl": 15.435,
+            "mean_nll": 2.736637,
+            "nll_standard_error": 0.020651
+          },
+          {
+            "offset": 57344,
+            "ppl": 15.4802,
+            "mean_nll": 2.739562,
+            "nll_standard_error": 0.020283
+          },
+          {
+            "offset": 59392,
+            "ppl": 15.4389,
+            "mean_nll": 2.736889,
+            "nll_standard_error": 0.019966
+          },
+          {
+            "offset": 61440,
+            "ppl": 15.2057,
+            "mean_nll": 2.721672,
+            "nll_standard_error": 0.019618
+          },
+          {
+            "offset": 63488,
+            "ppl": 15.0861,
+            "mean_nll": 2.713774,
+            "nll_standard_error": 0.019355
+          }
+        ],
+        "chunk_mean_nll": [
+          2.496792,
+          3.0117639999999994,
+          2.797796000000001,
+          2.719168,
+          2.9524849999999994,
+          1.902381,
+          1.882617999999999,
+          2.643708,
+          3.0446869999999997,
+          2.6507910000000017,
+          2.804226,
+          2.9085480000000032,
+          2.637180999999998,
+          2.8614669999999975,
+          2.7944829999999996,
+          3.0078730000000036,
+          2.744796000000001,
+          2.8470019999999963,
+          2.3682429999999997,
+          2.164490999999998,
+          2.7819350000000043,
+          2.9174129999999963,
+          2.912212000000004,
+          2.847140000000003,
+          2.83274999999999,
+          2.7512760000000043,
+          3.153290999999996,
+          3.1893189999999976,
+          2.821461999999997,
+          2.659372000000019,
+          2.2651619999999895,
+          2.4689359999999994
+        ],
+        "mean_nll": 2.713774,
+        "perplexity": 15.0861,
+        "final_ppl_standard_error": 0.29199,
+        "upstream_error_interpretation": "Unpaired upstream diagnostic; not a confidence interval.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      },
+      "error": null,
+      "evidence_dir": "perplexity/F16-r1",
+      "baseline": {
+        "monotonic_s": 145050.171,
+        "gpu_index": "0",
+        "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+        "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+        "driver_version": "610.88",
+        "vram_total_mib": 12282.0,
+        "vram_used_mib": 1470.0,
+        "gpu_utilization_percent": 7.0,
+        "gpu_temperature_c": 45.0,
+        "gpu_telemetry_error": null,
+        "system_ram_total_mib": 32402.54296875,
+        "system_ram_used_mib": 14284.87890625,
+        "system_ram_available_mib": 18117.6640625,
+        "process_tree_rss_mib": null
+      },
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "-c",
+          "2048",
+          "-b",
+          "512",
+          "-ub",
+          "128",
+          "-t",
+          "6",
+          "-ngl",
+          "99",
+          "-fa",
+          "on",
+          "--fit",
+          "off",
+          "-ctk",
+          "f16",
+          "-ctv",
+          "f16",
+          "--chunks",
+          "32",
+          "--ppl-output-type",
+          "1",
+          "--no-escape",
+          "--verbosity",
+          "4"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 600,
+        "wall_s": 14.062000000005355,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {
+          "peak_vram_mib": 5292.0,
+          "peak_process_rss_mib": 4749.89453125,
+          "peak_system_ram_used_mib": 19042.58203125,
+          "telemetry_samples": 28,
+          "sample_interval_seconds": 0.5,
+          "gpu_process_vram_mib": null
+        },
+        "guards": [
+          {
+            "elapsed_s": 0.046999999991385266,
+            "available_ram_bytes": 18990202880
+          },
+          {
+            "elapsed_s": 0.15600000001722947,
+            "available_ram_bytes": 18789773312
+          },
+          {
+            "elapsed_s": 0.26600000000325963,
+            "available_ram_bytes": 18726133760
+          },
+          {
+            "elapsed_s": 0.375,
+            "available_ram_bytes": 18645831680
+          },
+          {
+            "elapsed_s": 0.48399999999674037,
+            "available_ram_bytes": 18633355264
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18625994752
+          },
+          {
+            "elapsed_s": 0.6870000000053551,
+            "available_ram_bytes": 18626514944
+          },
+          {
+            "elapsed_s": 0.7969999999913853,
+            "available_ram_bytes": 18577993728
+          },
+          {
+            "elapsed_s": 0.9060000000172295,
+            "available_ram_bytes": 18218913792
+          },
+          {
+            "elapsed_s": 1.0,
+            "available_ram_bytes": 17865666560
+          },
+          {
+            "elapsed_s": 1.1089999999967404,
+            "available_ram_bytes": 17481912320
+          },
+          {
+            "elapsed_s": 1.2190000000118744,
+            "available_ram_bytes": 17172041728
+          },
+          {
+            "elapsed_s": 1.3280000000086147,
+            "available_ram_bytes": 16819789824
+          },
+          {
+            "elapsed_s": 1.437000000005355,
+            "available_ram_bytes": 16470020096
+          },
+          {
+            "elapsed_s": 1.5310000000172295,
+            "available_ram_bytes": 16126832640
+          },
+          {
+            "elapsed_s": 1.6410000000032596,
+            "available_ram_bytes": 15757795328
+          },
+          {
+            "elapsed_s": 1.75,
+            "available_ram_bytes": 15430909952
+          },
+          {
+            "elapsed_s": 1.8589999999967404,
+            "available_ram_bytes": 15161856000
+          },
+          {
+            "elapsed_s": 1.9690000000118744,
+            "available_ram_bytes": 15105314816
+          },
+          {
+            "elapsed_s": 2.062000000005355,
+            "available_ram_bytes": 15101009920
+          },
+          {
+            "elapsed_s": 2.1719999999913853,
+            "available_ram_bytes": 15102676992
+          },
+          {
+            "elapsed_s": 2.2810000000172295,
+            "available_ram_bytes": 15005130752
+          },
+          {
+            "elapsed_s": 2.3910000000032596,
+            "available_ram_bytes": 14684864512
+          },
+          {
+            "elapsed_s": 2.5,
+            "available_ram_bytes": 14375948288
+          },
+          {
+            "elapsed_s": 2.625,
+            "available_ram_bytes": 14060965888
+          },
+          {
+            "elapsed_s": 2.7339999999967404,
+            "available_ram_bytes": 14062497792
+          },
+          {
+            "elapsed_s": 2.8280000000086147,
+            "available_ram_bytes": 14053343232
+          },
+          {
+            "elapsed_s": 2.937000000005355,
+            "available_ram_bytes": 14055796736
+          },
+          {
+            "elapsed_s": 3.0469999999913853,
+            "available_ram_bytes": 14059077632
+          },
+          {
+            "elapsed_s": 3.1560000000172295,
+            "available_ram_bytes": 14029500416
+          },
+          {
+            "elapsed_s": 3.2660000000032596,
+            "available_ram_bytes": 14055759872
+          },
+          {
+            "elapsed_s": 3.375,
+            "available_ram_bytes": 14053158912
+          },
+          {
+            "elapsed_s": 3.4839999999967404,
+            "available_ram_bytes": 14052913152
+          },
+          {
+            "elapsed_s": 3.5780000000086147,
+            "available_ram_bytes": 14053916672
+          },
+          {
+            "elapsed_s": 3.7030000000086147,
+            "available_ram_bytes": 14032728064
+          },
+          {
+            "elapsed_s": 3.812000000005355,
+            "available_ram_bytes": 14040895488
+          },
+          {
+            "elapsed_s": 3.9060000000172295,
+            "available_ram_bytes": 14044811264
+          },
+          {
+            "elapsed_s": 4.01600000000326,
+            "available_ram_bytes": 14048645120
+          },
+          {
+            "elapsed_s": 4.14100000000326,
+            "available_ram_bytes": 14047440896
+          },
+          {
+            "elapsed_s": 4.23399999999674,
+            "available_ram_bytes": 14048452608
+          },
+          {
+            "elapsed_s": 4.344000000011874,
+            "available_ram_bytes": 14043201536
+          },
+          {
+            "elapsed_s": 4.453000000008615,
+            "available_ram_bytes": 14045159424
+          },
+          {
+            "elapsed_s": 4.562000000005355,
+            "available_ram_bytes": 14046490624
+          },
+          {
+            "elapsed_s": 4.671999999991385,
+            "available_ram_bytes": 14044299264
+          },
+          {
+            "elapsed_s": 4.76600000000326,
+            "available_ram_bytes": 14048178176
+          },
+          {
+            "elapsed_s": 4.875,
+            "available_ram_bytes": 14035886080
+          },
+          {
+            "elapsed_s": 4.98399999999674,
+            "available_ram_bytes": 14041395200
+          },
+          {
+            "elapsed_s": 5.094000000011874,
+            "available_ram_bytes": 14043947008
+          },
+          {
+            "elapsed_s": 5.203000000008615,
+            "available_ram_bytes": 14012739584
+          },
+          {
+            "elapsed_s": 5.312000000005355,
+            "available_ram_bytes": 14039736320
+          },
+          {
+            "elapsed_s": 5.421999999991385,
+            "available_ram_bytes": 14036500480
+          },
+          {
+            "elapsed_s": 5.51600000000326,
+            "available_ram_bytes": 14037254144
+          },
+          {
+            "elapsed_s": 5.625,
+            "available_ram_bytes": 14038769664
+          },
+          {
+            "elapsed_s": 5.73399999999674,
+            "available_ram_bytes": 14022959104
+          },
+          {
+            "elapsed_s": 5.844000000011874,
+            "available_ram_bytes": 14032273408
+          },
+          {
+            "elapsed_s": 5.953000000008615,
+            "available_ram_bytes": 14035988480
+          },
+          {
+            "elapsed_s": 6.046999999991385,
+            "available_ram_bytes": 14039846912
+          },
+          {
+            "elapsed_s": 6.1560000000172295,
+            "available_ram_bytes": 14032052224
+          },
+          {
+            "elapsed_s": 6.26600000000326,
+            "available_ram_bytes": 14013456384
+          },
+          {
+            "elapsed_s": 6.375,
+            "available_ram_bytes": 14034993152
+          },
+          {
+            "elapsed_s": 6.48399999999674,
+            "available_ram_bytes": 14036942848
+          },
+          {
+            "elapsed_s": 6.594000000011874,
+            "available_ram_bytes": 14038106112
+          },
+          {
+            "elapsed_s": 6.703000000008615,
+            "available_ram_bytes": 14036025344
+          },
+          {
+            "elapsed_s": 6.812000000005355,
+            "available_ram_bytes": 14024605696
+          },
+          {
+            "elapsed_s": 6.921999999991385,
+            "available_ram_bytes": 14029094912
+          },
+          {
+            "elapsed_s": 7.0310000000172295,
+            "available_ram_bytes": 14033399808
+          },
+          {
+            "elapsed_s": 7.14100000000326,
+            "available_ram_bytes": 14032154624
+          },
+          {
+            "elapsed_s": 7.25,
+            "available_ram_bytes": 14026047488
+          },
+          {
+            "elapsed_s": 7.35899999999674,
+            "available_ram_bytes": 14029299712
+          },
+          {
+            "elapsed_s": 7.469000000011874,
+            "available_ram_bytes": 14031429632
+          },
+          {
+            "elapsed_s": 7.562000000005355,
+            "available_ram_bytes": 14032703488
+          },
+          {
+            "elapsed_s": 7.671999999991385,
+            "available_ram_bytes": 14030811136
+          },
+          {
+            "elapsed_s": 7.7810000000172295,
+            "available_ram_bytes": 14014648320
+          },
+          {
+            "elapsed_s": 7.89100000000326,
+            "available_ram_bytes": 14028967936
+          },
+          {
+            "elapsed_s": 8.0,
+            "available_ram_bytes": 14034874368
+          },
+          {
+            "elapsed_s": 8.10899999999674,
+            "available_ram_bytes": 14026678272
+          },
+          {
+            "elapsed_s": 8.219000000011874,
+            "available_ram_bytes": 14022926336
+          },
+          {
+            "elapsed_s": 8.35899999999674,
+            "available_ram_bytes": 14024642560
+          },
+          {
+            "elapsed_s": 8.469000000011874,
+            "available_ram_bytes": 14025904128
+          },
+          {
+            "elapsed_s": 8.578000000008615,
+            "available_ram_bytes": 14027227136
+          },
+          {
+            "elapsed_s": 8.687000000005355,
+            "available_ram_bytes": 14027751424
+          },
+          {
+            "elapsed_s": 8.796999999991385,
+            "available_ram_bytes": 14012432384
+          },
+          {
+            "elapsed_s": 8.90600000001723,
+            "available_ram_bytes": 14024409088
+          },
+          {
+            "elapsed_s": 9.0,
+            "available_ram_bytes": 14023487488
+          },
+          {
+            "elapsed_s": 9.10899999999674,
+            "available_ram_bytes": 14022569984
+          },
+          {
+            "elapsed_s": 9.219000000011874,
+            "available_ram_bytes": 14023380992
+          },
+          {
+            "elapsed_s": 9.328000000008615,
+            "available_ram_bytes": 14010978304
+          },
+          {
+            "elapsed_s": 9.437000000005355,
+            "available_ram_bytes": 14025801728
+          },
+          {
+            "elapsed_s": 9.546999999991385,
+            "available_ram_bytes": 14026371072
+          },
+          {
+            "elapsed_s": 9.64100000000326,
+            "available_ram_bytes": 14026153984
+          },
+          {
+            "elapsed_s": 9.75,
+            "available_ram_bytes": 14026653696
+          },
+          {
+            "elapsed_s": 9.875,
+            "available_ram_bytes": 13995200512
+          },
+          {
+            "elapsed_s": 9.98399999999674,
+            "available_ram_bytes": 14021910528
+          },
+          {
+            "elapsed_s": 10.078000000008615,
+            "available_ram_bytes": 14017323008
+          },
+          {
+            "elapsed_s": 10.187000000005355,
+            "available_ram_bytes": 14021005312
+          },
+          {
+            "elapsed_s": 10.296999999991385,
+            "available_ram_bytes": 14023290880
+          },
+          {
+            "elapsed_s": 10.40600000001723,
+            "available_ram_bytes": 14023802880
+          },
+          {
+            "elapsed_s": 10.51600000000326,
+            "available_ram_bytes": 14024237056
+          },
+          {
+            "elapsed_s": 10.625,
+            "available_ram_bytes": 14023372800
+          },
+          {
+            "elapsed_s": 10.73399999999674,
+            "available_ram_bytes": 14024159232
+          },
+          {
+            "elapsed_s": 10.844000000011874,
+            "available_ram_bytes": 14013046784
+          },
+          {
+            "elapsed_s": 10.953000000008615,
+            "available_ram_bytes": 14015799296
+          },
+          {
+            "elapsed_s": 11.062000000005355,
+            "available_ram_bytes": 14017536000
+          },
+          {
+            "elapsed_s": 11.171999999991385,
+            "available_ram_bytes": 14020112384
+          },
+          {
+            "elapsed_s": 11.28100000001723,
+            "available_ram_bytes": 14017101824
+          },
+          {
+            "elapsed_s": 11.375,
+            "available_ram_bytes": 13999501312
+          },
+          {
+            "elapsed_s": 11.48399999999674,
+            "available_ram_bytes": 14019612672
+          },
+          {
+            "elapsed_s": 11.625,
+            "available_ram_bytes": 14020714496
+          },
+          {
+            "elapsed_s": 11.73399999999674,
+            "available_ram_bytes": 14019985408
+          },
+          {
+            "elapsed_s": 11.828000000008615,
+            "available_ram_bytes": 14006177792
+          },
+          {
+            "elapsed_s": 11.953000000008615,
+            "available_ram_bytes": 14010920960
+          },
+          {
+            "elapsed_s": 12.062000000005355,
+            "available_ram_bytes": 14012719104
+          },
+          {
+            "elapsed_s": 12.15600000001723,
+            "available_ram_bytes": 14014844928
+          },
+          {
+            "elapsed_s": 12.26600000000326,
+            "available_ram_bytes": 14015860736
+          },
+          {
+            "elapsed_s": 12.421999999991385,
+            "available_ram_bytes": 14015385600
+          },
+          {
+            "elapsed_s": 12.53100000001723,
+            "available_ram_bytes": 14015074304
+          },
+          {
+            "elapsed_s": 12.65600000001723,
+            "available_ram_bytes": 14014812160
+          },
+          {
+            "elapsed_s": 12.76600000000326,
+            "available_ram_bytes": 14014455808
+          },
+          {
+            "elapsed_s": 12.875,
+            "available_ram_bytes": 14003552256
+          },
+          {
+            "elapsed_s": 12.98399999999674,
+            "available_ram_bytes": 14006763520
+          },
+          {
+            "elapsed_s": 13.094000000011874,
+            "available_ram_bytes": 14007058432
+          },
+          {
+            "elapsed_s": 13.203000000008615,
+            "available_ram_bytes": 14010294272
+          },
+          {
+            "elapsed_s": 13.312000000005355,
+            "available_ram_bytes": 14008606720
+          },
+          {
+            "elapsed_s": 13.40600000001723,
+            "available_ram_bytes": 14007873536
+          },
+          {
+            "elapsed_s": 13.53100000001723,
+            "available_ram_bytes": 14009491456
+          },
+          {
+            "elapsed_s": 13.625,
+            "available_ram_bytes": 14010413056
+          },
+          {
+            "elapsed_s": 13.73399999999674,
+            "available_ram_bytes": 14010572800
+          },
+          {
+            "elapsed_s": 13.844000000011874,
+            "available_ram_bytes": 15410552832
+          },
+          {
+            "elapsed_s": 13.969000000011874,
+            "available_ram_bytes": 18476146688
+          }
+        ],
+        "streams": "stdout.log merges stdout and stderr"
+      },
+      "effective": {
+        "context_size": 2048,
+        "gpu_layers_loaded": 29,
+        "gpu_layers_total": 29,
+        "cache_type_k": "f16",
+        "cache_type_v": "f16",
+        "flash_attention": "on",
+        "automatic_fit": false,
+        "fit_verification": "explicit --fit off, pinned runtime, no fit diagnostic",
+        "parallel": 1
+      }
+    },
+    {
+      "label": "Q8_0",
+      "repeat": 1,
+      "status": "SUCCESS",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "context_size": 2048,
+        "chunks": 32,
+        "batch_size": 512,
+        "n_seq": 1,
+        "targets_per_chunk": 1023,
+        "total_scored_tokens": 32736,
+        "cumulative": [
+          {
+            "offset": 0,
+            "ppl": 12.1577,
+            "mean_nll": 2.497965,
+            "nll_standard_error": 0.10562
+          },
+          {
+            "offset": 2048,
+            "ppl": 15.7163,
+            "mean_nll": 2.754701,
+            "nll_standard_error": 0.076764
+          },
+          {
+            "offset": 4096,
+            "ppl": 15.9264,
+            "mean_nll": 2.767977,
+            "nll_standard_error": 0.062185
+          },
+          {
+            "offset": 6144,
+            "ppl": 15.7367,
+            "mean_nll": 2.755998,
+            "nll_standard_error": 0.053951
+          },
+          {
+            "offset": 8192,
+            "ppl": 16.3949,
+            "mean_nll": 2.79697,
+            "nll_standard_error": 0.049638
+          },
+          {
+            "offset": 10240,
+            "ppl": 14.129,
+            "mean_nll": 2.64823,
+            "nll_standard_error": 0.04436
+          },
+          {
+            "offset": 12288,
+            "ppl": 12.6575,
+            "mean_nll": 2.538249,
+            "nll_standard_error": 0.040447
+          },
+          {
+            "offset": 14336,
+            "ppl": 12.824,
+            "mean_nll": 2.551321,
+            "nll_standard_error": 0.03805
+          },
+          {
+            "offset": 16384,
+            "ppl": 13.53,
+            "mean_nll": 2.604912,
+            "nll_standard_error": 0.035919
+          },
+          {
+            "offset": 18432,
+            "ppl": 13.5877,
+            "mean_nll": 2.609167,
+            "nll_standard_error": 0.034254
+          },
+          {
+            "offset": 20480,
+            "ppl": 13.8401,
+            "mean_nll": 2.62757,
+            "nll_standard_error": 0.032726
+          },
+          {
+            "offset": 22528,
+            "ppl": 14.1763,
+            "mean_nll": 2.651572,
+            "nll_standard_error": 0.031271
+          },
+          {
+            "offset": 24576,
+            "ppl": 14.1692,
+            "mean_nll": 2.651068,
+            "nll_standard_error": 0.029985
+          },
+          {
+            "offset": 26624,
+            "ppl": 14.3852,
+            "mean_nll": 2.666201,
+            "nll_standard_error": 0.028851
+          },
+          {
+            "offset": 28672,
+            "ppl": 14.5147,
+            "mean_nll": 2.675161,
+            "nll_standard_error": 0.027848
+          },
+          {
+            "offset": 30720,
+            "ppl": 14.8257,
+            "mean_nll": 2.69636,
+            "nll_standard_error": 0.026937
+          },
+          {
+            "offset": 32768,
+            "ppl": 14.8774,
+            "mean_nll": 2.699846,
+            "nll_standard_error": 0.026093
+          },
+          {
+            "offset": 34816,
+            "ppl": 15.0088,
+            "mean_nll": 2.708635,
+            "nll_standard_error": 0.025344
+          },
+          {
+            "offset": 36864,
+            "ppl": 14.7415,
+            "mean_nll": 2.690665,
+            "nll_standard_error": 0.024727
+          },
+          {
+            "offset": 38912,
+            "ppl": 14.3587,
+            "mean_nll": 2.664356,
+            "nll_standard_error": 0.024035
+          },
+          {
+            "offset": 40960,
+            "ppl": 14.4359,
+            "mean_nll": 2.669718,
+            "nll_standard_error": 0.023472
+          },
+          {
+            "offset": 43008,
+            "ppl": 14.6059,
+            "mean_nll": 2.681427,
+            "nll_standard_error": 0.023026
+          },
+          {
+            "offset": 45056,
+            "ppl": 14.7519,
+            "mean_nll": 2.69137,
+            "nll_standard_error": 0.02252
+          },
+          {
+            "offset": 47104,
+            "ppl": 14.848,
+            "mean_nll": 2.697867,
+            "nll_standard_error": 0.022141
+          },
+          {
+            "offset": 49152,
+            "ppl": 14.9292,
+            "mean_nll": 2.70332,
+            "nll_standard_error": 0.021697
+          },
+          {
+            "offset": 51200,
+            "ppl": 14.9587,
+            "mean_nll": 2.705292,
+            "nll_standard_error": 0.021325
+          },
+          {
+            "offset": 53248,
+            "ppl": 15.2091,
+            "mean_nll": 2.721895,
+            "nll_standard_error": 0.020949
+          },
+          {
+            "offset": 55296,
+            "ppl": 15.4665,
+            "mean_nll": 2.738675,
+            "nll_standard_error": 0.020619
+          },
+          {
+            "offset": 57344,
+            "ppl": 15.5136,
+            "mean_nll": 2.741718,
+            "nll_standard_error": 0.020253
+          },
+          {
+            "offset": 59392,
+            "ppl": 15.4687,
+            "mean_nll": 2.738822,
+            "nll_standard_error": 0.019937
+          },
+          {
+            "offset": 61440,
+            "ppl": 15.233,
+            "mean_nll": 2.723465,
+            "nll_standard_error": 0.019588
+          },
+          {
+            "offset": 63488,
+            "ppl": 15.1083,
+            "mean_nll": 2.715247,
+            "nll_standard_error": 0.019323
+          }
+        ],
+        "chunk_mean_nll": [
+          2.497965,
+          3.0114369999999995,
+          2.7945290000000007,
+          2.7200609999999994,
+          2.960858,
+          1.9045299999999994,
+          1.8783630000000002,
+          2.642825000000002,
+          3.0336399999999983,
+          2.6474619999999973,
+          2.811600000000002,
+          2.9155939999999987,
+          2.6450200000000024,
+          2.8629299999999986,
+          2.8006010000000003,
+          3.0143449999999987,
+          2.7556220000000025,
+          2.8580480000000037,
+          2.3672049999999984,
+          2.164484999999999,
+          2.7769580000000005,
+          2.9273159999999905,
+          2.9101160000000093,
+          2.847297999999995,
+          2.8341920000000016,
+          2.7545920000000024,
+          3.1535729999999944,
+          3.1917350000000084,
+          2.826921999999996,
+          2.654837999999998,
+          2.2627549999999985,
+          2.4604890000000097
+        ],
+        "mean_nll": 2.715247,
+        "perplexity": 15.1083,
+        "final_ppl_standard_error": 0.29193,
+        "upstream_error_interpretation": "Unpaired upstream diagnostic; not a confidence interval.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      },
+      "error": null,
+      "evidence_dir": "perplexity/Q8_0-r1",
+      "baseline": {
+        "monotonic_s": 145064.312,
+        "gpu_index": "0",
+        "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+        "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+        "driver_version": "610.88",
+        "vram_total_mib": 12282.0,
+        "vram_used_mib": 1471.0,
+        "gpu_utilization_percent": 8.0,
+        "gpu_temperature_c": 51.0,
+        "gpu_telemetry_error": null,
+        "system_ram_total_mib": 32402.54296875,
+        "system_ram_used_mib": 14284.94921875,
+        "system_ram_available_mib": 18117.59375,
+        "process_tree_rss_mib": null
+      },
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "-c",
+          "2048",
+          "-b",
+          "512",
+          "-ub",
+          "128",
+          "-t",
+          "6",
+          "-ngl",
+          "99",
+          "-fa",
+          "on",
+          "--fit",
+          "off",
+          "-ctk",
+          "f16",
+          "-ctv",
+          "f16",
+          "--chunks",
+          "32",
+          "--ppl-output-type",
+          "1",
+          "--no-escape",
+          "--verbosity",
+          "4"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 600,
+        "wall_s": 12.10899999999674,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {
+          "peak_vram_mib": 3706.0,
+          "peak_process_rss_mib": 3099.97265625,
+          "peak_system_ram_used_mib": 17410.71875,
+          "telemetry_samples": 24,
+          "sample_interval_seconds": 0.5,
+          "gpu_process_vram_mib": null
+        },
+        "guards": [
+          {
+            "elapsed_s": 0.046000000002095476,
+            "available_ram_bytes": 19000291328
+          },
+          {
+            "elapsed_s": 0.15599999998812564,
+            "available_ram_bytes": 18804686848
+          },
+          {
+            "elapsed_s": 0.25,
+            "available_ram_bytes": 18738638848
+          },
+          {
+            "elapsed_s": 0.35899999999674037,
+            "available_ram_bytes": 18658082816
+          },
+          {
+            "elapsed_s": 0.46799999999348074,
+            "available_ram_bytes": 18647257088
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18636312576
+          },
+          {
+            "elapsed_s": 0.6710000000020955,
+            "available_ram_bytes": 18412482560
+          },
+          {
+            "elapsed_s": 0.7809999999881256,
+            "available_ram_bytes": 18065637376
+          },
+          {
+            "elapsed_s": 0.8900000000139698,
+            "available_ram_bytes": 17707937792
+          },
+          {
+            "elapsed_s": 1.0,
+            "available_ram_bytes": 17348788224
+          },
+          {
+            "elapsed_s": 1.1089999999967404,
+            "available_ram_bytes": 16984899584
+          },
+          {
+            "elapsed_s": 1.2030000000086147,
+            "available_ram_bytes": 16765165568
+          },
+          {
+            "elapsed_s": 1.312000000005355,
+            "available_ram_bytes": 16733564928
+          },
+          {
+            "elapsed_s": 1.4210000000020955,
+            "available_ram_bytes": 16731258880
+          },
+          {
+            "elapsed_s": 1.5309999999881256,
+            "available_ram_bytes": 16723320832
+          },
+          {
+            "elapsed_s": 1.6400000000139698,
+            "available_ram_bytes": 16686895104
+          },
+          {
+            "elapsed_s": 1.75,
+            "available_ram_bytes": 16282759168
+          },
+          {
+            "elapsed_s": 1.8589999999967404,
+            "available_ram_bytes": 15905521664
+          },
+          {
+            "elapsed_s": 1.9679999999934807,
+            "available_ram_bytes": 15779115008
+          },
+          {
+            "elapsed_s": 2.062000000005355,
+            "available_ram_bytes": 15776665600
+          },
+          {
+            "elapsed_s": 2.1710000000020955,
+            "available_ram_bytes": 15776296960
+          },
+          {
+            "elapsed_s": 2.2809999999881256,
+            "available_ram_bytes": 15764946944
+          },
+          {
+            "elapsed_s": 2.39000000001397,
+            "available_ram_bytes": 15758151680
+          },
+          {
+            "elapsed_s": 2.5,
+            "available_ram_bytes": 15758835712
+          },
+          {
+            "elapsed_s": 2.6089999999967404,
+            "available_ram_bytes": 15756009472
+          },
+          {
+            "elapsed_s": 2.7179999999934807,
+            "available_ram_bytes": 15754309632
+          },
+          {
+            "elapsed_s": 2.8280000000086147,
+            "available_ram_bytes": 15756886016
+          },
+          {
+            "elapsed_s": 2.937000000005355,
+            "available_ram_bytes": 15754334208
+          },
+          {
+            "elapsed_s": 3.0460000000020955,
+            "available_ram_bytes": 15755587584
+          },
+          {
+            "elapsed_s": 3.1559999999881256,
+            "available_ram_bytes": 15724896256
+          },
+          {
+            "elapsed_s": 3.26500000001397,
+            "available_ram_bytes": 15756902400
+          },
+          {
+            "elapsed_s": 3.375,
+            "available_ram_bytes": 15749033984
+          },
+          {
+            "elapsed_s": 3.4679999999934807,
+            "available_ram_bytes": 15749169152
+          },
+          {
+            "elapsed_s": 3.5929999999934807,
+            "available_ram_bytes": 15749042176
+          },
+          {
+            "elapsed_s": 3.687000000005355,
+            "available_ram_bytes": 15740436480
+          },
+          {
+            "elapsed_s": 3.8280000000086147,
+            "available_ram_bytes": 15739715584
+          },
+          {
+            "elapsed_s": 3.937000000005355,
+            "available_ram_bytes": 15734673408
+          },
+          {
+            "elapsed_s": 4.0460000000020955,
+            "available_ram_bytes": 15738601472
+          },
+          {
+            "elapsed_s": 4.155999999988126,
+            "available_ram_bytes": 15739170816
+          },
+          {
+            "elapsed_s": 4.26500000001397,
+            "available_ram_bytes": 15744393216
+          },
+          {
+            "elapsed_s": 4.375,
+            "available_ram_bytes": 15744778240
+          },
+          {
+            "elapsed_s": 4.48399999999674,
+            "available_ram_bytes": 15739953152
+          },
+          {
+            "elapsed_s": 4.578000000008615,
+            "available_ram_bytes": 15741403136
+          },
+          {
+            "elapsed_s": 4.687000000005355,
+            "available_ram_bytes": 15736479744
+          },
+          {
+            "elapsed_s": 4.812000000005355,
+            "available_ram_bytes": 15735599104
+          },
+          {
+            "elapsed_s": 4.9210000000020955,
+            "available_ram_bytes": 15741554688
+          },
+          {
+            "elapsed_s": 5.01500000001397,
+            "available_ram_bytes": 15745040384
+          },
+          {
+            "elapsed_s": 5.14000000001397,
+            "available_ram_bytes": 15740334080
+          },
+          {
+            "elapsed_s": 5.25,
+            "available_ram_bytes": 15745978368
+          },
+          {
+            "elapsed_s": 5.35899999999674,
+            "available_ram_bytes": 15738216448
+          },
+          {
+            "elapsed_s": 5.467999999993481,
+            "available_ram_bytes": 15741431808
+          },
+          {
+            "elapsed_s": 5.578000000008615,
+            "available_ram_bytes": 15743791104
+          },
+          {
+            "elapsed_s": 5.6710000000020955,
+            "available_ram_bytes": 15732989952
+          },
+          {
+            "elapsed_s": 5.7960000000020955,
+            "available_ram_bytes": 15712931840
+          },
+          {
+            "elapsed_s": 5.89000000001397,
+            "available_ram_bytes": 15732224000
+          },
+          {
+            "elapsed_s": 6.0,
+            "available_ram_bytes": 15735992320
+          },
+          {
+            "elapsed_s": 6.10899999999674,
+            "available_ram_bytes": 15739887616
+          },
+          {
+            "elapsed_s": 6.217999999993481,
+            "available_ram_bytes": 15725494272
+          },
+          {
+            "elapsed_s": 6.328000000008615,
+            "available_ram_bytes": 15741407232
+          },
+          {
+            "elapsed_s": 6.437000000005355,
+            "available_ram_bytes": 15737049088
+          },
+          {
+            "elapsed_s": 6.530999999988126,
+            "available_ram_bytes": 15734251520
+          },
+          {
+            "elapsed_s": 6.64000000001397,
+            "available_ram_bytes": 15728812032
+          },
+          {
+            "elapsed_s": 6.75,
+            "available_ram_bytes": 15732641792
+          },
+          {
+            "elapsed_s": 6.85899999999674,
+            "available_ram_bytes": 15730888704
+          },
+          {
+            "elapsed_s": 6.967999999993481,
+            "available_ram_bytes": 15734583296
+          },
+          {
+            "elapsed_s": 7.062000000005355,
+            "available_ram_bytes": 15738920960
+          },
+          {
+            "elapsed_s": 7.1710000000020955,
+            "available_ram_bytes": 15732142080
+          },
+          {
+            "elapsed_s": 7.280999999988126,
+            "available_ram_bytes": 15708397568
+          },
+          {
+            "elapsed_s": 7.39000000001397,
+            "available_ram_bytes": 15733661696
+          },
+          {
+            "elapsed_s": 7.5,
+            "available_ram_bytes": 15731867648
+          },
+          {
+            "elapsed_s": 7.592999999993481,
+            "available_ram_bytes": 15734259712
+          },
+          {
+            "elapsed_s": 7.717999999993481,
+            "available_ram_bytes": 15726514176
+          },
+          {
+            "elapsed_s": 7.828000000008615,
+            "available_ram_bytes": 15724056576
+          },
+          {
+            "elapsed_s": 7.9210000000020955,
+            "available_ram_bytes": 15731154944
+          },
+          {
+            "elapsed_s": 8.030999999988126,
+            "available_ram_bytes": 15734259712
+          },
+          {
+            "elapsed_s": 8.14000000001397,
+            "available_ram_bytes": 15723290624
+          },
+          {
+            "elapsed_s": 8.25,
+            "available_ram_bytes": 15726350336
+          },
+          {
+            "elapsed_s": 8.375,
+            "available_ram_bytes": 15727390720
+          },
+          {
+            "elapsed_s": 8.46799999999348,
+            "available_ram_bytes": 15732232192
+          },
+          {
+            "elapsed_s": 8.578000000008615,
+            "available_ram_bytes": 15731486720
+          },
+          {
+            "elapsed_s": 8.687000000005355,
+            "available_ram_bytes": 15721988096
+          },
+          {
+            "elapsed_s": 8.796000000002095,
+            "available_ram_bytes": 15723044864
+          },
+          {
+            "elapsed_s": 8.905999999988126,
+            "available_ram_bytes": 15720771584
+          },
+          {
+            "elapsed_s": 9.01500000001397,
+            "available_ram_bytes": 15732080640
+          },
+          {
+            "elapsed_s": 9.125,
+            "available_ram_bytes": 15734673408
+          },
+          {
+            "elapsed_s": 9.21799999999348,
+            "available_ram_bytes": 15726387200
+          },
+          {
+            "elapsed_s": 9.328000000008615,
+            "available_ram_bytes": 15728406528
+          },
+          {
+            "elapsed_s": 9.437000000005355,
+            "available_ram_bytes": 15730032640
+          },
+          {
+            "elapsed_s": 9.546000000002095,
+            "available_ram_bytes": 15734374400
+          },
+          {
+            "elapsed_s": 9.655999999988126,
+            "available_ram_bytes": 15724306432
+          },
+          {
+            "elapsed_s": 9.76500000001397,
+            "available_ram_bytes": 15725289472
+          },
+          {
+            "elapsed_s": 9.875,
+            "available_ram_bytes": 15724802048
+          },
+          {
+            "elapsed_s": 9.98399999999674,
+            "available_ram_bytes": 15732027392
+          },
+          {
+            "elapsed_s": 10.09299999999348,
+            "available_ram_bytes": 15733735424
+          },
+          {
+            "elapsed_s": 10.187000000005355,
+            "available_ram_bytes": 15725170688
+          },
+          {
+            "elapsed_s": 10.296000000002095,
+            "available_ram_bytes": 15726686208
+          },
+          {
+            "elapsed_s": 10.405999999988126,
+            "available_ram_bytes": 15725912064
+          },
+          {
+            "elapsed_s": 10.51500000001397,
+            "available_ram_bytes": 15730171904
+          },
+          {
+            "elapsed_s": 10.625,
+            "available_ram_bytes": 15733313536
+          },
+          {
+            "elapsed_s": 10.71799999999348,
+            "available_ram_bytes": 15727910912
+          },
+          {
+            "elapsed_s": 10.828000000008615,
+            "available_ram_bytes": 15733030912
+          },
+          {
+            "elapsed_s": 10.937000000005355,
+            "available_ram_bytes": 15724777472
+          },
+          {
+            "elapsed_s": 11.046000000002095,
+            "available_ram_bytes": 15726276608
+          },
+          {
+            "elapsed_s": 11.14000000001397,
+            "available_ram_bytes": 15725096960
+          },
+          {
+            "elapsed_s": 11.25,
+            "available_ram_bytes": 15729750016
+          },
+          {
+            "elapsed_s": 11.35899999999674,
+            "available_ram_bytes": 15718047744
+          },
+          {
+            "elapsed_s": 11.46799999999348,
+            "available_ram_bytes": 15729229824
+          },
+          {
+            "elapsed_s": 11.578000000008615,
+            "available_ram_bytes": 15733743616
+          },
+          {
+            "elapsed_s": 11.687000000005355,
+            "available_ram_bytes": 15725531136
+          },
+          {
+            "elapsed_s": 11.780999999988126,
+            "available_ram_bytes": 15728603136
+          },
+          {
+            "elapsed_s": 11.89000000001397,
+            "available_ram_bytes": 15732281344
+          },
+          {
+            "elapsed_s": 12.01500000001397,
+            "available_ram_bytes": 18363109376
+          }
+        ],
+        "streams": "stdout.log merges stdout and stderr"
+      },
+      "effective": {
+        "context_size": 2048,
+        "gpu_layers_loaded": 29,
+        "gpu_layers_total": 29,
+        "cache_type_k": "f16",
+        "cache_type_v": "f16",
+        "flash_attention": "on",
+        "automatic_fit": false,
+        "fit_verification": "explicit --fit off, pinned runtime, no fit diagnostic",
+        "parallel": 1
+      }
+    },
+    {
+      "label": "Q4_K_M",
+      "repeat": 1,
+      "status": "SUCCESS",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "context_size": 2048,
+        "chunks": 32,
+        "batch_size": 512,
+        "n_seq": 1,
+        "targets_per_chunk": 1023,
+        "total_scored_tokens": 32736,
+        "cumulative": [
+          {
+            "offset": 0,
+            "ppl": 13.8196,
+            "mean_nll": 2.626087,
+            "nll_standard_error": 0.11124
+          },
+          {
+            "offset": 2048,
+            "ppl": 16.988,
+            "mean_nll": 2.832507,
+            "nll_standard_error": 0.079285
+          },
+          {
+            "offset": 4096,
+            "ppl": 17.0883,
+            "mean_nll": 2.838394,
+            "nll_standard_error": 0.063943
+          },
+          {
+            "offset": 6144,
+            "ppl": 16.8391,
+            "mean_nll": 2.823706,
+            "nll_standard_error": 0.05522
+          },
+          {
+            "offset": 8192,
+            "ppl": 17.7153,
+            "mean_nll": 2.874428,
+            "nll_standard_error": 0.050715
+          },
+          {
+            "offset": 10240,
+            "ppl": 15.3464,
+            "mean_nll": 2.730883,
+            "nll_standard_error": 0.045434
+          },
+          {
+            "offset": 12288,
+            "ppl": 13.6694,
+            "mean_nll": 2.615157,
+            "nll_standard_error": 0.041386
+          },
+          {
+            "offset": 14336,
+            "ppl": 13.9485,
+            "mean_nll": 2.635375,
+            "nll_standard_error": 0.039141
+          },
+          {
+            "offset": 16384,
+            "ppl": 14.6847,
+            "mean_nll": 2.686806,
+            "nll_standard_error": 0.036904
+          },
+          {
+            "offset": 18432,
+            "ppl": 14.7407,
+            "mean_nll": 2.690611,
+            "nll_standard_error": 0.035141
+          },
+          {
+            "offset": 20480,
+            "ppl": 15.0177,
+            "mean_nll": 2.709229,
+            "nll_standard_error": 0.033529
+          },
+          {
+            "offset": 22528,
+            "ppl": 15.3448,
+            "mean_nll": 2.730778,
+            "nll_standard_error": 0.031975
+          },
+          {
+            "offset": 24576,
+            "ppl": 15.2964,
+            "mean_nll": 2.727619,
+            "nll_standard_error": 0.030615
+          },
+          {
+            "offset": 26624,
+            "ppl": 15.4797,
+            "mean_nll": 2.739528,
+            "nll_standard_error": 0.029415
+          },
+          {
+            "offset": 28672,
+            "ppl": 15.5975,
+            "mean_nll": 2.747114,
+            "nll_standard_error": 0.028377
+          },
+          {
+            "offset": 30720,
+            "ppl": 15.9118,
+            "mean_nll": 2.767062,
+            "nll_standard_error": 0.027428
+          },
+          {
+            "offset": 32768,
+            "ppl": 15.9234,
+            "mean_nll": 2.767791,
+            "nll_standard_error": 0.026544
+          },
+          {
+            "offset": 34816,
+            "ppl": 16.0395,
+            "mean_nll": 2.775056,
+            "nll_standard_error": 0.025773
+          },
+          {
+            "offset": 36864,
+            "ppl": 15.7615,
+            "mean_nll": 2.757569,
+            "nll_standard_error": 0.025155
+          },
+          {
+            "offset": 38912,
+            "ppl": 15.3396,
+            "mean_nll": 2.730439,
+            "nll_standard_error": 0.024459
+          },
+          {
+            "offset": 40960,
+            "ppl": 15.4479,
+            "mean_nll": 2.737471,
+            "nll_standard_error": 0.023923
+          },
+          {
+            "offset": 43008,
+            "ppl": 15.6222,
+            "mean_nll": 2.748694,
+            "nll_standard_error": 0.023455
+          },
+          {
+            "offset": 45056,
+            "ppl": 15.7984,
+            "mean_nll": 2.759906,
+            "nll_standard_error": 0.022955
+          },
+          {
+            "offset": 47104,
+            "ppl": 15.9049,
+            "mean_nll": 2.766627,
+            "nll_standard_error": 0.022589
+          },
+          {
+            "offset": 49152,
+            "ppl": 15.984,
+            "mean_nll": 2.771587,
+            "nll_standard_error": 0.02213
+          },
+          {
+            "offset": 51200,
+            "ppl": 16.0074,
+            "mean_nll": 2.773051,
+            "nll_standard_error": 0.021739
+          },
+          {
+            "offset": 53248,
+            "ppl": 16.3088,
+            "mean_nll": 2.791705,
+            "nll_standard_error": 0.021371
+          },
+          {
+            "offset": 55296,
+            "ppl": 16.6068,
+            "mean_nll": 2.809815,
+            "nll_standard_error": 0.021022
+          },
+          {
+            "offset": 57344,
+            "ppl": 16.6954,
+            "mean_nll": 2.815134,
+            "nll_standard_error": 0.020671
+          },
+          {
+            "offset": 59392,
+            "ppl": 16.6907,
+            "mean_nll": 2.814851,
+            "nll_standard_error": 0.020367
+          },
+          {
+            "offset": 61440,
+            "ppl": 16.4532,
+            "mean_nll": 2.80052,
+            "nll_standard_error": 0.02003
+          },
+          {
+            "offset": 63488,
+            "ppl": 16.3602,
+            "mean_nll": 2.794853,
+            "nll_standard_error": 0.019779
+          }
+        ],
+        "chunk_mean_nll": [
+          2.626087,
+          3.038927,
+          2.850167999999999,
+          2.779642000000001,
+          3.0773159999999997,
+          2.013157999999999,
+          1.9208010000000009,
+          2.7769009999999987,
+          3.0982540000000007,
+          2.7248560000000026,
+          2.895409000000001,
+          2.967816999999993,
+          2.6897110000000026,
+          2.8943450000000013,
+          2.8533180000000016,
+          3.066282000000001,
+          2.7794549999999987,
+          2.898561000000001,
+          2.442802999999998,
+          2.2149690000000035,
+          2.878111000000004,
+          2.984376999999995,
+          3.0065699999999964,
+          2.921210000000009,
+          2.8906269999999807,
+          2.8096510000000166,
+          3.2767089999999968,
+          3.298784999999995,
+          2.9640660000000025,
+          2.8066440000000057,
+          2.370589999999993,
+          2.619175999999996
+        ],
+        "mean_nll": 2.794853,
+        "perplexity": 16.3602,
+        "final_ppl_standard_error": 0.32359,
+        "upstream_error_interpretation": "Unpaired upstream diagnostic; not a confidence interval.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      },
+      "error": null,
+      "evidence_dir": "perplexity/Q4_K_M-r1",
+      "baseline": {
+        "monotonic_s": 145076.5,
+        "gpu_index": "0",
+        "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+        "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+        "driver_version": "610.88",
+        "vram_total_mib": 12282.0,
+        "vram_used_mib": 1471.0,
+        "gpu_utilization_percent": 91.0,
+        "gpu_temperature_c": 57.0,
+        "gpu_telemetry_error": null,
+        "system_ram_total_mib": 32402.54296875,
+        "system_ram_used_mib": 14285.90234375,
+        "system_ram_available_mib": 18116.640625,
+        "process_tree_rss_mib": null
+      },
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "-c",
+          "2048",
+          "-b",
+          "512",
+          "-ub",
+          "128",
+          "-t",
+          "6",
+          "-ngl",
+          "99",
+          "-fa",
+          "on",
+          "--fit",
+          "off",
+          "-ctk",
+          "f16",
+          "-ctv",
+          "f16",
+          "--chunks",
+          "32",
+          "--ppl-output-type",
+          "1",
+          "--no-escape",
+          "--verbosity",
+          "4"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 600,
+        "wall_s": 11.453000000008615,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {
+          "peak_vram_mib": 3014.0,
+          "peak_process_rss_mib": 2405.49609375,
+          "peak_system_ram_used_mib": 16713.37890625,
+          "telemetry_samples": 23,
+          "sample_interval_seconds": 0.5,
+          "gpu_process_vram_mib": null
+        },
+        "guards": [
+          {
+            "elapsed_s": 0.046999999991385266,
+            "available_ram_bytes": 18998759424
+          },
+          {
+            "elapsed_s": 0.15599999998812564,
+            "available_ram_bytes": 18797961216
+          },
+          {
+            "elapsed_s": 0.26600000000325963,
+            "available_ram_bytes": 18726305792
+          },
+          {
+            "elapsed_s": 0.375,
+            "available_ram_bytes": 18646675456
+          },
+          {
+            "elapsed_s": 0.46899999998277053,
+            "available_ram_bytes": 18631811072
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18447200256
+          },
+          {
+            "elapsed_s": 0.6879999999946449,
+            "available_ram_bytes": 18102026240
+          },
+          {
+            "elapsed_s": 0.7969999999913853,
+            "available_ram_bytes": 17759236096
+          },
+          {
+            "elapsed_s": 0.8910000000032596,
+            "available_ram_bytes": 17483771904
+          },
+          {
+            "elapsed_s": 1.0,
+            "available_ram_bytes": 17449877504
+          },
+          {
+            "elapsed_s": 1.1089999999967404,
+            "available_ram_bytes": 17425752064
+          },
+          {
+            "elapsed_s": 1.2189999999827705,
+            "available_ram_bytes": 17433350144
+          },
+          {
+            "elapsed_s": 1.312999999994645,
+            "available_ram_bytes": 17425620992
+          },
+          {
+            "elapsed_s": 1.4219999999913853,
+            "available_ram_bytes": 16943255552
+          },
+          {
+            "elapsed_s": 1.5309999999881256,
+            "available_ram_bytes": 16522162176
+          },
+          {
+            "elapsed_s": 1.6410000000032596,
+            "available_ram_bytes": 16454144000
+          },
+          {
+            "elapsed_s": 1.75,
+            "available_ram_bytes": 16485494784
+          },
+          {
+            "elapsed_s": 1.875,
+            "available_ram_bytes": 16484925440
+          },
+          {
+            "elapsed_s": 1.9839999999967404,
+            "available_ram_bytes": 16480182272
+          },
+          {
+            "elapsed_s": 2.0939999999827705,
+            "available_ram_bytes": 16482193408
+          },
+          {
+            "elapsed_s": 2.2189999999827705,
+            "available_ram_bytes": 16474783744
+          },
+          {
+            "elapsed_s": 2.3280000000086147,
+            "available_ram_bytes": 16482537472
+          },
+          {
+            "elapsed_s": 2.437999999994645,
+            "available_ram_bytes": 16479817728
+          },
+          {
+            "elapsed_s": 2.5469999999913853,
+            "available_ram_bytes": 16477536256
+          },
+          {
+            "elapsed_s": 2.6410000000032596,
+            "available_ram_bytes": 16478179328
+          },
+          {
+            "elapsed_s": 2.75,
+            "available_ram_bytes": 16478900224
+          },
+          {
+            "elapsed_s": 2.8589999999967404,
+            "available_ram_bytes": 16478494720
+          },
+          {
+            "elapsed_s": 2.9689999999827705,
+            "available_ram_bytes": 16472743936
+          },
+          {
+            "elapsed_s": 3.0780000000086147,
+            "available_ram_bytes": 16478158848
+          },
+          {
+            "elapsed_s": 3.187999999994645,
+            "available_ram_bytes": 16446988288
+          },
+          {
+            "elapsed_s": 3.2969999999913853,
+            "available_ram_bytes": 16479395840
+          },
+          {
+            "elapsed_s": 3.437999999994645,
+            "available_ram_bytes": 16474767360
+          },
+          {
+            "elapsed_s": 3.5469999999913853,
+            "available_ram_bytes": 16473014272
+          },
+          {
+            "elapsed_s": 3.6410000000032596,
+            "available_ram_bytes": 16476057600
+          },
+          {
+            "elapsed_s": 3.7660000000032596,
+            "available_ram_bytes": 16465805312
+          },
+          {
+            "elapsed_s": 3.875,
+            "available_ram_bytes": 16472293376
+          },
+          {
+            "elapsed_s": 3.9839999999967404,
+            "available_ram_bytes": 16467054592
+          },
+          {
+            "elapsed_s": 4.0939999999827705,
+            "available_ram_bytes": 16471740416
+          },
+          {
+            "elapsed_s": 4.203000000008615,
+            "available_ram_bytes": 16443912192
+          },
+          {
+            "elapsed_s": 4.296999999991385,
+            "available_ram_bytes": 16475488256
+          },
+          {
+            "elapsed_s": 4.405999999988126,
+            "available_ram_bytes": 16472588288
+          },
+          {
+            "elapsed_s": 4.51600000000326,
+            "available_ram_bytes": 16465797120
+          },
+          {
+            "elapsed_s": 4.625,
+            "available_ram_bytes": 16476532736
+          },
+          {
+            "elapsed_s": 4.7189999999827705,
+            "available_ram_bytes": 16461742080
+          },
+          {
+            "elapsed_s": 4.828000000008615,
+            "available_ram_bytes": 16473595904
+          },
+          {
+            "elapsed_s": 4.937999999994645,
+            "available_ram_bytes": 16465629184
+          },
+          {
+            "elapsed_s": 5.046999999991385,
+            "available_ram_bytes": 16469270528
+          },
+          {
+            "elapsed_s": 5.155999999988126,
+            "available_ram_bytes": 16471748608
+          },
+          {
+            "elapsed_s": 5.26600000000326,
+            "available_ram_bytes": 16471592960
+          },
+          {
+            "elapsed_s": 5.375,
+            "available_ram_bytes": 16472477696
+          },
+          {
+            "elapsed_s": 5.48399999999674,
+            "available_ram_bytes": 16460238848
+          },
+          {
+            "elapsed_s": 5.5939999999827705,
+            "available_ram_bytes": 16468803584
+          },
+          {
+            "elapsed_s": 5.703000000008615,
+            "available_ram_bytes": 16455487488
+          },
+          {
+            "elapsed_s": 5.812999999994645,
+            "available_ram_bytes": 16469348352
+          },
+          {
+            "elapsed_s": 5.937999999994645,
+            "available_ram_bytes": 16462061568
+          },
+          {
+            "elapsed_s": 6.046999999991385,
+            "available_ram_bytes": 16464158720
+          },
+          {
+            "elapsed_s": 6.155999999988126,
+            "available_ram_bytes": 16469966848
+          },
+          {
+            "elapsed_s": 6.26600000000326,
+            "available_ram_bytes": 16463319040
+          },
+          {
+            "elapsed_s": 6.35899999999674,
+            "available_ram_bytes": 16470233088
+          },
+          {
+            "elapsed_s": 6.4689999999827705,
+            "available_ram_bytes": 16457297920
+          },
+          {
+            "elapsed_s": 6.578000000008615,
+            "available_ram_bytes": 16468381696
+          },
+          {
+            "elapsed_s": 6.687999999994645,
+            "available_ram_bytes": 16472092672
+          },
+          {
+            "elapsed_s": 6.796999999991385,
+            "available_ram_bytes": 16438435840
+          },
+          {
+            "elapsed_s": 6.89100000000326,
+            "available_ram_bytes": 16467398656
+          },
+          {
+            "elapsed_s": 7.0,
+            "available_ram_bytes": 16463175680
+          },
+          {
+            "elapsed_s": 7.10899999999674,
+            "available_ram_bytes": 16467898368
+          },
+          {
+            "elapsed_s": 7.2189999999827705,
+            "available_ram_bytes": 16469434368
+          },
+          {
+            "elapsed_s": 7.328000000008615,
+            "available_ram_bytes": 16467705856
+          },
+          {
+            "elapsed_s": 7.421999999991385,
+            "available_ram_bytes": 16468283392
+          },
+          {
+            "elapsed_s": 7.546999999991385,
+            "available_ram_bytes": 16457330688
+          },
+          {
+            "elapsed_s": 7.64100000000326,
+            "available_ram_bytes": 16465940480
+          },
+          {
+            "elapsed_s": 7.75,
+            "available_ram_bytes": 16468987904
+          },
+          {
+            "elapsed_s": 7.85899999999674,
+            "available_ram_bytes": 16443109376
+          },
+          {
+            "elapsed_s": 7.9689999999827705,
+            "available_ram_bytes": 16457777152
+          },
+          {
+            "elapsed_s": 8.09399999998277,
+            "available_ram_bytes": 16460861440
+          },
+          {
+            "elapsed_s": 8.203000000008615,
+            "available_ram_bytes": 16466075648
+          },
+          {
+            "elapsed_s": 8.296999999991385,
+            "available_ram_bytes": 16467423232
+          },
+          {
+            "elapsed_s": 8.421999999991385,
+            "available_ram_bytes": 16467554304
+          },
+          {
+            "elapsed_s": 8.530999999988126,
+            "available_ram_bytes": 16459821056
+          },
+          {
+            "elapsed_s": 8.64100000000326,
+            "available_ram_bytes": 16467734528
+          },
+          {
+            "elapsed_s": 8.75,
+            "available_ram_bytes": 16457252864
+          },
+          {
+            "elapsed_s": 8.84399999998277,
+            "available_ram_bytes": 16437981184
+          },
+          {
+            "elapsed_s": 8.953000000008615,
+            "available_ram_bytes": 16457707520
+          },
+          {
+            "elapsed_s": 9.062999999994645,
+            "available_ram_bytes": 16464175104
+          },
+          {
+            "elapsed_s": 9.171999999991385,
+            "available_ram_bytes": 16463659008
+          },
+          {
+            "elapsed_s": 9.26600000000326,
+            "available_ram_bytes": 16457666560
+          },
+          {
+            "elapsed_s": 9.375,
+            "available_ram_bytes": 16458756096
+          },
+          {
+            "elapsed_s": 9.48399999999674,
+            "available_ram_bytes": 16453574656
+          },
+          {
+            "elapsed_s": 9.59399999998277,
+            "available_ram_bytes": 16464494592
+          },
+          {
+            "elapsed_s": 9.703000000008615,
+            "available_ram_bytes": 16456667136
+          },
+          {
+            "elapsed_s": 9.812999999994645,
+            "available_ram_bytes": 16453046272
+          },
+          {
+            "elapsed_s": 9.953000000008615,
+            "available_ram_bytes": 16454664192
+          },
+          {
+            "elapsed_s": 10.046999999991385,
+            "available_ram_bytes": 16458092544
+          },
+          {
+            "elapsed_s": 10.155999999988126,
+            "available_ram_bytes": 16462028800
+          },
+          {
+            "elapsed_s": 10.26600000000326,
+            "available_ram_bytes": 16453967872
+          },
+          {
+            "elapsed_s": 10.375,
+            "available_ram_bytes": 16443097088
+          },
+          {
+            "elapsed_s": 10.48399999999674,
+            "available_ram_bytes": 16449998848
+          },
+          {
+            "elapsed_s": 10.59399999998277,
+            "available_ram_bytes": 16454225920
+          },
+          {
+            "elapsed_s": 10.703000000008615,
+            "available_ram_bytes": 16450805760
+          },
+          {
+            "elapsed_s": 10.812999999994645,
+            "available_ram_bytes": 16454479872
+          },
+          {
+            "elapsed_s": 10.905999999988126,
+            "available_ram_bytes": 16457105408
+          },
+          {
+            "elapsed_s": 11.01600000000326,
+            "available_ram_bytes": 16456220672
+          },
+          {
+            "elapsed_s": 11.125,
+            "available_ram_bytes": 16458899456
+          },
+          {
+            "elapsed_s": 11.23399999999674,
+            "available_ram_bytes": 16819949568
+          },
+          {
+            "elapsed_s": 11.34399999998277,
+            "available_ram_bytes": 18598522880
+          }
+        ],
+        "streams": "stdout.log merges stdout and stderr"
+      },
+      "effective": {
+        "context_size": 2048,
+        "gpu_layers_loaded": 29,
+        "gpu_layers_total": 29,
+        "cache_type_k": "f16",
+        "cache_type_v": "f16",
+        "flash_attention": "on",
+        "automatic_fit": false,
+        "fit_verification": "explicit --fit off, pinned runtime, no fit diagnostic",
+        "parallel": 1
+      }
+    },
+    {
+      "label": "F16",
+      "repeat": 2,
+      "status": "SUCCESS",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "context_size": 2048,
+        "chunks": 32,
+        "batch_size": 512,
+        "n_seq": 1,
+        "targets_per_chunk": 1023,
+        "total_scored_tokens": 32736,
+        "cumulative": [
+          {
+            "offset": 0,
+            "ppl": 12.1435,
+            "mean_nll": 2.496792,
+            "nll_standard_error": 0.105796
+          },
+          {
+            "offset": 2048,
+            "ppl": 15.7097,
+            "mean_nll": 2.754278,
+            "nll_standard_error": 0.076861
+          },
+          {
+            "offset": 4096,
+            "ppl": 15.9392,
+            "mean_nll": 2.768784,
+            "nll_standard_error": 0.062291
+          },
+          {
+            "offset": 6144,
+            "ppl": 15.7427,
+            "mean_nll": 2.75638,
+            "nll_standard_error": 0.054027
+          },
+          {
+            "offset": 8192,
+            "ppl": 16.3725,
+            "mean_nll": 2.795601,
+            "nll_standard_error": 0.049696
+          },
+          {
+            "offset": 10240,
+            "ppl": 14.1078,
+            "mean_nll": 2.646731,
+            "nll_standard_error": 0.04441
+          },
+          {
+            "offset": 12288,
+            "ppl": 12.6489,
+            "mean_nll": 2.537572,
+            "nll_standard_error": 0.040505
+          },
+          {
+            "offset": 14336,
+            "ppl": 12.8178,
+            "mean_nll": 2.550839,
+            "nll_standard_error": 0.038116
+          },
+          {
+            "offset": 16384,
+            "ppl": 13.5409,
+            "mean_nll": 2.605711,
+            "nll_standard_error": 0.035998
+          },
+          {
+            "offset": 18432,
+            "ppl": 13.602,
+            "mean_nll": 2.610219,
+            "nll_standard_error": 0.034324
+          },
+          {
+            "offset": 20480,
+            "ppl": 13.8441,
+            "mean_nll": 2.627856,
+            "nll_standard_error": 0.032783
+          },
+          {
+            "offset": 22528,
+            "ppl": 14.1717,
+            "mean_nll": 2.651247,
+            "nll_standard_error": 0.031321
+          },
+          {
+            "offset": 24576,
+            "ppl": 14.1564,
+            "mean_nll": 2.650165,
+            "nll_standard_error": 0.030028
+          },
+          {
+            "offset": 26624,
+            "ppl": 14.3717,
+            "mean_nll": 2.665258,
+            "nll_standard_error": 0.028896
+          },
+          {
+            "offset": 28672,
+            "ppl": 14.496,
+            "mean_nll": 2.673873,
+            "nll_standard_error": 0.027891
+          },
+          {
+            "offset": 30720,
+            "ppl": 14.8018,
+            "mean_nll": 2.694748,
+            "nll_standard_error": 0.026973
+          },
+          {
+            "offset": 32768,
+            "ppl": 14.8454,
+            "mean_nll": 2.697692,
+            "nll_standard_error": 0.026123
+          },
+          {
+            "offset": 34816,
+            "ppl": 14.9691,
+            "mean_nll": 2.705987,
+            "nll_standard_error": 0.025369
+          },
+          {
+            "offset": 36864,
+            "ppl": 14.7053,
+            "mean_nll": 2.688211,
+            "nll_standard_error": 0.024757
+          },
+          {
+            "offset": 38912,
+            "ppl": 14.3253,
+            "mean_nll": 2.662025,
+            "nll_standard_error": 0.024064
+          },
+          {
+            "offset": 40960,
+            "ppl": 14.4073,
+            "mean_nll": 2.667735,
+            "nll_standard_error": 0.023506
+          },
+          {
+            "offset": 43008,
+            "ppl": 14.5717,
+            "mean_nll": 2.679084,
+            "nll_standard_error": 0.023057
+          },
+          {
+            "offset": 45056,
+            "ppl": 14.7202,
+            "mean_nll": 2.68922,
+            "nll_standard_error": 0.022552
+          },
+          {
+            "offset": 47104,
+            "ppl": 14.8174,
+            "mean_nll": 2.6958,
+            "nll_standard_error": 0.022174
+          },
+          {
+            "offset": 49152,
+            "ppl": 14.8988,
+            "mean_nll": 2.701278,
+            "nll_standard_error": 0.021731
+          },
+          {
+            "offset": 51200,
+            "ppl": 14.9274,
+            "mean_nll": 2.703201,
+            "nll_standard_error": 0.02136
+          },
+          {
+            "offset": 53248,
+            "ppl": 15.1784,
+            "mean_nll": 2.719871,
+            "nll_standard_error": 0.020982
+          },
+          {
+            "offset": 55296,
+            "ppl": 15.435,
+            "mean_nll": 2.736637,
+            "nll_standard_error": 0.020651
+          },
+          {
+            "offset": 57344,
+            "ppl": 15.4802,
+            "mean_nll": 2.739562,
+            "nll_standard_error": 0.020283
+          },
+          {
+            "offset": 59392,
+            "ppl": 15.4389,
+            "mean_nll": 2.736889,
+            "nll_standard_error": 0.019966
+          },
+          {
+            "offset": 61440,
+            "ppl": 15.2057,
+            "mean_nll": 2.721672,
+            "nll_standard_error": 0.019618
+          },
+          {
+            "offset": 63488,
+            "ppl": 15.0861,
+            "mean_nll": 2.713774,
+            "nll_standard_error": 0.019355
+          }
+        ],
+        "chunk_mean_nll": [
+          2.496792,
+          3.0117639999999994,
+          2.797796000000001,
+          2.719168,
+          2.9524849999999994,
+          1.902381,
+          1.882617999999999,
+          2.643708,
+          3.0446869999999997,
+          2.6507910000000017,
+          2.804226,
+          2.9085480000000032,
+          2.637180999999998,
+          2.8614669999999975,
+          2.7944829999999996,
+          3.0078730000000036,
+          2.744796000000001,
+          2.8470019999999963,
+          2.3682429999999997,
+          2.164490999999998,
+          2.7819350000000043,
+          2.9174129999999963,
+          2.912212000000004,
+          2.847140000000003,
+          2.83274999999999,
+          2.7512760000000043,
+          3.153290999999996,
+          3.1893189999999976,
+          2.821461999999997,
+          2.659372000000019,
+          2.2651619999999895,
+          2.4689359999999994
+        ],
+        "mean_nll": 2.713774,
+        "perplexity": 15.0861,
+        "final_ppl_standard_error": 0.29199,
+        "upstream_error_interpretation": "Unpaired upstream diagnostic; not a confidence interval.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      },
+      "error": null,
+      "evidence_dir": "perplexity/F16-r2",
+      "baseline": {
+        "monotonic_s": 145088.031,
+        "gpu_index": "0",
+        "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+        "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+        "driver_version": "610.88",
+        "vram_total_mib": 12282.0,
+        "vram_used_mib": 1471.0,
+        "gpu_utilization_percent": 89.0,
+        "gpu_temperature_c": 62.0,
+        "gpu_telemetry_error": null,
+        "system_ram_total_mib": 32402.54296875,
+        "system_ram_used_mib": 14287.67578125,
+        "system_ram_available_mib": 18114.8671875,
+        "process_tree_rss_mib": null
+      },
+      "process": {
+        "argv": [
+          "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+          "-m",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+          "-f",
+          "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+          "-c",
+          "2048",
+          "-b",
+          "512",
+          "-ub",
+          "128",
+          "-t",
+          "6",
+          "-ngl",
+          "99",
+          "-fa",
+          "on",
+          "--fit",
+          "off",
+          "-ctk",
+          "f16",
+          "-ctv",
+          "f16",
+          "--chunks",
+          "32",
+          "--ppl-output-type",
+          "1",
+          "--no-escape",
+          "--verbosity",
+          "4"
+        ],
+        "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+        "status": "SUCCESS",
+        "error": null,
+        "exit_code": 0,
+        "timeout_seconds": 600,
+        "wall_s": 14.187999999994645,
+        "cleanup": {
+          "success": true,
+          "remaining_pids": [],
+          "exit_code": 0,
+          "errors": []
+        },
+        "resources": {
+          "peak_vram_mib": 5292.0,
+          "peak_process_rss_mib": 4750.30859375,
+          "peak_system_ram_used_mib": 19012.01171875,
+          "telemetry_samples": 28,
+          "sample_interval_seconds": 0.5,
+          "gpu_process_vram_mib": null
+        },
+        "guards": [
+          {
+            "elapsed_s": 0.03200000000651926,
+            "available_ram_bytes": 18996670464
+          },
+          {
+            "elapsed_s": 0.14100000000325963,
+            "available_ram_bytes": 18791051264
+          },
+          {
+            "elapsed_s": 0.25,
+            "available_ram_bytes": 18733854720
+          },
+          {
+            "elapsed_s": 0.360000000015134,
+            "available_ram_bytes": 18650411008
+          },
+          {
+            "elapsed_s": 0.46900000001187436,
+            "available_ram_bytes": 18622857216
+          },
+          {
+            "elapsed_s": 0.5780000000086147,
+            "available_ram_bytes": 18604769280
+          },
+          {
+            "elapsed_s": 0.6879999999946449,
+            "available_ram_bytes": 18625011712
+          },
+          {
+            "elapsed_s": 0.7820000000065193,
+            "available_ram_bytes": 18593828864
+          },
+          {
+            "elapsed_s": 0.8910000000032596,
+            "available_ram_bytes": 18326659072
+          },
+          {
+            "elapsed_s": 1.0,
+            "available_ram_bytes": 17973538816
+          },
+          {
+            "elapsed_s": 1.110000000015134,
+            "available_ram_bytes": 17604739072
+          },
+          {
+            "elapsed_s": 1.2190000000118744,
+            "available_ram_bytes": 17345773568
+          },
+          {
+            "elapsed_s": 1.312999999994645,
+            "available_ram_bytes": 16988585984
+          },
+          {
+            "elapsed_s": 1.422000000020489,
+            "available_ram_bytes": 16645062656
+          },
+          {
+            "elapsed_s": 1.5320000000065193,
+            "available_ram_bytes": 16301268992
+          },
+          {
+            "elapsed_s": 1.6410000000032596,
+            "available_ram_bytes": 15938412544
+          },
+          {
+            "elapsed_s": 1.75,
+            "available_ram_bytes": 15595270144
+          },
+          {
+            "elapsed_s": 1.860000000015134,
+            "available_ram_bytes": 15226085376
+          },
+          {
+            "elapsed_s": 1.9690000000118744,
+            "available_ram_bytes": 15076044800
+          },
+          {
+            "elapsed_s": 2.062999999994645,
+            "available_ram_bytes": 15092645888
+          },
+          {
+            "elapsed_s": 2.172000000020489,
+            "available_ram_bytes": 15076601856
+          },
+          {
+            "elapsed_s": 2.2820000000065193,
+            "available_ram_bytes": 15005179904
+          },
+          {
+            "elapsed_s": 2.3910000000032596,
+            "available_ram_bytes": 14984417280
+          },
+          {
+            "elapsed_s": 2.485000000015134,
+            "available_ram_bytes": 14664138752
+          },
+          {
+            "elapsed_s": 2.5940000000118744,
+            "available_ram_bytes": 14357372928
+          },
+          {
+            "elapsed_s": 2.7030000000086147,
+            "available_ram_bytes": 14048239616
+          },
+          {
+            "elapsed_s": 2.812999999994645,
+            "available_ram_bytes": 14046363648
+          },
+          {
+            "elapsed_s": 2.922000000020489,
+            "available_ram_bytes": 14178537472
+          },
+          {
+            "elapsed_s": 3.047000000020489,
+            "available_ram_bytes": 14194548736
+          },
+          {
+            "elapsed_s": 3.1570000000065193,
+            "available_ram_bytes": 14193553408
+          },
+          {
+            "elapsed_s": 3.2660000000032596,
+            "available_ram_bytes": 14192951296
+          },
+          {
+            "elapsed_s": 3.3910000000032596,
+            "available_ram_bytes": 14192115712
+          },
+          {
+            "elapsed_s": 3.5,
+            "available_ram_bytes": 14190391296
+          },
+          {
+            "elapsed_s": 3.610000000015134,
+            "available_ram_bytes": 14189244416
+          },
+          {
+            "elapsed_s": 3.7190000000118744,
+            "available_ram_bytes": 14187876352
+          },
+          {
+            "elapsed_s": 3.8280000000086147,
+            "available_ram_bytes": 14187827200
+          },
+          {
+            "elapsed_s": 3.937999999994645,
+            "available_ram_bytes": 14176165888
+          },
+          {
+            "elapsed_s": 4.047000000020489,
+            "available_ram_bytes": 14178959360
+          },
+          {
+            "elapsed_s": 4.14100000000326,
+            "available_ram_bytes": 14179565568
+          },
+          {
+            "elapsed_s": 4.25,
+            "available_ram_bytes": 14183297024
+          },
+          {
+            "elapsed_s": 4.360000000015134,
+            "available_ram_bytes": 14182821888
+          },
+          {
+            "elapsed_s": 4.469000000011874,
+            "available_ram_bytes": 14183350272
+          },
+          {
+            "elapsed_s": 4.578000000008615,
+            "available_ram_bytes": 14183305216
+          },
+          {
+            "elapsed_s": 4.687999999994645,
+            "available_ram_bytes": 14181277696
+          },
+          {
+            "elapsed_s": 4.797000000020489,
+            "available_ram_bytes": 14182817792
+          },
+          {
+            "elapsed_s": 4.907000000006519,
+            "available_ram_bytes": 14182412288
+          },
+          {
+            "elapsed_s": 5.01600000000326,
+            "available_ram_bytes": 14172835840
+          },
+          {
+            "elapsed_s": 5.125,
+            "available_ram_bytes": 14177644544
+          },
+          {
+            "elapsed_s": 5.219000000011874,
+            "available_ram_bytes": 14174208000
+          },
+          {
+            "elapsed_s": 5.328000000008615,
+            "available_ram_bytes": 14177120256
+          },
+          {
+            "elapsed_s": 5.437999999994645,
+            "available_ram_bytes": 14176534528
+          },
+          {
+            "elapsed_s": 5.547000000020489,
+            "available_ram_bytes": 14176362496
+          },
+          {
+            "elapsed_s": 5.657000000006519,
+            "available_ram_bytes": 14175764480
+          },
+          {
+            "elapsed_s": 5.76600000000326,
+            "available_ram_bytes": 14174654464
+          },
+          {
+            "elapsed_s": 5.907000000006519,
+            "available_ram_bytes": 14174625792
+          },
+          {
+            "elapsed_s": 6.01600000000326,
+            "available_ram_bytes": 14165676032
+          },
+          {
+            "elapsed_s": 6.125,
+            "available_ram_bytes": 14168625152
+          },
+          {
+            "elapsed_s": 6.26600000000326,
+            "available_ram_bytes": 14169444352
+          },
+          {
+            "elapsed_s": 6.375,
+            "available_ram_bytes": 14171447296
+          },
+          {
+            "elapsed_s": 6.485000000015134,
+            "available_ram_bytes": 14170882048
+          },
+          {
+            "elapsed_s": 6.578000000008615,
+            "available_ram_bytes": 14170341376
+          },
+          {
+            "elapsed_s": 6.687999999994645,
+            "available_ram_bytes": 14169878528
+          },
+          {
+            "elapsed_s": 6.797000000020489,
+            "available_ram_bytes": 14168862720
+          },
+          {
+            "elapsed_s": 6.907000000006519,
+            "available_ram_bytes": 14168526848
+          },
+          {
+            "elapsed_s": 7.01600000000326,
+            "available_ram_bytes": 14162235392
+          },
+          {
+            "elapsed_s": 7.110000000015134,
+            "available_ram_bytes": 14167998464
+          },
+          {
+            "elapsed_s": 7.219000000011874,
+            "available_ram_bytes": 14167035904
+          },
+          {
+            "elapsed_s": 7.360000000015134,
+            "available_ram_bytes": 14171811840
+          },
+          {
+            "elapsed_s": 7.469000000011874,
+            "available_ram_bytes": 14170550272
+          },
+          {
+            "elapsed_s": 7.562999999994645,
+            "available_ram_bytes": 14171369472
+          },
+          {
+            "elapsed_s": 7.703000000008615,
+            "available_ram_bytes": 14171144192
+          },
+          {
+            "elapsed_s": 7.812999999994645,
+            "available_ram_bytes": 14146289664
+          },
+          {
+            "elapsed_s": 7.907000000006519,
+            "available_ram_bytes": 14164533248
+          },
+          {
+            "elapsed_s": 8.01600000000326,
+            "available_ram_bytes": 14156578816
+          },
+          {
+            "elapsed_s": 8.14100000000326,
+            "available_ram_bytes": 14160633856
+          },
+          {
+            "elapsed_s": 8.235000000015134,
+            "available_ram_bytes": 14159536128
+          },
+          {
+            "elapsed_s": 8.360000000015134,
+            "available_ram_bytes": 14163636224
+          },
+          {
+            "elapsed_s": 8.469000000011874,
+            "available_ram_bytes": 14163574784
+          },
+          {
+            "elapsed_s": 8.562999999994645,
+            "available_ram_bytes": 14163251200
+          },
+          {
+            "elapsed_s": 8.672000000020489,
+            "available_ram_bytes": 14163046400
+          },
+          {
+            "elapsed_s": 8.78200000000652,
+            "available_ram_bytes": 14163128320
+          },
+          {
+            "elapsed_s": 8.89100000000326,
+            "available_ram_bytes": 14162444288
+          },
+          {
+            "elapsed_s": 9.0,
+            "available_ram_bytes": 14164082688
+          },
+          {
+            "elapsed_s": 9.14100000000326,
+            "available_ram_bytes": 14168076288
+          },
+          {
+            "elapsed_s": 9.25,
+            "available_ram_bytes": 14167359488
+          },
+          {
+            "elapsed_s": 9.344000000011874,
+            "available_ram_bytes": 14151057408
+          },
+          {
+            "elapsed_s": 9.5,
+            "available_ram_bytes": 14169825280
+          },
+          {
+            "elapsed_s": 9.610000000015134,
+            "available_ram_bytes": 14170079232
+          },
+          {
+            "elapsed_s": 9.703000000008615,
+            "available_ram_bytes": 14170308608
+          },
+          {
+            "elapsed_s": 9.844000000011874,
+            "available_ram_bytes": 14170042368
+          },
+          {
+            "elapsed_s": 9.969000000011874,
+            "available_ram_bytes": 14162489344
+          },
+          {
+            "elapsed_s": 10.078000000008615,
+            "available_ram_bytes": 14164471808
+          },
+          {
+            "elapsed_s": 10.219000000011874,
+            "available_ram_bytes": 14166781952
+          },
+          {
+            "elapsed_s": 10.328000000008615,
+            "available_ram_bytes": 14163599360
+          },
+          {
+            "elapsed_s": 10.422000000020489,
+            "available_ram_bytes": 14165540864
+          },
+          {
+            "elapsed_s": 10.53200000000652,
+            "available_ram_bytes": 14165467136
+          },
+          {
+            "elapsed_s": 10.65700000000652,
+            "available_ram_bytes": 14165250048
+          },
+          {
+            "elapsed_s": 10.75,
+            "available_ram_bytes": 14164873216
+          },
+          {
+            "elapsed_s": 10.860000000015134,
+            "available_ram_bytes": 14164602880
+          },
+          {
+            "elapsed_s": 10.969000000011874,
+            "available_ram_bytes": 14156922880
+          },
+          {
+            "elapsed_s": 11.078000000008615,
+            "available_ram_bytes": 14153621504
+          },
+          {
+            "elapsed_s": 11.172000000020489,
+            "available_ram_bytes": 14161240064
+          },
+          {
+            "elapsed_s": 11.28200000000652,
+            "available_ram_bytes": 14158487552
+          },
+          {
+            "elapsed_s": 11.39100000000326,
+            "available_ram_bytes": 14159933440
+          },
+          {
+            "elapsed_s": 11.5,
+            "available_ram_bytes": 14163034112
+          },
+          {
+            "elapsed_s": 11.610000000015134,
+            "available_ram_bytes": 14163435520
+          },
+          {
+            "elapsed_s": 11.719000000011874,
+            "available_ram_bytes": 14163263488
+          },
+          {
+            "elapsed_s": 11.828000000008615,
+            "available_ram_bytes": 14162763776
+          },
+          {
+            "elapsed_s": 11.937999999994645,
+            "available_ram_bytes": 14137389056
+          },
+          {
+            "elapsed_s": 12.047000000020489,
+            "available_ram_bytes": 14156795904
+          },
+          {
+            "elapsed_s": 12.14100000000326,
+            "available_ram_bytes": 14158372864
+          },
+          {
+            "elapsed_s": 12.25,
+            "available_ram_bytes": 14156439552
+          },
+          {
+            "elapsed_s": 12.360000000015134,
+            "available_ram_bytes": 14157021184
+          },
+          {
+            "elapsed_s": 12.469000000011874,
+            "available_ram_bytes": 14156570624
+          },
+          {
+            "elapsed_s": 12.578000000008615,
+            "available_ram_bytes": 14156750848
+          },
+          {
+            "elapsed_s": 12.687999999994645,
+            "available_ram_bytes": 14156083200
+          },
+          {
+            "elapsed_s": 12.797000000020489,
+            "available_ram_bytes": 14155599872
+          },
+          {
+            "elapsed_s": 12.90700000000652,
+            "available_ram_bytes": 14155628544
+          },
+          {
+            "elapsed_s": 13.01600000000326,
+            "available_ram_bytes": 14150287360
+          },
+          {
+            "elapsed_s": 13.125,
+            "available_ram_bytes": 14151774208
+          },
+          {
+            "elapsed_s": 13.235000000015134,
+            "available_ram_bytes": 14150942720
+          },
+          {
+            "elapsed_s": 13.328000000008615,
+            "available_ram_bytes": 14151467008
+          },
+          {
+            "elapsed_s": 13.437999999994645,
+            "available_ram_bytes": 14151979008
+          },
+          {
+            "elapsed_s": 13.547000000020489,
+            "available_ram_bytes": 14151778304
+          },
+          {
+            "elapsed_s": 13.65700000000652,
+            "available_ram_bytes": 14151610368
+          },
+          {
+            "elapsed_s": 13.76600000000326,
+            "available_ram_bytes": 14151389184
+          },
+          {
+            "elapsed_s": 13.875,
+            "available_ram_bytes": 15085096960
+          },
+          {
+            "elapsed_s": 13.985000000015134,
+            "available_ram_bytes": 17686839296
+          },
+          {
+            "elapsed_s": 14.094000000011874,
+            "available_ram_bytes": 19067584512
+          }
+        ],
+        "streams": "stdout.log merges stdout and stderr"
+      },
+      "effective": {
+        "context_size": 2048,
+        "gpu_layers_loaded": 29,
+        "gpu_layers_total": 29,
+        "cache_type_k": "f16",
+        "cache_type_v": "f16",
+        "flash_attention": "on",
+        "automatic_fit": false,
+        "fit_verification": "explicit --fit off, pinned runtime, no fit diagnostic",
+        "parallel": 1
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "F16-r1",
+      "candidate": "Q8_0-r1",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "reference_perplexity": 15.0861,
+        "candidate_perplexity": 15.1083,
+        "delta_mean_nll": 0.0014730000000002796,
+        "perplexity_ratio": 1.001474085397365,
+        "perplexity_change_percent": 0.14740853973649626,
+        "paired_chunk_delta_mean_nll": [
+          0.0011730000000000906,
+          -0.0003269999999999662,
+          -0.003267000000000131,
+          0.0008929999999995886,
+          0.00837300000000063,
+          0.0021489999999992904,
+          -0.0042549999999987875,
+          -0.0008829999999981908,
+          -0.011047000000001361,
+          -0.0033290000000043563,
+          0.007374000000002212,
+          0.007045999999995445,
+          0.007839000000004148,
+          0.0014630000000011023,
+          0.006118000000000734,
+          0.006471999999995148,
+          0.010826000000001557,
+          0.011046000000007439,
+          -0.0010380000000012046,
+          -5.999999999062311e-06,
+          -0.004977000000003784,
+          0.009902999999994222,
+          -0.0020959999999945467,
+          0.00015799999999188685,
+          0.0014420000000114896,
+          0.0033159999999980982,
+          0.0002819999999985612,
+          0.002416000000010854,
+          0.005459999999999354,
+          -0.00453400000002091,
+          -0.002406999999990944,
+          -0.008446999999989657
+        ],
+        "exploratory_block_bootstrap": {
+          "seed": 42,
+          "samples": 10000,
+          "block_chunks": 4,
+          "blocks": 8,
+          "paired_block_delta_mean_nll": [
+            -0.0003820000000001045,
+            0.0013460000000007355,
+            1.0999999997984844e-05,
+            0.005473000000000283,
+            0.005207000000002182,
+            0.0007469999999969446,
+            0.0018640000000047507,
+            -0.0024820000000005393
+          ],
+          "confidence_level": 0.95,
+          "delta_mean_nll_interval": [
+            -0.0002028750000007129,
+            0.0032580000000005382
+          ],
+          "perplexity_ratio_interval": [
+            0.9997971455777405,
+            1.0032633130504065
+          ],
+          "perplexity_change_percent_interval": [
+            -0.020285442225949354,
+            0.3263313050406393
+          ],
+          "method": "Percentile bootstrap of paired, disjoint contiguous chunk blocks.",
+          "interpretation": "Exploratory corpus-block interval, conditional on this corpus and protocol. The small number of blocks and dependence between blocks limit coverage; not an IID-token interval, run-to-run uncertainty, or general-quality estimate."
+        },
+        "metric_interpretation": "Positive delta NLL means worse next-token likelihood on this corpus. The PPL ratio is exp(delta mean NLL) from rounded NLL values. PPL percentage change is not percentage loss in general model quality.",
+        "pairing_requirement": "Caller must independently verify identical corpus bytes, tokenizer, token positions, and runtime configuration; the log does not establish these identities.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      }
+    },
+    {
+      "reference": "F16-r1",
+      "candidate": "Q4_K_M-r1",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "reference_perplexity": 15.0861,
+        "candidate_perplexity": 16.3602,
+        "delta_mean_nll": 0.0810789999999999,
+        "perplexity_ratio": 1.0844565652514575,
+        "perplexity_change_percent": 8.44565652514575,
+        "paired_chunk_delta_mean_nll": [
+          0.12929499999999994,
+          0.027163000000000714,
+          0.05237199999999831,
+          0.06047400000000103,
+          0.12483100000000036,
+          0.1107769999999988,
+          0.038183000000001854,
+          0.13319299999999856,
+          0.05356700000000103,
+          0.07406500000000094,
+          0.0911830000000009,
+          0.0592689999999898,
+          0.052530000000004407,
+          0.03287800000000374,
+          0.05883500000000197,
+          0.05840899999999749,
+          0.034658999999997775,
+          0.05155900000000457,
+          0.07455999999999818,
+          0.05047800000000535,
+          0.09617599999999982,
+          0.06696399999999869,
+          0.09435799999999261,
+          0.07407000000000608,
+          0.05787699999999063,
+          0.05837500000001228,
+          0.12341800000000092,
+          0.10946599999999762,
+          0.14260400000000573,
+          0.14727199999998675,
+          0.10542800000000341,
+          0.1502399999999966
+        ],
+        "exploratory_block_bootstrap": {
+          "seed": 42,
+          "samples": 10000,
+          "block_chunks": 4,
+          "blocks": 8,
+          "paired_block_delta_mean_nll": [
+            0.067326,
+            0.10174599999999989,
+            0.06952099999999817,
+            0.0506630000000019,
+            0.05281400000000147,
+            0.0828919999999993,
+            0.08728400000000036,
+            0.13638599999999812
+          ],
+          "confidence_level": 0.95,
+          "delta_mean_nll_interval": [
+            0.06425261562500038,
+            0.1004051374999998
+          ],
+          "perplexity_ratio_interval": [
+            1.06636174437815,
+            1.1056187549701038
+          ],
+          "perplexity_change_percent_interval": [
+            6.636174437814983,
+            10.561875497010366
+          ],
+          "method": "Percentile bootstrap of paired, disjoint contiguous chunk blocks.",
+          "interpretation": "Exploratory corpus-block interval, conditional on this corpus and protocol. The small number of blocks and dependence between blocks limit coverage; not an IID-token interval, run-to-run uncertainty, or general-quality estimate."
+        },
+        "metric_interpretation": "Positive delta NLL means worse next-token likelihood on this corpus. The PPL ratio is exp(delta mean NLL) from rounded NLL values. PPL percentage change is not percentage loss in general model quality.",
+        "pairing_requirement": "Caller must independently verify identical corpus bytes, tokenizer, token positions, and runtime configuration; the log does not establish these identities.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      }
+    }
+  ],
+  "reference_repeat": {
+    "reference": "F16-r1",
+    "candidate": "F16-r2",
+    "interpretation": "Numerical repeat drift; separate from corpus uncertainty",
+    "metrics": {
+      "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+      "reference_perplexity": 15.0861,
+      "candidate_perplexity": 15.0861,
+      "delta_mean_nll": 0.0,
+      "perplexity_ratio": 1.0,
+      "perplexity_change_percent": 0.0,
+      "paired_chunk_delta_mean_nll": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "metric_interpretation": "Positive delta NLL means worse next-token likelihood on this corpus. The PPL ratio is exp(delta mean NLL) from rounded NLL values. PPL percentage change is not percentage loss in general model quality.",
+      "pairing_requirement": "Caller must independently verify identical corpus bytes, tokenizer, token positions, and runtime configuration; the log does not establish these identities.",
+      "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+    }
+  },
+  "preflight": [
+    {
+      "argv": [
+        "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+        "--version"
+      ],
+      "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+      "status": "SUCCESS",
+      "error": null,
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "wall_s": 0.25,
+      "cleanup": {
+        "success": true,
+        "remaining_pids": [],
+        "exit_code": 0,
+        "errors": []
+      },
+      "resources": {},
+      "guards": [
+        {
+          "elapsed_s": 0.031000000017229468,
+          "available_ram_bytes": 19019665408
+        },
+        {
+          "elapsed_s": 0.15600000001722947,
+          "available_ram_bytes": 18820296704
+        }
+      ],
+      "streams": "separate stdout.log and stderr.log"
+    }
+  ],
+  "metrics_helper_sha256": "03c24150c6b6815fdaecfd8b1890191df5aaba51abc732fc47e9249cbfe68224",
+  "manifest_sha256": "161aec7bc371b2c718d4378dc8f92a62316d9ac7e10b25a76f6ed8d80993e6a3",
+  "asset_receipts": {
+    "runtime": {
+      "llama-perplexity.exe": "cc9b6422ac9bb7aaba390ecf19fc3d6d73e38072cfc87cae5e0ed6d7087f3c39",
+      "llama-quantize.exe": "ff306a447997d2c1deed5b02d1347580ea41dc8c3803fa33b93686ef91700653",
+      "llama-tokenize.exe": "49ac76768cc968b55096c3a2e97e7d5a5f1078c76f8ab06e1f79461eb9543fbb",
+      "llama-server.exe": "aa2e1f5c67be55f11be26ae58d643a545ca07c6de498f6f870330ac2f4dfec73",
+      "cublas64_12.dll": "e40202fe4223c1cd2d2dce7beec59e1ed61c7801bd827309183be9b50e358f4c",
+      "cublasLt64_12.dll": "2a896460bef60ed57ef32b0875812f355a6984e671d638bb632f5e8c1d7a831f",
+      "cudart64_12.dll": "d28e42265da7462162a54da6b7a99ea4fa2caf8139d862bb500db875d0b32dfc",
+      "ggml-base.dll": "645538131f61107314a1fb38ee43b392ce76a16d1a6811f065b693c9552d8e18",
+      "ggml-cpu-alderlake.dll": "79bd5a3a21e574963312518c43c99ce76d10aa80651f658ac00003aae1f3fe01",
+      "ggml-cpu-cannonlake.dll": "9959698ba5b224a2541d72f711ec856133e010ee95854b70fd034f2c56a4ee05",
+      "ggml-cpu-cascadelake.dll": "edf3ffb10c59cbce92880c82f9580aae8dbf9c41d7e798a5cd8b4ca0acb10167",
+      "ggml-cpu-cooperlake.dll": "b726f7689ec7b5f5b67aa37bacb8c36348450f535aaf86f68a6756b9f90c98a0",
+      "ggml-cpu-haswell.dll": "97302fa13b3fd496828e6f4936ac01433532880cf8277de6bc8b0117add0b816",
+      "ggml-cpu-icelake.dll": "d29a2b47db63d0acb29ca6314cc4a9e0579592d0bbde42926bcab525296bd464",
+      "ggml-cpu-ivybridge.dll": "b742628d4a73f24dad4a4c516d8600b7d50d2e7c07cf6011592bb0f0bda45349",
+      "ggml-cpu-piledriver.dll": "04540f47f6a6d1ccabbb9a92470a9d27ddff6c47cb015b38f9383ac83a93fc5f",
+      "ggml-cpu-sandybridge.dll": "96d99740a206893d081e61a2e2c32ea2b999be0cc82410182e232d2d8041a392",
+      "ggml-cpu-sapphirerapids.dll": "858ea2d8375a94d61d9a80e98ef8f8a88f1ef7c537e98eb69752129fab7cedd2",
+      "ggml-cpu-skylakex.dll": "2b6ac583bbea84b6649ebfbf771907df208c9bfac33d024adb430a853018b396",
+      "ggml-cpu-sse42.dll": "5c23106448a1edfb2683fcc955df017e8e4bdb3330114afa948c1870f8d7a91f",
+      "ggml-cpu-x64.dll": "9241c4023de3b08eadcb56314bf51ac2bd338b12c4008fa4950c30068c11afb6",
+      "ggml-cpu-zen4.dll": "b8f6bd5d70bc608cd2d752ae74bbf85925c2945267bb0eded15aab324ff9716a",
+      "ggml-cuda.dll": "8ca6d2e63709cab79f6c87ca3153e61e409aba6592e83c0c74bac74e222952d1",
+      "ggml-rpc.dll": "39948a2e2e40454421ac819cda1b4da56a12df93e2c00c2ebdd24df2c448c857",
+      "ggml.dll": "9865b315ce521f45b79c50f1d5cfb56cf9f94f186aac3ed0fceebd67f46e48c7",
+      "libomp.dll": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "llama-batched-bench-impl.dll": "ae139d30f4aa2a6b47279e6b9d1848c69f8ac7572c1f3ef3b9a239900fcc8c01",
+      "llama-bench-impl.dll": "52b07f0fd3a6004b2de6485c1f7f8f5438bf3709eea14dfcd30fc4ec2f57f067",
+      "llama-cli-impl.dll": "4d35886296714799c6ca5aece1ef3e036da7982abacd1056fdf6424a31f13b61",
+      "llama-common.dll": "a9590b558f417f54d17fc688961959b3f4a95038195732adc41faab1999b69e3",
+      "llama-completion-impl.dll": "04526c3dfea986a6e058609fb7d2944612b4f9f7fd5a50235e3b60fd4fbe2d94",
+      "llama-fit-params-impl.dll": "567911c481d9d6d9111b128de622bd9e1a201fe2fb6f060034b030794cc861a2",
+      "llama-perplexity-impl.dll": "52a6213fcb4f06494c8c0b72d52d863124877f4cf87301375a2fe0fa4b075fe2",
+      "llama-quantize-impl.dll": "bcaa4cf05a476f06a09f3911f84b6e2576280b5fd9f23e775c9997b4fce7b8f3",
+      "llama-server-impl.dll": "16913f79cdf57f0f80e618aeff139aa0ae096f8f935b06a02510c556e976d9d4",
+      "llama.dll": "d5fed9f3fe95f03dce3714500903763356122faf1ae98a6179e6490f090c3798",
+      "mtmd.dll": "5a8a0e95ea7b3da360e1ace6325fa441834a2b01fbe9c50639fb7f0c5d57c479"
+    },
+    "models": {
+      "F16": {
+        "sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+        "size_bytes": 4069679264
+      },
+      "Q8_0": {
+        "sha256": "eaf3c2bedbd50a31e1ea12d2c3fe2915b76d387f6928b0663870f36effa9c1fb",
+        "size_bytes": 2165039264
+      },
+      "Q4_K_M": {
+        "sha256": "f65e47f0fc79b76415cb4ae7871a91e6922fdb90fe64690a13d307974cd0d289",
+        "size_bytes": 1282439328
+      }
+    },
+    "corpus": {
+      "sha256": "8f3f3e7ac2b0b69ad89472eb847012088036c371b22a37bf7a25176458b7eb2c",
+      "size_bytes": 1296367
+    }
+  },
+  "hardware": {
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.3",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "physical_cpu_count": 6,
+    "telemetry_scope": "whole selected device; process-tree RSS may double-count shared pages",
+    "snapshot": {
+      "monotonic_s": 145046.953,
+      "gpu_index": "0",
+      "gpu_uuid": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "driver_version": "610.88",
+      "vram_total_mib": 12282.0,
+      "vram_used_mib": 1470.0,
+      "gpu_utilization_percent": 31.0,
+      "gpu_temperature_c": 44.0,
+      "gpu_telemetry_error": null,
+      "system_ram_total_mib": 32402.54296875,
+      "system_ram_used_mib": 14266.92578125,
+      "system_ram_available_mib": 18135.6171875,
+      "process_tree_rss_mib": null
+    }
+  },
+  "environment": {
+    "removed_names": [],
+    "explicit": {
+      "CUDA_VISIBLE_DEVICES": "GPU-ef1d32f1-00a8-ede3-944b-4401921843cf"
+    }
+  },
+  "runtime_version": "version: 0.4.1-dev (build 10964, commit b29c606e2)\nbuilt with Clang 20.1.8 for Windows x86_64"
+}

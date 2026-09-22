@@ -1,0 +1,32 @@
+{
+  "backend": "llama_cpp",
+  "server": "D:\\LocalLargeModel\\runtimes\\upstream\\llama-server.exe",
+  "model": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "quantization": "Q8_0",
+  "expected_model_sha256": "eaf3c2bedbd50a31e1ea12d2c3fe2915b76d387f6928b0663870f36effa9c1fb",
+  "repetitions": 1,
+  "seed": 42,
+  "quality": false,
+  "gpu_index": 0,
+  "load_timeout_seconds": 90,
+  "request_timeout_seconds": 90,
+  "sample_interval_seconds": 0.5,
+  "notes": "Uncontrolled desktop; rotating quantization order. Separate from likelihood workload.",
+  "cases": [
+    {
+      "name": "ctx2k",
+      "context_size": 2048,
+      "prompt_tokens": 1792,
+      "output_tokens": 128,
+      "gpu_layers": 99,
+      "threads": 6,
+      "batch_size": 512,
+      "ubatch_size": 128,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "flash_attention": "on",
+      "fallbacks": []
+    }
+  ]
+}

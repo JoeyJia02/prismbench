@@ -1,0 +1,90 @@
+{
+  "schema_version": "1",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "runtime_dir": "D:\\LocalLargeModel\\runtimes\\upstream",
+  "expected_runtime": {
+    "llama-perplexity.exe": "cc9b6422ac9bb7aaba390ecf19fc3d6d73e38072cfc87cae5e0ed6d7087f3c39",
+    "llama-quantize.exe": "ff306a447997d2c1deed5b02d1347580ea41dc8c3803fa33b93686ef91700653",
+    "llama-tokenize.exe": "49ac76768cc968b55096c3a2e97e7d5a5f1078c76f8ab06e1f79461eb9543fbb",
+    "llama-server.exe": "aa2e1f5c67be55f11be26ae58d643a545ca07c6de498f6f870330ac2f4dfec73",
+    "cublas64_12.dll": "e40202fe4223c1cd2d2dce7beec59e1ed61c7801bd827309183be9b50e358f4c",
+    "cublasLt64_12.dll": "2a896460bef60ed57ef32b0875812f355a6984e671d638bb632f5e8c1d7a831f",
+    "cudart64_12.dll": "d28e42265da7462162a54da6b7a99ea4fa2caf8139d862bb500db875d0b32dfc",
+    "ggml-base.dll": "645538131f61107314a1fb38ee43b392ce76a16d1a6811f065b693c9552d8e18",
+    "ggml-cpu-alderlake.dll": "79bd5a3a21e574963312518c43c99ce76d10aa80651f658ac00003aae1f3fe01",
+    "ggml-cpu-cannonlake.dll": "9959698ba5b224a2541d72f711ec856133e010ee95854b70fd034f2c56a4ee05",
+    "ggml-cpu-cascadelake.dll": "edf3ffb10c59cbce92880c82f9580aae8dbf9c41d7e798a5cd8b4ca0acb10167",
+    "ggml-cpu-cooperlake.dll": "b726f7689ec7b5f5b67aa37bacb8c36348450f535aaf86f68a6756b9f90c98a0",
+    "ggml-cpu-haswell.dll": "97302fa13b3fd496828e6f4936ac01433532880cf8277de6bc8b0117add0b816",
+    "ggml-cpu-icelake.dll": "d29a2b47db63d0acb29ca6314cc4a9e0579592d0bbde42926bcab525296bd464",
+    "ggml-cpu-ivybridge.dll": "b742628d4a73f24dad4a4c516d8600b7d50d2e7c07cf6011592bb0f0bda45349",
+    "ggml-cpu-piledriver.dll": "04540f47f6a6d1ccabbb9a92470a9d27ddff6c47cb015b38f9383ac83a93fc5f",
+    "ggml-cpu-sandybridge.dll": "96d99740a206893d081e61a2e2c32ea2b999be0cc82410182e232d2d8041a392",
+    "ggml-cpu-sapphirerapids.dll": "858ea2d8375a94d61d9a80e98ef8f8a88f1ef7c537e98eb69752129fab7cedd2",
+    "ggml-cpu-skylakex.dll": "2b6ac583bbea84b6649ebfbf771907df208c9bfac33d024adb430a853018b396",
+    "ggml-cpu-sse42.dll": "5c23106448a1edfb2683fcc955df017e8e4bdb3330114afa948c1870f8d7a91f",
+    "ggml-cpu-x64.dll": "9241c4023de3b08eadcb56314bf51ac2bd338b12c4008fa4950c30068c11afb6",
+    "ggml-cpu-zen4.dll": "b8f6bd5d70bc608cd2d752ae74bbf85925c2945267bb0eded15aab324ff9716a",
+    "ggml-cuda.dll": "8ca6d2e63709cab79f6c87ca3153e61e409aba6592e83c0c74bac74e222952d1",
+    "ggml-rpc.dll": "39948a2e2e40454421ac819cda1b4da56a12df93e2c00c2ebdd24df2c448c857",
+    "ggml.dll": "9865b315ce521f45b79c50f1d5cfb56cf9f94f186aac3ed0fceebd67f46e48c7",
+    "libomp.dll": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+    "llama-batched-bench-impl.dll": "ae139d30f4aa2a6b47279e6b9d1848c69f8ac7572c1f3ef3b9a239900fcc8c01",
+    "llama-bench-impl.dll": "52b07f0fd3a6004b2de6485c1f7f8f5438bf3709eea14dfcd30fc4ec2f57f067",
+    "llama-cli-impl.dll": "4d35886296714799c6ca5aece1ef3e036da7982abacd1056fdf6424a31f13b61",
+    "llama-common.dll": "a9590b558f417f54d17fc688961959b3f4a95038195732adc41faab1999b69e3",
+    "llama-completion-impl.dll": "04526c3dfea986a6e058609fb7d2944612b4f9f7fd5a50235e3b60fd4fbe2d94",
+    "llama-fit-params-impl.dll": "567911c481d9d6d9111b128de622bd9e1a201fe2fb6f060034b030794cc861a2",
+    "llama-perplexity-impl.dll": "52a6213fcb4f06494c8c0b72d52d863124877f4cf87301375a2fe0fa4b075fe2",
+    "llama-quantize-impl.dll": "bcaa4cf05a476f06a09f3911f84b6e2576280b5fd9f23e775c9997b4fce7b8f3",
+    "llama-server-impl.dll": "16913f79cdf57f0f80e618aeff139aa0ae096f8f935b06a02510c556e976d9d4",
+    "llama.dll": "d5fed9f3fe95f03dce3714500903763356122faf1ae98a6179e6490f090c3798",
+    "mtmd.dll": "5a8a0e95ea7b3da360e1ace6325fa441834a2b01fbe9c50639fb7f0c5d57c479"
+  },
+  "corpus": {
+    "path": "D:\\LocalLargeModel\\outputs\\quality-study\\prepared\\wikitext-2-raw-test.txt",
+    "sha256": "8f3f3e7ac2b0b69ad89472eb847012088036c371b22a37bf7a25176458b7eb2c",
+    "rows": 4358,
+    "source": {
+      "repo": "Salesforce/wikitext",
+      "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "file": "wikitext-2-raw-v1/test-00000-of-00001.parquet",
+      "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "extraction": "UTF-8 encode two-LF join of every text row in order; rstrip LF only",
+      "license": "upstream metadata: CC BY-SA 3.0 + GFDL; prose links CC BY-SA 4.0; corpus is not MIT"
+    }
+  },
+  "models": [],
+  "preparation": {
+    "parent": {
+      "path": "D:\\LocalLargeModel\\models\\quality-study\\Qwen_Qwen3-1.7B-bf16.gguf",
+      "sha256": "199b4df12194e24ac097d4fcbd279ce62bd4959bed9f0d4719d05a6ab1501861",
+      "size_bytes": 4069679264,
+      "repo": "bartowski/Qwen_Qwen3-1.7B-GGUF",
+      "revision": "dcb19155b962dbb6389f4691a982043a8e651022",
+      "metadata": {
+        "tokenizer_sha256": "7b436ebf11eaae4f8e551d5dabb954efcd506519dbac3b91a0a86d0f0b234d0d",
+        "tensor_shape_sha256": "2a401ff54ac3da619a0c3b651398f1352afab128db25493b48bf2786985d31af",
+        "tensor_count": 311,
+        "tensor_types": {
+          "BF16": 198,
+          "F32": 113
+        },
+        "architecture": "qwen3",
+        "general_file_type": 32,
+        "add_bos_token": false,
+        "add_eos_token": null,
+        "tokenizer_fingerprint_rule": "canonical JSON of every tokenizer.* typed metadata value"
+      }
+    },
+    "helper_sha256": "d862281397e9eacdb578c5e830473acaea61ec83408ff598cb4f89417041f413",
+    "dependencies": {
+      "gguf": "0.19.0",
+      "numpy": "2.5.3",
+      "pyarrow": "25.0.1",
+      "prismbench": "0.1.0a1"
+    },
+    "quantization": "BF16 -> F16; independently F16 -> Q8_0 and F16 -> Q4_K_M; no imatrix or requantize",
+    "limitation": "Community BF16 parent; equality to the official checkpoint is not independently verified."
+  }
+}

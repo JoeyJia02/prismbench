@@ -114,7 +114,9 @@ Compare two results only with matched model identity, suite, seed, runtime and w
 prismbench compare-quality reference/results.json candidate/results.json --reference-attempt ctx4k-r1-a0 --candidate-attempt ctx4k-r1-a0
 ```
 
-The output is a paired **probe score delta**, with changed settings listed. It does not claim FP16-relative quantization degradation without a comparable measured reference. Perplexity and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) integration are future work.
+The output is a paired **probe score delta**, with changed settings listed. It does not claim FP16-relative quantization degradation without a comparable measured reference.
+
+For an optional likelihood comparison, the [Qwen3-1.7B experiment recipe](experiments/quantization-README.md) reuses upstream `llama-perplexity` with a derived F16 reference, Q8_0 and Q4_K_M. The [measured 32-chunk prefix pilot](docs/validation-quantization-20260922.md) pairs corpus prediction changes with nine separate deployment lifetimes. It records shared weight lineage, tokenization, rounding and statistical limits; PPL change is **not** a percentage of general quality lost. This source-checkout experiment has its own report and optional preparation dependencies, separate from the CLI's probe comparator and deployment result schema. General [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) integration remains future work.
 
 ## Evidence and reproducibility
 

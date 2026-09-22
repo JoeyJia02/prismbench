@@ -1,0 +1,9 @@
+[
+  "D:\\LocalLargeModel\\runtimes\\upstream\\llama-quantize.exe",
+  "--max-buffer-size",
+  "256",
+  "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-F16.gguf",
+  "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q4_K_M.gguf",
+  "Q4_K_M",
+  "6"
+]

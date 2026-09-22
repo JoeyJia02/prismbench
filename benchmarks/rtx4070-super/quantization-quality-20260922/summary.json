@@ -1,0 +1,403 @@
+{
+  "scope": "Qwen3-1.7B community-BF16-derived F16/Q8_0/Q4_K_M, WikiText-2 raw test prefix pilot, one Windows RTX4070SUPER",
+  "quality_protocol": {
+    "context_size": 2048,
+    "chunks": 32,
+    "batch_size": 512,
+    "ubatch_size": 128,
+    "threads": 6,
+    "gpu_layers": 99,
+    "parallel": 1,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attention": "on",
+    "fit": "off",
+    "escape": false,
+    "parse_special": false,
+    "stride": 0,
+    "gpu_index": 0,
+    "timeout_seconds": 600,
+    "tokenize_timeout_seconds": 30,
+    "sample_interval_seconds": 0.5,
+    "minimum_start_ram_gib": 10,
+    "minimum_start_free_vram_gib": 7,
+    "minimum_run_ram_gib": 6,
+    "token_prefix_length": 65536,
+    "log_verbosity": 4
+  },
+  "rows": [
+    {
+      "label": "F16",
+      "model_bytes": 4069679264,
+      "model_sha256": "88d9134f85eec8ce75f39d2654fbcfd570fdda68821936ded67b177c0d4b326e",
+      "model_size_vs_f16": 1.0,
+      "perplexity": 15.0861,
+      "mean_nll": 2.713774,
+      "quality_peak_vram_mib": 5292.0,
+      "quality_peak_rss_mib": 4749.89453125,
+      "quality_wall_s": 14.062000000005355,
+      "performance_lifetimes": 3,
+      "ttft_s_mean": 0.20496186666423455,
+      "ttft_s_stdev": 0.006776877972660669,
+      "ttft_s_values": [
+        0.20989759999793023,
+        0.19723520000115968,
+        0.20775279999361373
+      ],
+      "generation_tokens_per_second_mean": 104.14424350305413,
+      "generation_tokens_per_second_stdev": 0.15625957154641715,
+      "generation_tokens_per_second_values": [
+        104.32051204121564,
+        104.08948745352855,
+        104.0227310144182
+      ],
+      "prompt_tokens_per_second_mean": 9190.024347867033,
+      "prompt_tokens_per_second_stdev": 65.73277808881222,
+      "prompt_tokens_per_second_values": [
+        9147.944520166828,
+        9156.358099442545,
+        9265.770423991726
+      ],
+      "load_time_s_mean": 1.9345032999893494,
+      "load_time_s_stdev": 0.027156547202866,
+      "load_time_s_values": [
+        1.9569944999821018,
+        1.9421808999904897,
+        1.904334499995457
+      ],
+      "total_latency_s_mean": 1.4245184666554753,
+      "total_latency_s_stdev": 0.00615933608327974,
+      "total_latency_s_values": [
+        1.4273985999752767,
+        1.4174466999829747,
+        1.4287101000081748
+      ],
+      "performance_peak_vram_mib": 5197.0,
+      "performance_peak_process_rss_mib": 3806.3203125,
+      "performance_peak_system_ram_used_mib": 18007.63671875
+    },
+    {
+      "label": "Q8_0",
+      "model_bytes": 2165039264,
+      "model_sha256": "eaf3c2bedbd50a31e1ea12d2c3fe2915b76d387f6928b0663870f36effa9c1fb",
+      "model_size_vs_f16": 0.5319926027467898,
+      "perplexity": 15.1083,
+      "mean_nll": 2.715247,
+      "quality_peak_vram_mib": 3706.0,
+      "quality_peak_rss_mib": 3099.97265625,
+      "quality_wall_s": 12.10899999999674,
+      "performance_lifetimes": 3,
+      "ttft_s_mean": 0.17674600000221594,
+      "ttft_s_stdev": 0.006824421469656458,
+      "ttft_s_values": [
+        0.18327209999551997,
+        0.17730790001223795,
+        0.16965799999888986
+      ],
+      "generation_tokens_per_second_mean": 167.32544739015586,
+      "generation_tokens_per_second_stdev": 0.5966029231990531,
+      "generation_tokens_per_second_values": [
+        168.00964137217576,
+        167.05294920801117,
+        166.91375159028064
+      ],
+      "prompt_tokens_per_second_mean": 10481.495952502106,
+      "prompt_tokens_per_second_stdev": 235.8384318819,
+      "prompt_tokens_per_second_values": [
+        10572.08426989493,
+        10213.794321996706,
+        10658.609265614685
+      ],
+      "load_time_s_mean": 1.257797566659671,
+      "load_time_s_stdev": 0.01997174826067508,
+      "load_time_s_values": [
+        1.2722618999832775,
+        1.2350104000070132,
+        1.266120399988722
+      ],
+      "total_latency_s_mean": 0.9358788333386959,
+      "total_latency_s_stdev": 0.0045796584597847575,
+      "total_latency_s_values": [
+        0.9393011999782175,
+        0.937658900016686,
+        0.9306764000211842
+      ],
+      "performance_peak_vram_mib": 3645.0,
+      "performance_peak_process_rss_mib": 2172.13671875,
+      "performance_peak_system_ram_used_mib": 16367.5078125
+    },
+    {
+      "label": "Q4_K_M",
+      "model_bytes": 1282439328,
+      "model_sha256": "f65e47f0fc79b76415cb4ae7871a91e6922fdb90fe64690a13d307974cd0d289",
+      "model_size_vs_f16": 0.3151204910284547,
+      "perplexity": 16.3602,
+      "mean_nll": 2.794853,
+      "quality_peak_vram_mib": 3014.0,
+      "quality_peak_rss_mib": 2405.49609375,
+      "quality_wall_s": 11.453000000008615,
+      "performance_lifetimes": 3,
+      "ttft_s_mean": 0.17905599999357946,
+      "ttft_s_stdev": 0.003292660302199173,
+      "ttft_s_values": [
+        0.17525440000463277,
+        0.18100669997511432,
+        0.1809069000009913
+      ],
+      "generation_tokens_per_second_mean": 233.19960927848345,
+      "generation_tokens_per_second_stdev": 0.6900802751967116,
+      "generation_tokens_per_second_values": [
+        233.9771697237227,
+        232.65996288432405,
+        232.96169522740362
+      ],
+      "prompt_tokens_per_second_mean": 10914.167655546658,
+      "prompt_tokens_per_second_stdev": 227.63904292903285,
+      "prompt_tokens_per_second_values": [
+        11176.459582005402,
+        10768.130659728273,
+        10797.912724906302
+      ],
+      "load_time_s_mean": 0.9632138333302768,
+      "load_time_s_stdev": 0.02117785129180161,
+      "load_time_s_values": [
+        0.9454475000093225,
+        0.9866493000008631,
+        0.9575446999806445
+      ],
+      "total_latency_s_mean": 0.7237798666562109,
+      "total_latency_s_stdev": 0.0048390842251245444,
+      "total_latency_s_values": [
+        0.7182122999802232,
+        0.7269739999901503,
+        0.7261532999982592
+      ],
+      "performance_peak_vram_mib": 2953.0,
+      "performance_peak_process_rss_mib": 1486.38671875,
+      "performance_peak_system_ram_used_mib": 15676.33984375
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "F16-r1",
+      "candidate": "Q8_0-r1",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "reference_perplexity": 15.0861,
+        "candidate_perplexity": 15.1083,
+        "delta_mean_nll": 0.0014730000000002796,
+        "perplexity_ratio": 1.001474085397365,
+        "perplexity_change_percent": 0.14740853973649626,
+        "paired_chunk_delta_mean_nll": [
+          0.0011730000000000906,
+          -0.0003269999999999662,
+          -0.003267000000000131,
+          0.0008929999999995886,
+          0.00837300000000063,
+          0.0021489999999992904,
+          -0.0042549999999987875,
+          -0.0008829999999981908,
+          -0.011047000000001361,
+          -0.0033290000000043563,
+          0.007374000000002212,
+          0.007045999999995445,
+          0.007839000000004148,
+          0.0014630000000011023,
+          0.006118000000000734,
+          0.006471999999995148,
+          0.010826000000001557,
+          0.011046000000007439,
+          -0.0010380000000012046,
+          -5.999999999062311e-06,
+          -0.004977000000003784,
+          0.009902999999994222,
+          -0.0020959999999945467,
+          0.00015799999999188685,
+          0.0014420000000114896,
+          0.0033159999999980982,
+          0.0002819999999985612,
+          0.002416000000010854,
+          0.005459999999999354,
+          -0.00453400000002091,
+          -0.002406999999990944,
+          -0.008446999999989657
+        ],
+        "exploratory_block_bootstrap": {
+          "seed": 42,
+          "samples": 10000,
+          "block_chunks": 4,
+          "blocks": 8,
+          "paired_block_delta_mean_nll": [
+            -0.0003820000000001045,
+            0.0013460000000007355,
+            1.0999999997984844e-05,
+            0.005473000000000283,
+            0.005207000000002182,
+            0.0007469999999969446,
+            0.0018640000000047507,
+            -0.0024820000000005393
+          ],
+          "confidence_level": 0.95,
+          "delta_mean_nll_interval": [
+            -0.0002028750000007129,
+            0.0032580000000005382
+          ],
+          "perplexity_ratio_interval": [
+            0.9997971455777405,
+            1.0032633130504065
+          ],
+          "perplexity_change_percent_interval": [
+            -0.020285442225949354,
+            0.3263313050406393
+          ],
+          "method": "Percentile bootstrap of paired, disjoint contiguous chunk blocks.",
+          "interpretation": "Exploratory corpus-block interval, conditional on this corpus and protocol. The small number of blocks and dependence between blocks limit coverage; not an IID-token interval, run-to-run uncertainty, or general-quality estimate."
+        },
+        "metric_interpretation": "Positive delta NLL means worse next-token likelihood on this corpus. The PPL ratio is exp(delta mean NLL) from rounded NLL values. PPL percentage change is not percentage loss in general model quality.",
+        "pairing_requirement": "Caller must independently verify identical corpus bytes, tokenizer, token positions, and runtime configuration; the log does not establish these identities.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      }
+    },
+    {
+      "reference": "F16-r1",
+      "candidate": "Q4_K_M-r1",
+      "metrics": {
+        "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+        "reference_perplexity": 15.0861,
+        "candidate_perplexity": 16.3602,
+        "delta_mean_nll": 0.0810789999999999,
+        "perplexity_ratio": 1.0844565652514575,
+        "perplexity_change_percent": 8.44565652514575,
+        "paired_chunk_delta_mean_nll": [
+          0.12929499999999994,
+          0.027163000000000714,
+          0.05237199999999831,
+          0.06047400000000103,
+          0.12483100000000036,
+          0.1107769999999988,
+          0.038183000000001854,
+          0.13319299999999856,
+          0.05356700000000103,
+          0.07406500000000094,
+          0.0911830000000009,
+          0.0592689999999898,
+          0.052530000000004407,
+          0.03287800000000374,
+          0.05883500000000197,
+          0.05840899999999749,
+          0.034658999999997775,
+          0.05155900000000457,
+          0.07455999999999818,
+          0.05047800000000535,
+          0.09617599999999982,
+          0.06696399999999869,
+          0.09435799999999261,
+          0.07407000000000608,
+          0.05787699999999063,
+          0.05837500000001228,
+          0.12341800000000092,
+          0.10946599999999762,
+          0.14260400000000573,
+          0.14727199999998675,
+          0.10542800000000341,
+          0.1502399999999966
+        ],
+        "exploratory_block_bootstrap": {
+          "seed": 42,
+          "samples": 10000,
+          "block_chunks": 4,
+          "blocks": 8,
+          "paired_block_delta_mean_nll": [
+            0.067326,
+            0.10174599999999989,
+            0.06952099999999817,
+            0.0506630000000019,
+            0.05281400000000147,
+            0.0828919999999993,
+            0.08728400000000036,
+            0.13638599999999812
+          ],
+          "confidence_level": 0.95,
+          "delta_mean_nll_interval": [
+            0.06425261562500038,
+            0.1004051374999998
+          ],
+          "perplexity_ratio_interval": [
+            1.06636174437815,
+            1.1056187549701038
+          ],
+          "perplexity_change_percent_interval": [
+            6.636174437814983,
+            10.561875497010366
+          ],
+          "method": "Percentile bootstrap of paired, disjoint contiguous chunk blocks.",
+          "interpretation": "Exploratory corpus-block interval, conditional on this corpus and protocol. The small number of blocks and dependence between blocks limit coverage; not an IID-token interval, run-to-run uncertainty, or general-quality estimate."
+        },
+        "metric_interpretation": "Positive delta NLL means worse next-token likelihood on this corpus. The PPL ratio is exp(delta mean NLL) from rounded NLL values. PPL percentage change is not percentage loss in general model quality.",
+        "pairing_requirement": "Caller must independently verify identical corpus bytes, tokenizer, token positions, and runtime configuration; the log does not establish these identities.",
+        "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+      }
+    }
+  ],
+  "reference_repeat": {
+    "reference": "F16-r1",
+    "candidate": "F16-r2",
+    "interpretation": "Numerical repeat drift; separate from corpus uncertainty",
+    "metrics": {
+      "protocol": "llama.cpp-b10964-non-strided-ppl-output-type-1",
+      "reference_perplexity": 15.0861,
+      "candidate_perplexity": 15.0861,
+      "delta_mean_nll": 0.0,
+      "perplexity_ratio": 1.0,
+      "perplexity_change_percent": 0.0,
+      "paired_chunk_delta_mean_nll": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "metric_interpretation": "Positive delta NLL means worse next-token likelihood on this corpus. The PPL ratio is exp(delta mean NLL) from rounded NLL values. PPL percentage change is not percentage loss in general model quality.",
+      "pairing_requirement": "Caller must independently verify identical corpus bytes, tokenizer, token positions, and runtime configuration; the log does not establish these identities.",
+      "rounding_caveat": "Cumulative mean NLL is printed to six decimals. Reconstructed chunk means amplify this rounding: the absolute bound for zero-based chunk i is (2*i+1)*0.0000005 nats/token. Paired chunk differences have twice that bound; the overall paired mean has a 0.000001 nats/token rounding bound. Bootstrap intervals do not incorporate this rounding uncertainty."
+    }
+  },
+  "performance_order": [
+    "F16",
+    "Q8_0",
+    "Q4_K_M",
+    "Q8_0",
+    "Q4_K_M",
+    "F16",
+    "Q4_K_M",
+    "F16",
+    "Q8_0"
+  ]
+}

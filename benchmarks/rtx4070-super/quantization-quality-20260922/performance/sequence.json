@@ -1,0 +1,72 @@
+{
+  "order": [
+    "F16",
+    "Q8_0",
+    "Q4_K_M",
+    "Q8_0",
+    "Q4_K_M",
+    "F16",
+    "Q4_K_M",
+    "F16",
+    "Q8_0"
+  ],
+  "controller_sha256": "7f664960332a735d8a90a2707f40d9e5627321e8aa21d95239acbd873ff4d302",
+  "python": "D:\\LocalLargeModel\\.venv-quality\\Scripts\\python.exe",
+  "status": "SUCCESS",
+  "runs": [
+    {
+      "label": "F16",
+      "order": 1,
+      "path": "01-F16",
+      "success": true
+    },
+    {
+      "label": "Q8_0",
+      "order": 2,
+      "path": "02-Q8_0",
+      "success": true
+    },
+    {
+      "label": "Q4_K_M",
+      "order": 3,
+      "path": "03-Q4_K_M",
+      "success": true
+    },
+    {
+      "label": "Q8_0",
+      "order": 4,
+      "path": "04-Q8_0",
+      "success": true
+    },
+    {
+      "label": "Q4_K_M",
+      "order": 5,
+      "path": "05-Q4_K_M",
+      "success": true
+    },
+    {
+      "label": "F16",
+      "order": 6,
+      "path": "06-F16",
+      "success": true
+    },
+    {
+      "label": "Q4_K_M",
+      "order": 7,
+      "path": "07-Q4_K_M",
+      "success": true
+    },
+    {
+      "label": "F16",
+      "order": 8,
+      "path": "08-F16",
+      "success": true
+    },
+    {
+      "label": "Q8_0",
+      "order": 9,
+      "path": "09-Q8_0",
+      "success": true
+    }
+  ]
+}

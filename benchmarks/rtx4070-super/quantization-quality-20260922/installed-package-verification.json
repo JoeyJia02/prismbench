@@ -1,0 +1,21 @@
+{
+  "timing": "Post-run read-only verification; matches provenance in all nine deployment lifetimes.",
+  "package_path": "D:\\LocalLargeModel\\.venv-quality\\Lib\\site-packages\\prismbench",
+  "version": "0.1.0a1",
+  "source_sha256": {
+    "__init__.py": "ea45c03accb4903efa01040017cf6379e2ca48f7f1502629df6d99ae65e1b83a",
+    "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "backends/__init__.py": "317c9e77aecca6cb786cd263dce0e6a7e1ff70388837145cd93ccda32dda3e6a",
+    "backends/base.py": "4124d45f774ba8f5210a6ee64ea5731e34fbd782b48f70d18771deab43b1f1a1",
+    "backends/llama_cpp.py": "6bd6163362c6428fad1fc59b0b7eedb9280dd7e1faba5ea996bd925fcd0c51ce",
+    "backends/process.py": "5cb12b987956305d01bf2e99916ed5fef1fa06f7e6483ab0c3e5fcdb16df09d4",
+    "backends/synthetic.py": "bc05a666200d92d2bfef981b3a4fdfec6369901ccd379b1aeee43c44104cb780",
+    "cli.py": "8e2141e4f0f26e3872486e507b9f209901fe74dd70256b944baac4f8774b260e",
+    "config.py": "b14539cd8ed9c3aa8a2b1302ea8dadfe7ed00b80aa9abed436c8804392a874ee",
+    "hardware.py": "c02e9e80bb4f1332b2a9ecf26250a18297ff3750a4e7d1e7b153716880ffbfb1",
+    "io.py": "bed3a0cf1e020c1af054401a8d414fe4dcfc5b96abb6189dba8d69e1d964851c",
+    "quality.py": "c52d793cce49ca85dc90cf42d6bb938c1b29f5c60735e2b949171ed71b8e8a64",
+    "report.py": "1b47a15f56f5e9df17ae2b033909adaa0c55a47b243ffcccf2abb7911e466637",
+    "runner.py": "e3a0092e6938ade9b591fdbece1448979ec1272662372cb84a7cb44678ba1169"
+  }
+}

@@ -34,3 +34,10 @@ The helper uses the pinned release's private Windows Job implementation only in 
 A narrow `PASS` requires an explicit `cudaMalloc ... out of memory` diagnostic, an `OOM → SUCCESS` chain with correct parent linkage, confirmed owned cleanup, successful 128/16-token fallback, and the final three GPU samples at or below baseline median plus 256 MiB. A guard, timeout, host-only allocation error, unexpected success or missing evidence is inconclusive. `physical_vram_oom_proven` remains **false even on PASS**, because the Job cap can influence the allocation failure.
 
 Post-chain settling is not a recovery admission check **before** the fallback. The released CLI retries immediately after confirming owned-process cleanup; it has no sustained-memory-recovery gate. One controlled sentinel does not prove that every desktop application was unaffected. Do not remove the cap or escalate the workload to turn an inconclusive result into a claim of physical exhaustion.
+
+## Paired quantization study
+
+The [Qwen3-1.7B recipe](quantization-README.md) compares a derived F16 baseline
+with Q8_0 and Q4_K_M on a fixed corpus prefix, using upstream perplexity and
+separate deployment measurements. Its preparation dependencies are optional
+and remain outside the PrismBench runtime package.

@@ -1,0 +1,505 @@
+{
+  "argv": [
+    "D:\\LocalLargeModel\\runtimes\\upstream\\llama-perplexity.exe",
+    "-m",
+    "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\Qwen3-1.7B-Q8_0.gguf",
+    "-f",
+    "D:\\LocalLargeModel\\outputs\\quality-study\\prepared-v2\\wikitext-2-raw-test.txt",
+    "-c",
+    "2048",
+    "-b",
+    "512",
+    "-ub",
+    "128",
+    "-t",
+    "6",
+    "-ngl",
+    "99",
+    "-fa",
+    "on",
+    "--fit",
+    "off",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "--chunks",
+    "32",
+    "--ppl-output-type",
+    "1",
+    "--no-escape",
+    "--verbosity",
+    "4"
+  ],
+  "cwd": "D:\\LocalLargeModel\\runtimes\\upstream",
+  "status": "SUCCESS",
+  "error": null,
+  "exit_code": 0,
+  "timeout_seconds": 600,
+  "wall_s": 12.10899999999674,
+  "cleanup": {
+    "success": true,
+    "remaining_pids": [],
+    "exit_code": 0,
+    "errors": []
+  },
+  "resources": {
+    "peak_vram_mib": 3706.0,
+    "peak_process_rss_mib": 3099.97265625,
+    "peak_system_ram_used_mib": 17410.71875,
+    "telemetry_samples": 24,
+    "sample_interval_seconds": 0.5,
+    "gpu_process_vram_mib": null
+  },
+  "guards": [
+    {
+      "elapsed_s": 0.046000000002095476,
+      "available_ram_bytes": 19000291328
+    },
+    {
+      "elapsed_s": 0.15599999998812564,
+      "available_ram_bytes": 18804686848
+    },
+    {
+      "elapsed_s": 0.25,
+      "available_ram_bytes": 18738638848
+    },
+    {
+      "elapsed_s": 0.35899999999674037,
+      "available_ram_bytes": 18658082816
+    },
+    {
+      "elapsed_s": 0.46799999999348074,
+      "available_ram_bytes": 18647257088
+    },
+    {
+      "elapsed_s": 0.5780000000086147,
+      "available_ram_bytes": 18636312576
+    },
+    {
+      "elapsed_s": 0.6710000000020955,
+      "available_ram_bytes": 18412482560
+    },
+    {
+      "elapsed_s": 0.7809999999881256,
+      "available_ram_bytes": 18065637376
+    },
+    {
+      "elapsed_s": 0.8900000000139698,
+      "available_ram_bytes": 17707937792
+    },
+    {
+      "elapsed_s": 1.0,
+      "available_ram_bytes": 17348788224
+    },
+    {
+      "elapsed_s": 1.1089999999967404,
+      "available_ram_bytes": 16984899584
+    },
+    {
+      "elapsed_s": 1.2030000000086147,
+      "available_ram_bytes": 16765165568
+    },
+    {
+      "elapsed_s": 1.312000000005355,
+      "available_ram_bytes": 16733564928
+    },
+    {
+      "elapsed_s": 1.4210000000020955,
+      "available_ram_bytes": 16731258880
+    },
+    {
+      "elapsed_s": 1.5309999999881256,
+      "available_ram_bytes": 16723320832
+    },
+    {
+      "elapsed_s": 1.6400000000139698,
+      "available_ram_bytes": 16686895104
+    },
+    {
+      "elapsed_s": 1.75,
+      "available_ram_bytes": 16282759168
+    },
+    {
+      "elapsed_s": 1.8589999999967404,
+      "available_ram_bytes": 15905521664
+    },
+    {
+      "elapsed_s": 1.9679999999934807,
+      "available_ram_bytes": 15779115008
+    },
+    {
+      "elapsed_s": 2.062000000005355,
+      "available_ram_bytes": 15776665600
+    },
+    {
+      "elapsed_s": 2.1710000000020955,
+      "available_ram_bytes": 15776296960
+    },
+    {
+      "elapsed_s": 2.2809999999881256,
+      "available_ram_bytes": 15764946944
+    },
+    {
+      "elapsed_s": 2.39000000001397,
+      "available_ram_bytes": 15758151680
+    },
+    {
+      "elapsed_s": 2.5,
+      "available_ram_bytes": 15758835712
+    },
+    {
+      "elapsed_s": 2.6089999999967404,
+      "available_ram_bytes": 15756009472
+    },
+    {
+      "elapsed_s": 2.7179999999934807,
+      "available_ram_bytes": 15754309632
+    },
+    {
+      "elapsed_s": 2.8280000000086147,
+      "available_ram_bytes": 15756886016
+    },
+    {
+      "elapsed_s": 2.937000000005355,
+      "available_ram_bytes": 15754334208
+    },
+    {
+      "elapsed_s": 3.0460000000020955,
+      "available_ram_bytes": 15755587584
+    },
+    {
+      "elapsed_s": 3.1559999999881256,
+      "available_ram_bytes": 15724896256
+    },
+    {
+      "elapsed_s": 3.26500000001397,
+      "available_ram_bytes": 15756902400
+    },
+    {
+      "elapsed_s": 3.375,
+      "available_ram_bytes": 15749033984
+    },
+    {
+      "elapsed_s": 3.4679999999934807,
+      "available_ram_bytes": 15749169152
+    },
+    {
+      "elapsed_s": 3.5929999999934807,
+      "available_ram_bytes": 15749042176
+    },
+    {
+      "elapsed_s": 3.687000000005355,
+      "available_ram_bytes": 15740436480
+    },
+    {
+      "elapsed_s": 3.8280000000086147,
+      "available_ram_bytes": 15739715584
+    },
+    {
+      "elapsed_s": 3.937000000005355,
+      "available_ram_bytes": 15734673408
+    },
+    {
+      "elapsed_s": 4.0460000000020955,
+      "available_ram_bytes": 15738601472
+    },
+    {
+      "elapsed_s": 4.155999999988126,
+      "available_ram_bytes": 15739170816
+    },
+    {
+      "elapsed_s": 4.26500000001397,
+      "available_ram_bytes": 15744393216
+    },
+    {
+      "elapsed_s": 4.375,
+      "available_ram_bytes": 15744778240
+    },
+    {
+      "elapsed_s": 4.48399999999674,
+      "available_ram_bytes": 15739953152
+    },
+    {
+      "elapsed_s": 4.578000000008615,
+      "available_ram_bytes": 15741403136
+    },
+    {
+      "elapsed_s": 4.687000000005355,
+      "available_ram_bytes": 15736479744
+    },
+    {
+      "elapsed_s": 4.812000000005355,
+      "available_ram_bytes": 15735599104
+    },
+    {
+      "elapsed_s": 4.9210000000020955,
+      "available_ram_bytes": 15741554688
+    },
+    {
+      "elapsed_s": 5.01500000001397,
+      "available_ram_bytes": 15745040384
+    },
+    {
+      "elapsed_s": 5.14000000001397,
+      "available_ram_bytes": 15740334080
+    },
+    {
+      "elapsed_s": 5.25,
+      "available_ram_bytes": 15745978368
+    },
+    {
+      "elapsed_s": 5.35899999999674,
+      "available_ram_bytes": 15738216448
+    },
+    {
+      "elapsed_s": 5.467999999993481,
+      "available_ram_bytes": 15741431808
+    },
+    {
+      "elapsed_s": 5.578000000008615,
+      "available_ram_bytes": 15743791104
+    },
+    {
+      "elapsed_s": 5.6710000000020955,
+      "available_ram_bytes": 15732989952
+    },
+    {
+      "elapsed_s": 5.7960000000020955,
+      "available_ram_bytes": 15712931840
+    },
+    {
+      "elapsed_s": 5.89000000001397,
+      "available_ram_bytes": 15732224000
+    },
+    {
+      "elapsed_s": 6.0,
+      "available_ram_bytes": 15735992320
+    },
+    {
+      "elapsed_s": 6.10899999999674,
+      "available_ram_bytes": 15739887616
+    },
+    {
+      "elapsed_s": 6.217999999993481,
+      "available_ram_bytes": 15725494272
+    },
+    {
+      "elapsed_s": 6.328000000008615,
+      "available_ram_bytes": 15741407232
+    },
+    {
+      "elapsed_s": 6.437000000005355,
+      "available_ram_bytes": 15737049088
+    },
+    {
+      "elapsed_s": 6.530999999988126,
+      "available_ram_bytes": 15734251520
+    },
+    {
+      "elapsed_s": 6.64000000001397,
+      "available_ram_bytes": 15728812032
+    },
+    {
+      "elapsed_s": 6.75,
+      "available_ram_bytes": 15732641792
+    },
+    {
+      "elapsed_s": 6.85899999999674,
+      "available_ram_bytes": 15730888704
+    },
+    {
+      "elapsed_s": 6.967999999993481,
+      "available_ram_bytes": 15734583296
+    },
+    {
+      "elapsed_s": 7.062000000005355,
+      "available_ram_bytes": 15738920960
+    },
+    {
+      "elapsed_s": 7.1710000000020955,
+      "available_ram_bytes": 15732142080
+    },
+    {
+      "elapsed_s": 7.280999999988126,
+      "available_ram_bytes": 15708397568
+    },
+    {
+      "elapsed_s": 7.39000000001397,
+      "available_ram_bytes": 15733661696
+    },
+    {
+      "elapsed_s": 7.5,
+      "available_ram_bytes": 15731867648
+    },
+    {
+      "elapsed_s": 7.592999999993481,
+      "available_ram_bytes": 15734259712
+    },
+    {
+      "elapsed_s": 7.717999999993481,
+      "available_ram_bytes": 15726514176
+    },
+    {
+      "elapsed_s": 7.828000000008615,
+      "available_ram_bytes": 15724056576
+    },
+    {
+      "elapsed_s": 7.9210000000020955,
+      "available_ram_bytes": 15731154944
+    },
+    {
+      "elapsed_s": 8.030999999988126,
+      "available_ram_bytes": 15734259712
+    },
+    {
+      "elapsed_s": 8.14000000001397,
+      "available_ram_bytes": 15723290624
+    },
+    {
+      "elapsed_s": 8.25,
+      "available_ram_bytes": 15726350336
+    },
+    {
+      "elapsed_s": 8.375,
+      "available_ram_bytes": 15727390720
+    },
+    {
+      "elapsed_s": 8.46799999999348,
+      "available_ram_bytes": 15732232192
+    },
+    {
+      "elapsed_s": 8.578000000008615,
+      "available_ram_bytes": 15731486720
+    },
+    {
+      "elapsed_s": 8.687000000005355,
+      "available_ram_bytes": 15721988096
+    },
+    {
+      "elapsed_s": 8.796000000002095,
+      "available_ram_bytes": 15723044864
+    },
+    {
+      "elapsed_s": 8.905999999988126,
+      "available_ram_bytes": 15720771584
+    },
+    {
+      "elapsed_s": 9.01500000001397,
+      "available_ram_bytes": 15732080640
+    },
+    {
+      "elapsed_s": 9.125,
+      "available_ram_bytes": 15734673408
+    },
+    {
+      "elapsed_s": 9.21799999999348,
+      "available_ram_bytes": 15726387200
+    },
+    {
+      "elapsed_s": 9.328000000008615,
+      "available_ram_bytes": 15728406528
+    },
+    {
+      "elapsed_s": 9.437000000005355,
+      "available_ram_bytes": 15730032640
+    },
+    {
+      "elapsed_s": 9.546000000002095,
+      "available_ram_bytes": 15734374400
+    },
+    {
+      "elapsed_s": 9.655999999988126,
+      "available_ram_bytes": 15724306432
+    },
+    {
+      "elapsed_s": 9.76500000001397,
+      "available_ram_bytes": 15725289472
+    },
+    {
+      "elapsed_s": 9.875,
+      "available_ram_bytes": 15724802048
+    },
+    {
+      "elapsed_s": 9.98399999999674,
+      "available_ram_bytes": 15732027392
+    },
+    {
+      "elapsed_s": 10.09299999999348,
+      "available_ram_bytes": 15733735424
+    },
+    {
+      "elapsed_s": 10.187000000005355,
+      "available_ram_bytes": 15725170688
+    },
+    {
+      "elapsed_s": 10.296000000002095,
+      "available_ram_bytes": 15726686208
+    },
+    {
+      "elapsed_s": 10.405999999988126,
+      "available_ram_bytes": 15725912064
+    },
+    {
+      "elapsed_s": 10.51500000001397,
+      "available_ram_bytes": 15730171904
+    },
+    {
+      "elapsed_s": 10.625,
+      "available_ram_bytes": 15733313536
+    },
+    {
+      "elapsed_s": 10.71799999999348,
+      "available_ram_bytes": 15727910912
+    },
+    {
+      "elapsed_s": 10.828000000008615,
+      "available_ram_bytes": 15733030912
+    },
+    {
+      "elapsed_s": 10.937000000005355,
+      "available_ram_bytes": 15724777472
+    },
+    {
+      "elapsed_s": 11.046000000002095,
+      "available_ram_bytes": 15726276608
+    },
+    {
+      "elapsed_s": 11.14000000001397,
+      "available_ram_bytes": 15725096960
+    },
+    {
+      "elapsed_s": 11.25,
+      "available_ram_bytes": 15729750016
+    },
+    {
+      "elapsed_s": 11.35899999999674,
+      "available_ram_bytes": 15718047744
+    },
+    {
+      "elapsed_s": 11.46799999999348,
+      "available_ram_bytes": 15729229824
+    },
+    {
+      "elapsed_s": 11.578000000008615,
+      "available_ram_bytes": 15733743616
+    },
+    {
+      "elapsed_s": 11.687000000005355,
+      "available_ram_bytes": 15725531136
+    },
+    {
+      "elapsed_s": 11.780999999988126,
+      "available_ram_bytes": 15728603136
+    },
+    {
+      "elapsed_s": 11.89000000001397,
+      "available_ram_bytes": 15732281344
+    },
+    {
+      "elapsed_s": 12.01500000001397,
+      "available_ram_bytes": 18363109376
+    }
+  ],
+  "streams": "stdout.log merges stdout and stderr"
+}
