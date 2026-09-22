@@ -31,7 +31,7 @@ PROTOCOL = {"context_size": 2048, "chunks": 32, "batch_size": 512,
             "gpu_index": 0, "timeout_seconds": 600, "tokenize_timeout_seconds": 30,
             "sample_interval_seconds": 0.5, "minimum_start_ram_gib": 10,
             "minimum_start_free_vram_gib": 7, "minimum_run_ram_gib": 6,
-            "token_prefix_length": 65536}
+            "token_prefix_length": 65536, "log_verbosity": 4}
 LABELS = ("F16", "Q8_0", "Q4_K_M")
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 
@@ -258,7 +258,7 @@ def perplexity_argv(runtime, model, corpus):
     return [str(runtime / "llama-perplexity.exe"), "-m", model["path"], "-f", corpus,
             "-c", "2048", "-b", "512", "-ub", "128", "-t", "6", "-ngl", "99",
             "-fa", "on", "--fit", "off", "-ctk", "f16", "-ctv", "f16", "--chunks", "32",
-            "--ppl-output-type", "1", "--no-escape"]
+            "--ppl-output-type", "1", "--no-escape", "--verbosity", "4"]
 
 
 def _logs(directory):
