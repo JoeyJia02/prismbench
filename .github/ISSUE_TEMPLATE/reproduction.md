@@ -5,6 +5,10 @@ about: Report a measured result on another GPU, OS or runtime
 
 ## Environment and artifacts
 
+For quick installation/demo feedback, use the first-run template instead; full
+hardware evidence is optional. Review [sharing results](https://github.com/JoeyJia02/prismbench/blob/main/docs/sharing-results.md)
+before attaching files. Token IDs, logs and GPU UUIDs can also reveal information.
+
 - PrismBench version or commit, Python version, OS:
 - GPU name/VRAM, driver, CPU and system RAM:
 - llama.cpp version/commit and executable hash:
@@ -21,8 +25,9 @@ upload model weights or runtime binaries.
 
 Inspect prompts, paths and logs before sharing. Remove external credentials and
 unnecessary personal identifiers from a copy, documenting exactly what was
-redacted. Preserve numerical results and artifact hashes; keep the original
-locally. An OOM/timeout report is useful even without a successful result.
+redacted. Preserve numerical results and original artifact hashes; disclose that
+redacted bytes no longer match the original hashes. Keep the original locally.
+An OOM/timeout report is useful even without a successful result.
 
 ## Interpretation
 

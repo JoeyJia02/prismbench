@@ -176,7 +176,7 @@ $placementConfig | ConvertTo-Json -Depth 10 | Set-Content placement.local.json -
 
 This makes six lifetimes with the bundled version 2 single-line probes. Allow roughly 3–10 minutes as a planning estimate. The reference's full placement versus 20-layer placement used 6,689 versus 4,501 MiB sampled peak VRAM and generated 70.52 versus 11.50 token/s. Both answered 8/8 probes in each repeat. Those easy probes compare the **same Q4 weights** at different placements; they do not establish general quality equivalence or quantify Q4-versus-FP16 degradation. The comparison command above selects repetition 1 only; select `r2` and `r3` explicitly to inspect the other pairs. Keep this session separate from the context sweep when comparing timings.
 
-For explicit failure recovery, see [the fallback example](../examples/offload-fallback.json) and [methodology](methodology.md). Copy it into your own config and adjust paths/hash first. The published alpha has no deliberate real-hardware OOM validation; deterministic process fixtures validate its fallback mechanics.
+For explicit failure recovery, see [the fallback example](../examples/offload-fallback.json) and [methodology](methodology.md). Copy it into your own config and adjust paths/hash first. The [bounded CUDA follow-up](validation-20260922.md) observed an allocation rejection and successful fallback under a host-memory cap. Ordinary physical VRAM exhaustion and a pre-retry memory recovery check remain unvalidated; deterministic process fixtures validate fallback mechanics.
 
 ## Linux and WSL pointers
 

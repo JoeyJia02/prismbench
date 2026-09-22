@@ -6,6 +6,11 @@ PrismBench starts a local model, checks the workload that actually ran, records 
 
 [![Tests and package](https://github.com/JoeyJia02/prismbench/actions/workflows/ci.yml/badge.svg)](https://github.com/JoeyJia02/prismbench/actions/workflows/ci.yml)
 
+**New here?** Follow the [short first-run guide](docs/first-run.md) to install the
+alpha, inspect a synthetic report, then measure a GGUF you already have. No Git
+clone or model download is needed for the demo. [First-run feedback](https://github.com/JoeyJia02/prismbench/issues/new?template=first_run.md)
+is welcome even if installation fails; no pull request or full log bundle is required.
+
 It answers: “Did this GGUF complete this context on my machine, at what cost, and what happened after a failure?” A successful 16K run means **16K was tested**, not that 16K is the model or device's maximum.
 
 For model fit recommendations, start with [llmfit](https://github.com/AlexsJones/llmfit). For automatic configuration search, use [llama-autotune](https://github.com/Najafu/llama-autotune). For engine throughput microbenchmarks, use [llama-bench](https://github.com/ggml-org/llama.cpp/tree/master/tools/llama-bench). PrismBench focuses on owned server lifetimes, precise workload checks and inspectable failure evidence. See the [competitor analysis](docs/competitive-landscape.md) and [scope decision](docs/adr/0001-v01.md).
@@ -63,21 +68,21 @@ For complete Windows download, checksum and first-run commands, follow the [RTX 
 3. Inspect hardware and create an editable config. Example PowerShell paths:
 
 ```powershell
-prismbench doctor
-prismbench init --server C:\llama\llama-server.exe --model C:\models\Qwen3-8B-Q4_K_M.gguf --model-id Qwen/Qwen3-8B --quantization Q4_K_M
-prismbench run prismbench.local.json
+.\.venv\Scripts\prismbench.exe doctor
+.\.venv\Scripts\prismbench.exe init --server C:\llama\llama-server.exe --model C:\models\Qwen3-8B-Q4_K_M.gguf --model-id Qwen/Qwen3-8B --quantization Q4_K_M
+.\.venv\Scripts\prismbench.exe run prismbench.local.json
 ```
 
-On Linux/WSL, supply the Linux `llama-server` binary and Linux model paths. Do not use a Windows binary inside a Linux config. No Docker or extra service is required.
+On Linux/WSL, use `.venv/bin/prismbench`, supply the Linux `llama-server` binary and Linux model paths. Do not use a Windows binary inside a Linux config. No Docker or extra service is required.
 
-`init` writes a 2K workload with three independent server lifetimes. Edit the JSON to adjust context, prompt/output token counts, GPU layers, KV cache types and repetitions. Use [the 1K–16K sample](examples/qwen3-context-sweep.json) or [offload fallback sample](examples/offload-fallback.json). Paths in JSON resolve **relative to that config file**. The CLI refuses to reuse an existing output directory.
+`init` writes a 2K workload with three independent server lifetimes and `quality: true` for the smoke probes. For a shorter first deployment run, follow the [first-run guide](docs/first-run.md), setting `repetitions: 1` and `quality: false` before running. Edit the JSON to adjust context, prompt/output token counts, GPU layers, KV cache types and repetitions. Use [the 1K–16K sample](examples/qwen3-context-sweep.json) or [offload fallback sample](examples/offload-fallback.json). Paths in JSON resolve **relative to that config file**. The CLI refuses to reuse an existing output directory.
 
-```console
-prismbench run my-config.json --output outputs/my-experiment
-prismbench report outputs/my-experiment/results.json --output outputs/export
+```powershell
+.\.venv\Scripts\prismbench.exe run my-config.json --output outputs/my-experiment
+.\.venv\Scripts\prismbench.exe report outputs/my-experiment/results.json --output outputs/export
 ```
 
-Report export validates saved data without inference. Raw evidence remains in the original experiment directory; copy that complete directory when sharing a report.
+Report export validates saved data without inference. Raw evidence remains in the original experiment directory. Before sharing, review a copy using [the sharing guide](docs/sharing-results.md); reports, logs and token IDs can contain private information, and the CLI does not anonymize them.
 
 ## What is measured
 
@@ -106,12 +111,12 @@ Exit codes: `0` all requested case/repetition chains ultimately succeeded; `1` a
 
 ## Lightweight quality checks
 
-Enable `quality` for bundled deterministic raw-completion probes, or supply `quality_suite` as a local JSON file following [the bundled format](src/prismbench/data/probes.json). The version 2 protocol requests a **single-line answer**, stops generation at the first newline, and compares the entire returned answer exactly after Unicode/whitespace normalization. It does not extract a correct substring from a longer response. They are **smoke probes, not a general benchmark or a percentage of quality retained**. Some instruction models require custom prompt templates; the bundled suite deliberately does not apply a hidden chat template.
+`init` enables `quality` by default for bundled deterministic raw-completion probes; set it to `false` to omit them, or supply `quality_suite` as a local JSON file following [the bundled format](src/prismbench/data/probes.json). The version 2 protocol requests a **single-line answer**, stops generation at the first newline, and compares the entire returned answer exactly after Unicode/whitespace normalization. It does not extract a correct substring from a longer response. They are **smoke probes, not a general benchmark or a percentage of quality retained**. Some instruction models require custom prompt templates; the bundled suite deliberately does not apply a hidden chat template.
 
 Compare two results only with matched model identity, suite, seed, runtime and workload. When a session has multiple eligible attempts, select the desired attempt IDs:
 
-```console
-prismbench compare-quality reference/results.json candidate/results.json --reference-attempt ctx4k-r1-a0 --candidate-attempt ctx4k-r1-a0
+```powershell
+.\.venv\Scripts\prismbench.exe compare-quality reference/results.json candidate/results.json --reference-attempt ctx4k-r1-a0 --candidate-attempt ctx4k-r1-a0
 ```
 
 The output is a paired **probe score delta**, with changed settings listed. It does not claim FP16-relative quantization degradation without a comparable measured reference.

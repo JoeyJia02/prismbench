@@ -1,5 +1,12 @@
 # Contributing
 
+Trying the package is a contribution. Use the [short first-run guide](docs/first-run.md)
+and [first-run feedback form](https://github.com/JoeyJia02/prismbench/issues/new?template=first_run.md)
+for installation success, failure or confusing steps. No GPU, full evidence bundle
+or pull request is required. Read [sharing results](docs/sharing-results.md) before
+attaching files. The [first-user plan](docs/community-launch.md) tracks what external
+feedback would establish; maintainer reruns and download counts do not prove adoption.
+
 Start with an issue describing a reproducible user problem. Check [alternatives](docs/competitive-landscape.md) and [scope](docs/adr/0001-v01.md) before adding a backend or dependency. Small, reviewable changes are preferred.
 
 Install Python 3.10+ and create a virtual environment. Then:

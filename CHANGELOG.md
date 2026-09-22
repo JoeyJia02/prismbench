@@ -2,6 +2,7 @@
 
 ## Unreleased — validation follow-up
 
+- Add a short pinned-wheel first-run guide, optional low-effort feedback, evidence-sharing guidance and reviewed community launch drafts. These documentation changes do not alter the published alpha package or establish external adoption.
 - Add an optional Qwen3-1.7B F16/Q8_0/Q4_K_M likelihood recipe using upstream llama.cpp, a pinned corpus, strict token/window alignment and exploratory paired block intervals.
 - Record four accepted PPL lifetimes, an invalid logging pilot and nine rotating deployment lifetimes on the RTX 4070 SUPER. Keep third-party corpus text/token arrays and model assets out of the public evidence.
 - Add preparation, parser and failure-lifecycle tests without changing the installed backend or published alpha assets.
